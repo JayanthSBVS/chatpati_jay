@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-cream: #F5EFEB;
+  --color-primary-ivory: #FAF7F2;
+  --color-primary-gold: #CBAA6A;
+  --color-primary-brown: #7A5B42;
+  --color-primary-sand: #D5C6B1;
+  
+  --color-accent-green: #5A6B4E;
+  --color-accent-rose: #C08A84;
+  --color-accent-saffron: #E2A060;
+  
+  --color-text-black: #1A1817;
+  --color-text-espresso: #3E2723;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  html, body {
+    @apply text-text-black font-sans antialiased selection:bg-primary-gold selection:text-white;
+    background-color: #0a0908;
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Textures and Utilities */
+.bg-texture-paper {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.clip-reveal {
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
