@@ -9,24 +9,22 @@ export default function Scene0_CoverPage() {
   const isMobile = useIsMobile();
   const coverRef = useRef(null);
   const videoRef = useRef(null);
-  const typographyRef = useRef(null);
-  const subtitleRef = useRef(null);
+  const brandRef = useRef(null);
   const indicatorRef = useRef(null);
-  const gradientRef = useRef(null);
 
   useEffect(() => {
     const video = videoRef.current;
     const cover = coverRef.current;
-    const typography = typographyRef.current;
-    const subtitle = subtitleRef.current;
+    const brand = brandRef.current;
     const indicator = indicatorRef.current;
-    const gradient = gradientRef.current;
     const homePage = document.getElementById('home-page-wrapper');
 
     if (!video || !cover || !homePage) return;
 
-    // Mobile video play requires user interaction.
-    let hasStarted = false;
+    // Play immediately (autoplay via attribute) + fallback for browsers that block it
+    video.play().catch(() => {});
+
+    let hasStarted = true;
     const startVideo = () => {
       if (!hasStarted && video) {
         hasStarted = true;
@@ -38,58 +36,54 @@ export default function Scene0_CoverPage() {
     window.addEventListener('pointerdown', startVideo, { once: true });
     window.addEventListener('wheel', startVideo, { once: true });
 
-    // Initial state for homepage reveal (starts lower and hidden)
+    // Initial state: homepage hidden beneath
     gsap.set(homePage, { opacity: 0, y: 40 });
 
-    const scrollDistance = isMobile ? window.innerHeight * 1.1 : window.innerHeight * 1.4;
+    const scrollDistance = isMobile
+      ? window.innerHeight * 1.1
+      : window.innerHeight * 1.4;
 
-    // Timeline for dissolving the cover
+    // Main cover dissolve timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         id: 'cover-sequence',
         trigger: document.body,
         start: 'top top',
         end: () => `+=${scrollDistance}`,
-        scrub: 1,
+        scrub: 1.2,
         onUpdate: (self) => {
           if (!hasStarted && self.progress > 0.01) {
             startVideo();
           }
-        }
+        },
       },
     });
 
-    // 0% -> 70%: Fade out UI elements early, deepen the atmosphere
-    tl.to(indicator, { opacity: 0, duration: 0.1, ease: 'none' }, 0)
-      .to(typography, { opacity: 0, y: -20, duration: 0.2, ease: 'none' }, 0.1)
-      .to(subtitle, { opacity: 0, y: -10, duration: 0.2, ease: 'none' }, 0.1)
-      .to(gradient, { backgroundColor: 'rgba(5, 3, 2, 0.4)', duration: 0.4, ease: 'none' }, 0.2)
-      // 70% -> 100%: The cover completely dissolves.
-      .to(cover, { opacity: 0, duration: 0.3, ease: 'none' }, 0.7);
+    // 0–25%: Fade scroll indicator
+    tl.to(indicator, { opacity: 0, y: 8, duration: 0.25, ease: 'none' }, 0)
+      // 10–45%: Brand lockup lifts and fades
+      .to(brand, { opacity: 0, y: -24, duration: 0.35, ease: 'none' }, 0.1)
+      // 65–100%: Cover itself dissolves
+      .to(cover, { opacity: 0, duration: 0.35, ease: 'none' }, 0.65);
 
-    // HERO REVEAL IS DECOUPLED FROM SCRUB.
+    // Homepage reveal (decoupled, one-shot ease)
     ScrollTrigger.create({
       trigger: document.body,
-      start: () => `+=${scrollDistance * 0.7}`, // 70% point
+      start: () => `+=${scrollDistance * 0.65}`,
       onEnter: () => {
-        gsap.to(homePage, { 
-          opacity: 1, 
-          y: 0, 
-          duration: 2.2, // Cinematic slow fade
-          ease: 'expo.out' 
+        gsap.to(homePage, {
+          opacity: 1,
+          y: 0,
+          duration: 2.4,
+          ease: 'expo.out',
         });
       },
       onLeaveBack: () => {
-        gsap.to(homePage, { 
-          opacity: 0, 
-          y: 40, 
-          duration: 1,
-          ease: 'power2.out' 
-        });
-      }
+        gsap.to(homePage, { opacity: 0, y: 40, duration: 1, ease: 'power2.out' });
+      },
     });
 
-    // Hard toggle at exactly 100%
+    // Hard toggle at 100% — ensure cover is gone and can't intercept clicks
     ScrollTrigger.create({
       trigger: document.body,
       start: 'top top',
@@ -106,15 +100,15 @@ export default function Scene0_CoverPage() {
           cover.style.pointerEvents = 'auto';
           cover.style.visibility = 'visible';
         }
-      }
+      },
     });
 
     return () => {
       window.removeEventListener('touchstart', startVideo);
       window.removeEventListener('pointerdown', startVideo);
       window.removeEventListener('wheel', startVideo);
-      ScrollTrigger.getAll().forEach(t => t.kill());
-      gsap.killTweensOf([cover, typography, subtitle, indicator, gradient, homePage]);
+      ScrollTrigger.getAll().forEach((t) => t.kill());
+      gsap.killTweensOf([cover, brand, indicator, homePage]);
       gsap.set(homePage, { clearProps: 'all' });
     };
   }, [isMobile]);
@@ -127,13 +121,17 @@ export default function Scene0_CoverPage() {
         inset: 0,
         zIndex: 50,
         willChange: 'opacity',
-        background: '#080604',
+        background: '#060402',
       }}
     >
-      {/* VIDEO */}
+      {/* ─── VIDEO ─── */}
       <video
         ref={videoRef}
-        src={isMobile ? '/assets/cover/cover-mobile.mp4' : '/assets/cover/cover-desktop.mp4'}
+        src={
+          isMobile
+            ? '/assets/cover/cover_video_mobile.mp4'
+            : '/assets/cover/cover_video_desktop.mp4'
+        }
         style={{
           position: 'absolute',
           inset: 0,
@@ -141,14 +139,21 @@ export default function Scene0_CoverPage() {
           height: '100%',
           objectFit: 'cover',
         }}
+        autoPlay
         muted
         playsInline
+        loop
         disablePictureInPicture
       />
 
-      {/* OVERLAY */}
+      {/* ─── GRADIENT OVERLAY ─── */}
+      {/*
+        Three-zone gradient:
+          Top ~35%  → slightly dark so logo/text stays readable
+          Middle     → nearly transparent so video hero is untouched
+          Bottom ~30% → slight dark vignette for scroll indicator
+      */}
       <div
-        ref={gradientRef}
         style={{
           position: 'absolute',
           inset: 0,
@@ -156,131 +161,212 @@ export default function Scene0_CoverPage() {
           pointerEvents: 'none',
           background: `linear-gradient(
             to bottom,
-            rgba(5,3,2,0.85) 0%,
-            rgba(5,3,2,0.50) 25%,
-            rgba(5,3,2,0.00) 45%,
-            rgba(5,3,2,0.00) 65%,
-            rgba(10,6,3,0.75) 100%
+            rgba(0,0,0,0.38) 0%,
+            rgba(0,0,0,0.18) 22%,
+            rgba(0,0,0,0.08) 40%,
+            rgba(0,0,0,0.08) 62%,
+            rgba(0,0,0,0.40) 100%
           )`,
-          willChange: 'background-color',
         }}
       />
 
+      {/* ─── BRAND LOCKUP ─── */}
       <div
-        ref={typographyRef}
+        ref={brandRef}
         style={{
           position: 'absolute',
-          top: isMobile ? '12vh' : '14vh',
+          top: isMobile ? '10vh' : '18vh',
           left: 0,
           right: 0,
           zIndex: 10,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          gap: 0,
           pointerEvents: 'none',
           willChange: 'opacity, transform',
         }}
       >
+        {/* LOGO */}
         <img
           src="/assets/logo.png"
-          alt="Logo"
+          alt="Chatpati Delhi Logo"
           style={{
-            width: isMobile ? '35vw' : '15vw',
-            maxWidth: '180px',
-            marginBottom: '24px',
-            filter: 'drop-shadow(0 4px 16px rgba(203,170,106,0.30))',
+            width: isMobile ? '28vw' : '10vw',
+            maxWidth: isMobile ? '120px' : '160px',
+            minWidth: '72px',
+            marginBottom: isMobile ? '18px' : '22px',
+            filter:
+              'drop-shadow(0 2px 12px rgba(203,170,106,0.45)) drop-shadow(0 0 30px rgba(0,0,0,0.6))',
           }}
         />
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <h1 style={{
+        {/* CHATPATI */}
+        <span
+          style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? 'clamp(2.5rem, 10vw, 5rem)' : 'clamp(4rem, 8vw, 10rem)',
-            color: '#F5EFEB', // Pure bright ivory
-            lineHeight: 1,
-            letterSpacing: '-0.02em',
+            fontSize: isMobile ? 'clamp(2rem, 8.5vw, 3.4rem)' : 'clamp(2.8rem, 5.5vw, 6rem)',
+            fontWeight: '700',
+            color: '#F7F0E8',
+            letterSpacing: isMobile ? '0.24em' : '0.30em',
             textTransform: 'uppercase',
-            margin: 0,
-            whiteSpace: 'nowrap',
-            textShadow: '0 8px 30px rgba(0,0,0,0.9), 0 2px 10px rgba(0,0,0,0.8)' // Guarantees visibility
-          }}>
-            Chatpati Delhi
-          </h1>
-          
-          {/* THE LUXURY '2' FOCAL POINT */}
-          <span style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? 'clamp(4rem, 15vw, 7rem)' : 'clamp(6rem, 12vw, 14rem)',
-            fontWeight: '300',
-            fontStyle: 'italic',
-            background: 'linear-gradient(135deg, #FFDF8A 0%, #CBAA6A 40%, #8A6427 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            marginLeft: isMobile ? '16px' : '28px',
-            filter: 'drop-shadow(0px 10px 30px rgba(0,0,0,0.95)) drop-shadow(0px 0px 40px rgba(203,170,106,0.35))',
             lineHeight: 1,
-            transform: 'translateY(-6%)' 
-          }}>
+            display: 'block',
+            textShadow:
+              '0 2px 20px rgba(0,0,0,0.85), 0 0 60px rgba(0,0,0,0.5)',
+          }}
+        >
+          Chatpati
+        </span>
+
+        {/* DELHI */}
+        <span
+          style={{
+            fontFamily: 'var(--font-serif)',
+            fontSize: isMobile ? 'clamp(1.3rem, 5.5vw, 2.2rem)' : 'clamp(1.6rem, 3vw, 3.4rem)',
+            fontWeight: '400',
+            color: '#E8DDD0',
+            letterSpacing: isMobile ? '0.45em' : '0.55em',
+            textTransform: 'uppercase',
+            lineHeight: 1,
+            marginTop: isMobile ? '6px' : '8px',
+            display: 'block',
+            textShadow:
+              '0 2px 14px rgba(0,0,0,0.80), 0 0 40px rgba(0,0,0,0.4)',
+          }}
+        >
+          Delhi
+        </span>
+
+        {/* THE 2 — accent / design element */}
+        <div
+          style={{
+            marginTop: isMobile ? '14px' : '18px',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: isMobile ? '6px' : '8px',
+          }}
+        >
+          {/* Fine rule above */}
+          <div
+            style={{
+              width: isMobile ? '44px' : '64px',
+              height: '1px',
+              background:
+                'linear-gradient(90deg, transparent, rgba(203,170,106,0.7), transparent)',
+            }}
+          />
+
+          {/* The numeral */}
+          <span
+            style={{
+              fontFamily: 'var(--font-serif)',
+              fontSize: isMobile ? 'clamp(2.2rem, 9vw, 3.8rem)' : 'clamp(2.8rem, 5vw, 5.2rem)',
+              fontWeight: '300',
+              fontStyle: 'italic',
+              lineHeight: 1,
+              display: 'block',
+              /* Gold gradient fill */
+              background:
+                'linear-gradient(160deg, #FFE8A3 0%, #D4A752 38%, #CBAA6A 60%, #9A7535 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              /* Glow only — no neon, no scale circus */
+              filter:
+                'drop-shadow(0 0 18px rgba(203,170,106,0.55)) drop-shadow(0 4px 10px rgba(0,0,0,0.7))',
+            }}
+          >
             2
           </span>
+
+          {/* Fine rule below */}
+          <div
+            style={{
+              width: isMobile ? '44px' : '64px',
+              height: '1px',
+              background:
+                'linear-gradient(90deg, transparent, rgba(203,170,106,0.7), transparent)',
+            }}
+          />
         </div>
-        
+
+        {/* SUBTITLE */}
         <p
-          ref={subtitleRef}
           style={{
-            marginTop: isMobile ? '20px' : '32px',
+            marginTop: isMobile ? '14px' : '18px',
             fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? '10px' : '14px',
-            letterSpacing: '0.5em',
+            fontSize: isMobile ? '8px' : '10.5px',
+            letterSpacing: isMobile ? '0.38em' : '0.48em',
             textTransform: 'uppercase',
-            color: '#cbab6a',
-            opacity: 0.9,
-            textShadow: '0 2px 14px rgba(203,170,106,0.45)',
+            color: '#cbaa6a',
+            opacity: 0.85,
+            textShadow: '0 2px 10px rgba(0,0,0,0.7)',
           }}
         >
           Royal Catering &amp; Takeout
         </p>
       </div>
 
-      {/* SCROLL INDICATOR */}
+      {/* ─── SCROLL INDICATOR ─── */}
       <div
         ref={indicatorRef}
         style={{
           position: 'absolute',
-          bottom: '28px',
+          bottom: isMobile ? '24px' : '32px',
           left: 0,
           right: 0,
           zIndex: 10,
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          gap: '10px',
           pointerEvents: 'none',
-          willChange: 'opacity',
+          willChange: 'opacity, transform',
         }}
       >
         <p
           style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? '7.5px' : '9.5px',
-            letterSpacing: '0.42em',
+            fontSize: isMobile ? '7px' : '9px',
+            letterSpacing: '0.45em',
             textTransform: 'uppercase',
-            color: '#cbab6a',
-            animation: 'coverPulse 3.5s ease-in-out infinite',
+            color: 'rgba(203,170,106,0.82)',
+            animation: 'coverFadeFloat 3.2s ease-in-out infinite',
+            textShadow: '0 1px 8px rgba(0,0,0,0.6)',
           }}
         >
-          Scroll to Enter
+          Scroll to Explore
         </p>
-        <div
-          style={{
-            marginTop: '10px',
-            width: '1px',
-            height: '26px',
-            background: '#cbab6a',
-            animation: 'coverLine 3.5s ease-in-out infinite',
-            transformOrigin: 'top center',
-          }}
-        />
+
+        {/* Animated chevron arrow */}
+        <svg
+          width={isMobile ? '16' : '18'}
+          height={isMobile ? '24' : '28'}
+          viewBox="0 0 18 28"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style={{ animation: 'coverChevronBounce 3.2s ease-in-out infinite' }}
+        >
+          <line x1="1" y1="1" x2="9" y2="12" stroke="rgba(203,170,106,0.75)" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="17" y1="1" x2="9" y2="12" stroke="rgba(203,170,106,0.75)" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="1" y1="13" x2="9" y2="24" stroke="rgba(203,170,106,0.45)" strokeWidth="1.5" strokeLinecap="round" />
+          <line x1="17" y1="13" x2="9" y2="24" stroke="rgba(203,170,106,0.45)" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
       </div>
+
+      {/* ─── KEYFRAMES ─── */}
+      <style>{`
+        @keyframes coverFadeFloat {
+          0%, 100% { opacity: 0.55; transform: translateY(0px); }
+          50%       { opacity: 1;    transform: translateY(-4px); }
+        }
+        @keyframes coverChevronBounce {
+          0%, 100% { opacity: 0.5;  transform: translateY(0px);  }
+          50%       { opacity: 0.95; transform: translateY(6px);  }
+        }
+      `}</style>
     </div>
   );
 }

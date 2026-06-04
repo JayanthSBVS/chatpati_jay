@@ -38,8 +38,8 @@ export default function Navbar() {
           Chatpati <span className="text-primary-gold">Delhi</span>
         </div>
         
-        {/* Desktop Links */}
-        <div className="relative z-10 pointer-events-auto hidden md:flex gap-12 font-sans text-xs tracking-[0.2em] uppercase text-primary-cream">
+        {/* Desktop + Tablet Links */}
+        <div className="relative z-10 pointer-events-auto hidden md:flex gap-8 lg:gap-12 font-sans text-[10px] lg:text-xs tracking-[0.2em] uppercase text-primary-cream">
           {['Story', 'Menu', 'Catering', 'Reservations'].map((item) => (
             <a
               key={item}
@@ -52,7 +52,7 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile Hamburger Trigger */}
+        {/* Mobile Hamburger — hidden at md+ */}
         <button 
           className="relative z-[60] flex md:hidden flex-col gap-2 pointer-events-auto p-2"
           onClick={() => setMenuOpen(!menuOpen)}

@@ -1,6 +1,7 @@
 import React from 'react';
 import SmoothScroll from './SmoothScroll';
 import Navbar from './Navbar';
+import GlobalScrollIndicator from './GlobalScrollIndicator';
 
 export default function Layout({ children }) {
   return (
@@ -12,6 +13,8 @@ export default function Layout({ children }) {
         {/* 2. Saffron Light Beam sweeping slowly */}
         <div className="fixed top-[-10%] left-[-10%] w-[120%] h-[120%] z-40 pointer-events-none mix-blend-screen opacity-10 bg-[radial-gradient(ellipse_at_top_right,_rgba(226,160,96,0.6)_0%,_transparent_60%)]"></div>
         <Navbar />
+        {/* 3. Global Scroll Indicator — visible throughout entire app */}
+        <GlobalScrollIndicator />
         <main>{children}</main>
       </div>
     </SmoothScroll>
