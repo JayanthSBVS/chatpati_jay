@@ -175,7 +175,7 @@ export default function Scene0_CoverPage() {
         ref={brandRef}
         style={{
           position: 'absolute',
-          top: isMobile ? '10vh' : '18vh',
+          top: isMobile ? '8vh' : '18vh',
           left: 0,
           right: 0,
           zIndex: 10,
@@ -192,10 +192,10 @@ export default function Scene0_CoverPage() {
           src="/assets/logo.png"
           alt="Chatpati Delhi Logo"
           style={{
-            width: isMobile ? '28vw' : '10vw',
-            maxWidth: isMobile ? '120px' : '160px',
-            minWidth: '72px',
-            marginBottom: isMobile ? '18px' : '22px',
+            width: isMobile ? '22vw' : '10vw',
+            maxWidth: isMobile ? '100px' : '160px',
+            minWidth: '64px',
+            marginBottom: isMobile ? '14px' : '22px',
             filter:
               'drop-shadow(0 2px 12px rgba(203,170,106,0.45)) drop-shadow(0 0 30px rgba(0,0,0,0.6))',
           }}
@@ -205,15 +205,14 @@ export default function Scene0_CoverPage() {
         <span
           style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? 'clamp(2rem, 8.5vw, 3.4rem)' : 'clamp(2.8rem, 5.5vw, 6rem)',
-            fontWeight: '700',
+            fontSize: isMobile ? 'clamp(3rem, 13vw, 5rem)' : 'clamp(2.8rem, 5.5vw, 6rem)',
+            fontWeight: isMobile ? '900' : '700',
             color: '#F7F0E8',
-            letterSpacing: isMobile ? '0.24em' : '0.30em',
+            letterSpacing: isMobile ? '0.16em' : '0.30em',
             textTransform: 'uppercase',
             lineHeight: 1,
             display: 'block',
-            textShadow:
-              '0 2px 20px rgba(0,0,0,0.85), 0 0 60px rgba(0,0,0,0.5)',
+            textShadow: '0 2px 20px rgba(0,0,0,0.85), 0 0 60px rgba(0,0,0,0.5)',
           }}
         >
           Chatpati
@@ -223,16 +222,15 @@ export default function Scene0_CoverPage() {
         <span
           style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? 'clamp(1.3rem, 5.5vw, 2.2rem)' : 'clamp(1.6rem, 3vw, 3.4rem)',
-            fontWeight: '400',
+            fontSize: isMobile ? 'clamp(1.6rem, 6.5vw, 2.8rem)' : 'clamp(1.6rem, 3vw, 3.4rem)',
+            fontWeight: isMobile ? '700' : '400',
             color: '#E8DDD0',
-            letterSpacing: isMobile ? '0.45em' : '0.55em',
+            letterSpacing: isMobile ? '0.35em' : '0.55em',
             textTransform: 'uppercase',
             lineHeight: 1,
             marginTop: isMobile ? '6px' : '8px',
             display: 'block',
-            textShadow:
-              '0 2px 14px rgba(0,0,0,0.80), 0 0 40px rgba(0,0,0,0.4)',
+            textShadow: '0 2px 14px rgba(0,0,0,0.80), 0 0 40px rgba(0,0,0,0.4)',
           }}
         >
           Delhi
@@ -262,8 +260,8 @@ export default function Scene0_CoverPage() {
           <span
             style={{
               fontFamily: 'var(--font-serif)',
-              fontSize: isMobile ? 'clamp(2.2rem, 9vw, 3.8rem)' : 'clamp(2.8rem, 5vw, 5.2rem)',
-              fontWeight: '300',
+              fontSize: isMobile ? 'clamp(4rem, 18vw, 7rem)' : 'clamp(2.8rem, 5vw, 5.2rem)',
+              fontWeight: isMobile ? '700' : '300',
               fontStyle: 'italic',
               lineHeight: 1,
               display: 'block',
@@ -273,7 +271,6 @@ export default function Scene0_CoverPage() {
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              /* Glow only — no neon, no scale circus */
               filter:
                 'drop-shadow(0 0 18px rgba(203,170,106,0.55)) drop-shadow(0 4px 10px rgba(0,0,0,0.7))',
             }}
@@ -297,11 +294,12 @@ export default function Scene0_CoverPage() {
           style={{
             marginTop: isMobile ? '14px' : '18px',
             fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? '8px' : '10.5px',
-            letterSpacing: isMobile ? '0.38em' : '0.48em',
+            fontSize: isMobile ? '15px' : '10.5px',
+            letterSpacing: isMobile ? '0.22em' : '0.48em',
+            fontWeight: isMobile ? '700' : '400',
             textTransform: 'uppercase',
             color: '#cbaa6a',
-            opacity: 0.85,
+            opacity: 1,
             textShadow: '0 2px 10px rgba(0,0,0,0.7)',
           }}
         >
@@ -309,64 +307,10 @@ export default function Scene0_CoverPage() {
         </p>
       </div>
 
-      {/* ─── SCROLL INDICATOR ─── */}
-      <div
-        ref={indicatorRef}
-        style={{
-          position: 'absolute',
-          bottom: isMobile ? '24px' : '32px',
-          left: 0,
-          right: 0,
-          zIndex: 10,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '10px',
-          pointerEvents: 'none',
-          willChange: 'opacity, transform',
-        }}
-      >
-        <p
-          style={{
-            fontFamily: 'var(--font-serif)',
-            fontSize: isMobile ? '7px' : '9px',
-            letterSpacing: '0.45em',
-            textTransform: 'uppercase',
-            color: 'rgba(203,170,106,0.82)',
-            animation: 'coverFadeFloat 3.2s ease-in-out infinite',
-            textShadow: '0 1px 8px rgba(0,0,0,0.6)',
-          }}
-        >
-          Scroll to Explore
-        </p>
+      {/* ─── SCROLL INDICATOR removed — handled by GlobalScrollIndicator ─── */}
+      <div ref={indicatorRef} style={{ display: 'none' }} />
 
-        {/* Animated chevron arrow */}
-        <svg
-          width={isMobile ? '16' : '18'}
-          height={isMobile ? '24' : '28'}
-          viewBox="0 0 18 28"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{ animation: 'coverChevronBounce 3.2s ease-in-out infinite' }}
-        >
-          <line x1="1" y1="1" x2="9" y2="12" stroke="rgba(203,170,106,0.75)" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="17" y1="1" x2="9" y2="12" stroke="rgba(203,170,106,0.75)" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="1" y1="13" x2="9" y2="24" stroke="rgba(203,170,106,0.45)" strokeWidth="1.5" strokeLinecap="round" />
-          <line x1="17" y1="13" x2="9" y2="24" stroke="rgba(203,170,106,0.45)" strokeWidth="1.5" strokeLinecap="round" />
-        </svg>
-      </div>
 
-      {/* ─── KEYFRAMES ─── */}
-      <style>{`
-        @keyframes coverFadeFloat {
-          0%, 100% { opacity: 0.55; transform: translateY(0px); }
-          50%       { opacity: 1;    transform: translateY(-4px); }
-        }
-        @keyframes coverChevronBounce {
-          0%, 100% { opacity: 0.5;  transform: translateY(0px);  }
-          50%       { opacity: 0.95; transform: translateY(6px);  }
-        }
-      `}</style>
     </div>
   );
 }
