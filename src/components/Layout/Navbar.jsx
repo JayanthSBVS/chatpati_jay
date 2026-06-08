@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const { scrollY } = useScroll();
+  const location = useLocation();
   const [hidden, setHidden] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
 
@@ -17,6 +19,13 @@ export default function Navbar() {
   });
 
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { label: 'Story', path: '/about' },
+    { label: 'Menu', path: '/menu' },
+    { label: 'Catering', path: '/catering' },
+    { label: 'Reservations', path: '/contact' }
+  ];
 
   return (
     <>
@@ -34,22 +43,25 @@ export default function Navbar() {
           <div className="absolute inset-0 bg-[#0a0908]/80 backdrop-blur-md h-[150%]" style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)' }}></div>
         </div>
         
-        <div className="relative z-10 pointer-events-auto font-serif text-2xl tracking-widest text-primary-cream uppercase">
+        <Link to="/" className="relative z-10 pointer-events-auto font-serif text-2xl tracking-widest text-primary-cream uppercase">
           Chatpati <span className="text-primary-gold">Delhi</span>
-        </div>
+        </Link>
         
         {/* Desktop + Tablet Links */}
         <div className="relative z-10 pointer-events-auto hidden md:flex gap-8 lg:gap-12 font-sans text-[10px] lg:text-xs tracking-[0.2em] uppercase text-primary-cream">
-          {['Story', 'Menu', 'Catering', 'Reservations'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
-              className="relative group overflow-hidden"
-            >
-              <span className="block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full">{item}</span>
-              <span className="absolute top-0 left-0 block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full text-primary-gold group-hover:translate-y-0">{item}</span>
-            </a>
-          ))}
+          {navLinks.map((item) => {
+            const isActive = location.pathname === item.path;
+            return (
+              <Link
+                key={item.label}
+                to={item.path}
+                className="relative group overflow-hidden"
+              >
+                <span className={`block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:-translate-y-full ${isActive ? 'text-primary-gold' : ''}`}>{item.label}</span>
+                <span className="absolute top-0 left-0 block transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] translate-y-full text-primary-gold group-hover:translate-y-0">{item.label}</span>
+              </Link>
+            )
+          })}
         </div>
 
         {/* Mobile Hamburger — hidden at md+ */}
@@ -71,15 +83,15 @@ export default function Navbar() {
         <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] pointer-events-none bg-[radial-gradient(ellipse_at_top_right,_rgba(226,160,96,0.15)_0%,_transparent_60%)]"></div>
 
         <div className="flex flex-col items-center gap-10 mt-12">
-          {['Story', 'Menu', 'Catering', 'Reservations'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase()}`}
+          {navLinks.map((item) => (
+            <Link
+              key={item.label}
+              to={item.path}
               onClick={() => setMenuOpen(false)}
-              className="font-serif text-4xl text-[#F5EFEB]/90 tracking-widest uppercase hover:text-[#CBAA6A] transition-colors"
+              className={`font-serif text-4xl tracking-widest uppercase transition-colors hover:text-[#CBAA6A] ${location.pathname === item.path ? 'text-[#CBAA6A]' : 'text-[#F5EFEB]/90'}`}
             >
-              {item}
-            </a>
+              {item.label}
+            </Link>
           ))}
         </div>
 
