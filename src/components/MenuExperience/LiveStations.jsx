@@ -6,13 +6,13 @@ const stations = [
     name: "Paneer Taco",
     description: "A modern fusion of Mexican street style and robust Indian tandoori flavors. Smoked paneer, zesty chutneys, and crisp shells.",
     tag: "Fusion Grill",
-    image: "/assets/menu_paneer.png"
+    image: "/assets/menu_paneer_opt.webp"
   },
   {
     name: "Raj Kachori",
     description: "The King of Chaats. A giant, crispy orb filled with spiced lentils, yogurt, sweet dates, and vibrant tamarind chutney.",
     tag: "Heritage Chaat",
-    image: "/assets/menu-1.jpeg"
+    image: "/assets/menu-1_opt.webp"
   },
   {
     name: "Chole Bhature",
@@ -24,13 +24,13 @@ const stations = [
     name: "Dosa Station",
     description: "Paper-thin, crispy rice crepes made fresh on the griddle. Served with coconut chutney and piping hot sambar.",
     tag: "South Indian",
-    image: "/assets/menu-2.jpeg"
+    image: "/assets/menu-2_opt.webp"
   },
   {
     name: "Jalebi",
     description: "Swirls of fermented batter fried to a crisp and soaked in saffron syrup. Best enjoyed piping hot.",
     tag: "Sweet Ending",
-    image: "/assets/menu_street.png"
+    image: "/assets/menu_street_opt.webp"
   }
 ];
 

@@ -10,35 +10,35 @@ const events = [
     experience: "Royal Buffet Setup",
     station: "Live Chaat & Dosa Counters",
     dishes: "Purani Delhi Jahangiri Chicken, Dum Aloo",
-    image: "/assets/event_wedding.png"
+    image: "/assets/event_wedding_opt.webp"
   },
   {
     title: "Mehndi & Sangeet",
     experience: "Vibrant Street Food Vibe",
     station: "Raj Kachori & Jalebi Station",
     dishes: "Aloo Tikki, Malai Soya Chaap",
-    image: "/assets/event_mehndi.png"
+    image: "/assets/event_mehndi_opt.webp"
   },
   {
     title: "Corporate Gala",
     experience: "Sophisticated Plated or Buffet",
     station: "Paneer Taco Live Grill",
     dishes: "Lamb Chops, Malai Kofta",
-    image: "/assets/event_corporate.png"
+    image: "/assets/event_corporate_opt.webp"
   },
   {
     title: "Family Celebration",
     experience: "Fun & Interactive Dining",
     station: "Chole Bhature Stand",
     dishes: "Veg Hakka Noodles, Chicken Lollypop",
-    image: "/assets/event_family.png"
+    image: "/assets/event_family_opt.webp"
   },
   {
     title: "Holiday Party",
     experience: "Warm Winter Feast",
     station: "Tawa Kathal Sukkha",
     dishes: "Sarso Ka Saag, Butter Chicken",
-    image: "/assets/menu_feast.png"
+    image: "/assets/menu_feast_opt.webp"
   }
 ];
 
@@ -49,9 +49,9 @@ export default function EventsWeCater() {
   useEffect(() => {
     let mm = gsap.matchMedia();
 
-    mm.add("(min-width: 768px)", () => {
+    // Only apply GSAP pin & scrub on desktop where momentum scrolling isn't disrupted
+    mm.add("(min-width: 1024px)", () => {
       const wrapper = wrapperRef.current;
-      // We calculate the total scrollable width
       const totalWidth = wrapper.scrollWidth - window.innerWidth;
 
       gsap.to(wrapper, {

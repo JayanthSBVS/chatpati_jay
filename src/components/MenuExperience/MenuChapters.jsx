@@ -17,32 +17,25 @@ const Chapter = ({ title, description, veg, nonVeg, items, index, image }) => {
   return (
     <section ref={chapterRef} className="min-h-screen py-24 md:py-32 flex items-center relative border-b border-[#CBAA6A]/10 overflow-hidden">
       
-      {/* Optional Layered Image for Specific Chapters */}
-      {image && (
-        <div className="absolute inset-0 pointer-events-none opacity-10">
-          <img 
-            src={image} 
-            alt="" 
-            loading="lazy" 
-            decoding="async" 
-            className="w-full h-full object-cover object-center" 
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a0908] via-[#0a0908]/80 to-[#0a0908]" />
-        </div>
-      )}
+      {/* Background paper texture for the section */}
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 relative z-10">
         
         {/* Left Column: Title & Intro */}
-        <div ref={leftColRef} className="lg:col-span-5 flex flex-col justify-center will-change-transform">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-6 block">
+        <div ref={leftColRef} className="lg:col-span-5 flex flex-col justify-center relative">
+          {image && (
+            <div className="hidden lg:block absolute -right-12 top-1/2 -translate-y-1/2 w-48 h-64 rounded-2xl overflow-hidden opacity-50 border border-primary-gold/20 shadow-2xl pointer-events-none transform -rotate-3 group-hover:rotate-0 transition-transform duration-700">
+              <img src={image} alt={title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
+            </div>
+          )}
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-6 block relative z-10">
             {formatChapter(index)}
           </span>
-          <h2 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none">
+          <h2 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none relative z-10">
             {title}
           </h2>
           {description && (
-            <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md">
+            <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md relative z-10">
               {description}
             </p>
           )}
@@ -127,23 +120,6 @@ export default function MenuChapters() {
   ];
 
   const containerRef = useRef(null);
-
-  useEffect(() => {
-    // Batch reveal animations for chapter items
-    const sections = gsap.utils.toArray('.menu-item-reveal');
-    ScrollTrigger.batch(sections, {
-      onEnter: elements => {
-        gsap.to(elements, {
-          autoAlpha: 1,
-          y: 0,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: "power2.out"
-        });
-      },
-      once: true
-    });
-  }, []);
 
   return (
     <div ref={containerRef} className="bg-[#0a0908] relative">

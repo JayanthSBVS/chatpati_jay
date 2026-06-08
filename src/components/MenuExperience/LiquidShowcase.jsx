@@ -1,36 +1,36 @@
 import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+
 
 const drinks = [
   {
     name: "Mango Lassi",
     ingredients: "Alphonso Mango, Sweet Yogurt, Cardamom, Pistachio",
     description: "The classic tropical cooler. Rich, thick, and perfectly balanced.",
-    image: "/assets/mango_lassi_1780917929199.png"
+    image: "/assets/mango_lassi_1780917929199_opt.webp"
   },
   {
     name: "Sweet Lassi",
     ingredients: "Fresh Yogurt, Malai, Saffron Strands, Rose Water",
     description: "A decadent, creamy staple topped with a rich layer of fresh malai.",
-    image: "/assets/sweet_lassi_1780917946995.png"
+    image: "/assets/sweet_lassi_1780917946995_opt.webp"
   },
   {
     name: "Salt Lassi",
     ingredients: "Whipped Yogurt, Roasted Cumin, Black Salt, Fresh Mint",
     description: "Frothy, savory, and immensely refreshing to cleanse the palate.",
-    image: "/assets/salt_lassi_1780917969166.png"
+    image: "/assets/salt_lassi_1780917969166_opt.webp"
   },
   {
     name: "Aam Ka Panna",
     ingredients: "Green Mango, Roasted Cumin, Black Salt, Mint",
     description: "A tangy, refreshing summer essential that awakens the senses.",
-    image: "/assets/aam_ka_panna_1780917981215.png"
+    image: "/assets/aam_ka_panna_1780917981215_opt.webp"
   },
   {
     name: "Thandai",
     ingredients: "Almonds, Saffron, Rose Petals, Fennel, Milk",
     description: "A royal, festive cooler steeped in tradition and luxury.",
-    image: "/assets/thandai_1780918002624.png"
+    image: "/assets/thandai_1780918002624_opt.webp"
   }
 ];
 
@@ -56,25 +56,17 @@ export default function LiquidShowcase() {
             return (
               <div key={i} className="relative group">
                 {/* Floating Typography - Optional Background Text */}
-                <motion.h3 
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+                <h3 
                   className="hidden md:block font-serif text-6xl md:text-8xl lg:text-[10rem] text-primary-cream/5 absolute -top-12 md:-top-24 left-0 pointer-events-none select-none transition-colors duration-700 group-hover:text-primary-gold/10"
                 >
                   {drink.name}
-                </motion.h3>
+                </h3>
 
                 <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 relative z-10`}>
                   
                   {/* Premium Staggered Image */}
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8 }}
-                    className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-[#CBAA6A]/10 shadow-2xl"
+                  <div 
+                    className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-[#CBAA6A]/10 shadow-2xl transition-transform duration-700 hover:-translate-y-2"
                   >
                     <img 
                       src={drink.image} 
@@ -84,17 +76,13 @@ export default function LiquidShowcase() {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-transparent opacity-80" />
-                  </motion.div>
+                  </div>
 
                   {/* Content */}
-                  <motion.div 
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-100px" }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
+                  <div 
                     className="w-full md:w-1/2 flex flex-col justify-center"
                   >
-                    <h4 className="font-serif text-4xl md:text-6xl text-primary-cream mb-6">
+                    <h4 className="font-serif text-4xl md:text-6xl text-primary-cream mb-6 group-hover:text-primary-gold transition-colors duration-500">
                       {drink.name}
                     </h4>
                     <div className="mb-8">
@@ -104,7 +92,7 @@ export default function LiquidShowcase() {
                     <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md font-light">
                       {drink.description}
                     </p>
-                  </motion.div>
+                  </div>
 
                 </div>
               </div>
