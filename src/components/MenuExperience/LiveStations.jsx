@@ -83,7 +83,7 @@ const StationSpotlight = ({ name, description, tag, index, image }) => {
 export default function LiveStations() {
   return (
     <section className="py-32 bg-[#050403] relative border-t border-[#CBAA6A]/10">
-      <div className="absolute inset-0 bg-texture-paper opacity-20 pointer-events-none mix-blend-overlay" />
+      <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-32">

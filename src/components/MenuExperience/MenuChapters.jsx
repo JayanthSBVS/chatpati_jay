@@ -12,22 +12,7 @@ const Chapter = ({ title, description, veg, nonVeg, items, index, image }) => {
   const chapterRef = useRef(null);
   const leftColRef = useRef(null);
 
-  useEffect(() => {
-    let mm = gsap.matchMedia();
-    mm.add("(min-width: 768px)", () => {
-      gsap.to(leftColRef.current, {
-        y: 100,
-        ease: "none",
-        scrollTrigger: {
-          trigger: chapterRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
-        }
-      });
-    });
-    return () => mm.revert();
-  }, []);
+  // GSAP scrub removed for performance optimization. Text now flows naturally.
 
   return (
     <section ref={chapterRef} className="min-h-screen py-24 md:py-32 flex items-center relative border-b border-[#CBAA6A]/10 overflow-hidden">
@@ -162,7 +147,7 @@ export default function MenuChapters() {
 
   return (
     <div ref={containerRef} className="bg-[#0a0908] relative">
-      <div className="absolute inset-0 bg-texture-paper opacity-20 pointer-events-none mix-blend-overlay" />
+      <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       {chapters.map((chapter, index) => (
         <Chapter 
           key={chapter.title} 

@@ -45,7 +45,7 @@ const MagneticButton = ({ children, to, primary }) => {
 export default function LuxuryCTA() {
   return (
     <section className="h-[80vh] bg-[#050403] relative flex items-center justify-center overflow-hidden border-t border-[#CBAA6A]/20">
-      <div className="absolute inset-0 bg-texture-paper opacity-30 mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(203,170,106,0.15)_0%,_transparent_60%)] pointer-events-none" />
 
       <div className="relative z-10 text-center px-4">

@@ -14,7 +14,7 @@ export default function SignatureHighlights() {
 
   return (
     <section className="py-24 md:py-32 bg-[#050403] relative border-y border-[#CBAA6A]/10">
-      <div className="absolute inset-0 bg-texture-paper opacity-20 pointer-events-none mix-blend-overlay" />
+      <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center divide-x-0 md:divide-x divide-[#CBAA6A]/10">

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const regions = [
   "Delhi Street Food",
@@ -9,11 +9,13 @@ const regions = [
   "South Indian Traditions"
 ];
 
-const RegionItem = ({ region, idx, scrollYProgress }) => {
-  const y = useTransform(scrollYProgress, [0, 1], [50 - (idx * 10), -50 + (idx * 10)]);
+const RegionItem = ({ region, idx }) => {
   return (
     <motion.div 
-      style={{ y }}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, delay: idx * 0.1 }}
       className="group border-b border-primary-cream/10 pb-8 flex items-end justify-between hover:border-primary-gold/50 transition-colors duration-500 cursor-default"
     >
       <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-primary-cream/40 group-hover:text-primary-cream transition-colors duration-500">
@@ -28,11 +30,6 @@ const RegionItem = ({ region, idx, scrollYProgress }) => {
 
 export default function CuisineJourney() {
   const containerRef = useRef(null);
-  
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"]
-  });
 
   return (
     <section ref={containerRef} className="py-32 relative bg-[#0a0908] overflow-hidden">
@@ -57,7 +54,7 @@ export default function CuisineJourney() {
 
         <div className="flex flex-col gap-8 md:gap-12">
           {regions.map((region, idx) => (
-            <RegionItem key={region} region={region} idx={idx} scrollYProgress={scrollYProgress} />
+            <RegionItem key={region} region={region} idx={idx} />
           ))}
         </div>
       </div>
