@@ -63,7 +63,7 @@ export default function LiveStations() {
   return (
     <section
       ref={sectionRef}
-      className="pt-8 pb-16 md:py-32 bg-surface-base relative border-t border-border-subtle"
+      className="pt-8 pb-16 md:py-32 bg-surface-paper relative border-t border-border-subtle"
     >
       <style>{`
         .station-item {
@@ -102,7 +102,7 @@ export default function LiveStations() {
                 className={`station-item flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 mb-32`}
               >
                 {/* Image */}
-                <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-surface-accent rounded-[2rem] border border-border-subtle">
+                <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-surface-card rounded-[2rem] border border-border-subtle">
                   <img
                     src={station.image}
                     alt={station.name}

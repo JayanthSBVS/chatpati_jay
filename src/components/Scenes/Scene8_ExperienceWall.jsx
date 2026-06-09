@@ -34,10 +34,10 @@ export default function Scene8_ExperienceWall() {
         <div className="absolute inset-0 bg-gradient-to-t from-[#0a0503] via-transparent to-transparent" />
         
         <div className="relative z-20 text-center flex flex-col items-center">
-          <h2 className="font-serif text-4xl md:text-7xl text-[#F5EFEB] leading-[1.1] tracking-tighter opacity-90 mix-blend-overlay">
+          <h2 className="font-serif text-4xl md:text-7xl text-content-primary leading-[1.1] tracking-tighter opacity-90 mix-blend-overlay">
             Every Gathering Deserves<br/>A Memory Worth Serving
           </h2>
-          <span className="mt-12 font-sans text-[10px] md:text-xs tracking-[0.5em] text-[#CBAA6A] uppercase opacity-70">
+          <span className="mt-12 font-sans text-[10px] md:text-xs tracking-[0.5em] text-accent-gold uppercase opacity-70">
             The Hosting Experience
           </span>
         </div>

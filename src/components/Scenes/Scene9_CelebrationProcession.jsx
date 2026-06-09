@@ -35,12 +35,12 @@ export default function Scene9_CelebrationProcession() {
             <img src="/assets/event_wedding.png" className="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-luminosity" alt="Weddings" />
             <div className="relative z-10 w-full max-w-5xl px-6 md:px-8">
               <span className="
-                font-sans tracking-[0.4em] text-[#CBAA6A] uppercase block mb-3
+                font-sans tracking-[0.4em] text-accent-gold uppercase block mb-3
                 text-[9px] font-medium opacity-90
                 md:text-[10px] md:font-normal md:opacity-100
               ">Weddings &amp; Engagements</span>
               <h2 className="
-                font-serif text-[#F5EFEB] tracking-tighter
+                font-serif text-content-primary tracking-tighter
                 text-4xl font-bold leading-tight
                 md:text-6xl md:font-semibold
                 lg:text-8xl lg:font-normal
@@ -59,7 +59,7 @@ export default function Scene9_CelebrationProcession() {
                 md:text-[10px] md:font-normal md:opacity-100
               ">Family Celebrations</span>
               <h2 className="
-                font-serif text-[#F5EFEB] tracking-tighter
+                font-serif text-content-primary tracking-tighter
                 text-4xl font-bold leading-tight
                 md:text-6xl md:font-semibold
                 lg:text-8xl lg:font-normal
@@ -78,7 +78,7 @@ export default function Scene9_CelebrationProcession() {
                 md:text-[10px] md:font-normal md:opacity-100
               ">Festive Gatherings</span>
               <h2 className="
-                font-serif text-[#F5EFEB] tracking-tighter
+                font-serif text-content-primary tracking-tighter
                 text-4xl font-bold leading-tight
                 md:text-6xl md:font-semibold
                 lg:text-8xl lg:font-normal
@@ -97,7 +97,7 @@ export default function Scene9_CelebrationProcession() {
                 md:text-[10px] md:font-normal md:opacity-100
               ">Prestige Events</span>
               <h2 className="
-                font-serif text-[#F5EFEB] tracking-tighter
+                font-serif text-content-primary tracking-tighter
                 text-4xl font-bold leading-tight
                 md:text-6xl md:font-semibold
                 lg:text-8xl lg:font-normal

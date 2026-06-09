@@ -36,7 +36,7 @@ const drinks = [
 
 export default function LiquidShowcase() {
   return (
-    <section className="py-24 md:py-32 bg-surface-base relative overflow-hidden border-t border-border-subtle">
+    <section className="py-24 md:py-32 bg-surface-accent relative overflow-hidden border-t border-border-subtle">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-24 text-center">
@@ -55,7 +55,7 @@ export default function LiquidShowcase() {
               <div key={i} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24`}>
 
                 {/* Image */}
-                <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-border-subtle shadow-2xl bg-surface-accent">
+                <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-border-subtle shadow-2xl bg-surface-base">
                   <img
                     src={drink.image}
                     alt={drink.name}

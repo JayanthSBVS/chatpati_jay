@@ -33,15 +33,15 @@ export default function MenuManuscript() {
           <motion.div 
             animate={{ opacity: [0.1, 0.25, 0.1] }} 
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="absolute inset-0 bg-[#CBAA6A] blur-[20px] rounded-full mix-blend-screen pointer-events-none" 
+            className="absolute inset-0 bg-accent-gold blur-[20px] rounded-full mix-blend-screen pointer-events-none" 
           />
           
-          <span className="relative z-10 font-sans text-[9px] tracking-[0.4em] uppercase text-[#CBAA6A]/70 group-hover:text-[#F5EFEB] transition-colors duration-700">
+          <span className="relative z-10 font-sans text-[9px] tracking-[0.4em] uppercase text-accent-gold/70 group-hover:text-content-primary transition-colors duration-700">
             Open Manuscript
           </span>
           
           {/* Minimal separator line */}
-          <div className="relative w-0 group-hover:w-full h-[1px] bg-gradient-to-r from-transparent via-[#CBAA6A]/50 to-transparent transition-all duration-700" />
+          <div className="relative w-0 group-hover:w-full h-[1px] bg-gradient-to-r from-transparent via-accent-gold/50 to-transparent transition-all duration-700" />
         </button>
       </motion.div>
 
@@ -62,7 +62,7 @@ export default function MenuManuscript() {
             {/* Close Button */}
             <button 
               onClick={toggleMenu}
-              className="absolute top-8 md:top-12 right-8 md:right-12 z-50 text-[#CBAA6A]/60 hover:text-[#CBAA6A] font-sans text-[10px] tracking-[0.3em] uppercase transition-colors"
+              className="absolute top-8 md:top-12 right-8 md:right-12 z-50 text-accent-gold/60 hover:text-accent-gold font-sans text-[10px] tracking-[0.3em] uppercase transition-colors"
             >
               Close Manuscript
             </button>
@@ -118,14 +118,14 @@ export default function MenuManuscript() {
                 
                 {/* Visible Dots Cue for Swiping */}
                 <div className="flex gap-3">
-                  <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${currentPage === 1 ? 'bg-[#CBAA6A]' : 'bg-[#CBAA6A]/20'}`} />
-                  <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${currentPage === 2 ? 'bg-[#CBAA6A]' : 'bg-[#CBAA6A]/20'}`} />
+                  <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${currentPage === 1 ? 'bg-accent-gold' : 'bg-accent-gold/20'}`} />
+                  <div className={`w-1.5 h-1.5 rounded-full transition-colors duration-500 ${currentPage === 2 ? 'bg-accent-gold' : 'bg-accent-gold/20'}`} />
                 </div>
 
                 <div className="flex w-full justify-between items-center max-w-sm">
                   <button 
                     onClick={prevPage}
-                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 1 ? 'opacity-20 pointer-events-none text-white' : 'opacity-100 text-[#CBAA6A] hover:scale-110'}`}
+                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 1 ? 'opacity-20 pointer-events-none text-white' : 'opacity-100 text-accent-gold hover:scale-110'}`}
                   >
                     Previous
                   </button>
@@ -134,7 +134,7 @@ export default function MenuManuscript() {
                   </div>
                   <button 
                     onClick={nextPage}
-                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 2 ? 'opacity-20 pointer-events-none text-white' : 'opacity-100 text-[#CBAA6A] hover:scale-110'}`}
+                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 2 ? 'opacity-20 pointer-events-none text-white' : 'opacity-100 text-accent-gold hover:scale-110'}`}
                   >
                     Next Page
                   </button>

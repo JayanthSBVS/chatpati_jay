@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 export default function LuxuryCTA() {
   return (
-    <section className="h-[80vh] bg-surface-base relative flex items-center justify-center overflow-hidden border-t border-border-subtle">
+    <section className="h-[80vh] bg-surface-card relative flex items-center justify-center overflow-hidden border-t border-border-subtle">
       <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--color-border-subtle)_0%,_transparent_60%)] pointer-events-none" />
 

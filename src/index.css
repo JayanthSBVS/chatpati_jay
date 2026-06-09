@@ -29,7 +29,10 @@
   --color-content-ghost: var(--content-ghost);
 
   --color-border-subtle: var(--border-subtle);
+  
   --color-accent-gold: var(--accent-gold);
+  --color-accent-gold-hover: var(--accent-gold-hover);
+  --color-accent-gold-soft: var(--accent-gold-soft);
 }
 
 :root, .theme-dark {
@@ -43,7 +46,13 @@
   --content-ghost: rgba(255, 255, 255, 0.03);
 
   --border-subtle: rgba(203, 170, 106, 0.1);
+  
   --accent-gold: #CBAA6A;
+  --accent-gold-hover: #E2A060;
+  --accent-gold-soft: rgba(203, 170, 106, 0.12);
+
+  --hero-overlay: linear-gradient(180deg, rgba(5,4,3,0.85) 0%, rgba(5,4,3,0.65) 40%, rgba(5,4,3,0.95) 100%);
+  --section-overlay: linear-gradient(180deg, rgba(5,4,3,0.9) 0%, rgba(5,4,3,0.7) 50%, rgba(5,4,3,0.9) 100%);
 }
 
 .theme-light {
@@ -54,10 +63,16 @@
 
   --content-primary: #2E2218;
   --content-secondary: #6D5A4B;
-  --content-ghost: rgba(62, 39, 35, 0.04);
+  --content-ghost: rgba(46, 34, 24, 0.04);
 
-  --border-subtle: rgba(166, 124, 59, 0.2);
+  --border-subtle: rgba(166, 124, 59, 0.18);
+  
   --accent-gold: #A67C3B;
+  --accent-gold-hover: #8F6A31;
+  --accent-gold-soft: rgba(166, 124, 59, 0.12);
+
+  --hero-overlay: linear-gradient(180deg, rgba(244,237,227,0.3) 0%, rgba(244,237,227,0.5) 40%, rgba(244,237,227,0.8) 100%);
+  --section-overlay: linear-gradient(180deg, rgba(244,237,227,0.4) 0%, rgba(244,237,227,0.6) 50%, rgba(244,237,227,0.85) 100%);
 }
 
 @layer base {

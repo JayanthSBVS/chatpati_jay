@@ -14,14 +14,14 @@ export default function Scene6_Hospitality({ progress }) {
     >
       <div className="max-w-5xl mx-auto text-center flex flex-col items-center w-full">
         <div>
-          <span className="font-sans text-[8px] md:text-[10px] tracking-[0.4em] uppercase text-[#CBAA6A]/50 mb-6 block">The Celebration</span>
-          <h2 className="font-serif text-4xl md:text-6xl text-[#F5EFEB]/90 max-w-2xl mx-auto leading-[1.1]">
+          <span className="font-sans text-[8px] md:text-[10px] tracking-[0.4em] uppercase text-accent-gold/50 mb-6 block">The Celebration</span>
+          <h2 className="font-serif text-4xl md:text-6xl text-content-primary/90 max-w-2xl mx-auto leading-[1.1]">
             Royal Hospitality
           </h2>
         </div>
         
         <div className="mt-16 md:mt-24 relative w-full aspect-[21/9] max-w-5xl mx-auto overflow-hidden shadow-[0_0_100px_rgba(203,170,106,0.05)]">
-          <div className="absolute inset-0 bg-[#0a0908]/50 mix-blend-overlay z-10 pointer-events-none"></div>
+          <div className="absolute inset-0 bg-surface-paper/50 mix-blend-overlay z-10 pointer-events-none"></div>
           <img 
             src="/assets/reference-1.jpeg" 
             alt="Catering and Events" 

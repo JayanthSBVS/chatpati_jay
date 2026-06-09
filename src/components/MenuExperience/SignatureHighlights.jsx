@@ -32,7 +32,7 @@ export default function SignatureHighlights() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-surface-base relative border-y border-border-subtle">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-surface-paper relative border-y border-border-subtle">
       <style>{`
         .stats-item {
           opacity: 0;

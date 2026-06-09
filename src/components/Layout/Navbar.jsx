@@ -41,9 +41,8 @@ export default function Navbar() {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 w-full z-50 pt-8 pb-6 px-8 flex justify-between items-start pointer-events-none"
       >
-        {/* Absolute positioning for the blur so it doesn't clip children */}
-        <div className={`absolute inset-0 transition-opacity duration-700 ${hasScrolled && !menuOpen ? 'opacity-100' : 'opacity-0'}`}>
-          <div className="absolute inset-0 bg-surface-paper/80 backdrop-blur-md h-[150%]" style={{ WebkitMaskImage: 'linear-gradient(to bottom, black 50%, transparent 100%)' }}></div>
+        {/* Background layer without glassmorphism */}
+        <div className={`absolute inset-0 transition-colors duration-500 border-b ${hasScrolled && !menuOpen ? 'bg-surface-paper border-border-subtle' : 'bg-transparent border-transparent'}`}>
         </div>
         
         <Link to="/" className="relative z-10 pointer-events-auto font-serif text-2xl tracking-widest text-content-primary uppercase">
@@ -109,7 +108,7 @@ export default function Navbar() {
 
       {/* FULLSCREEN MOBILE MENU OVERLAY */}
       <div 
-        className={`fixed inset-0 z-40 bg-surface-base transition-all duration-700 ease-in-out md:hidden flex flex-col justify-center items-center ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`fixed inset-0 z-40 bg-surface-card transition-all duration-700 ease-in-out md:hidden flex flex-col justify-center items-center ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         {/* Subtle Palace Texture & Glow */}
         <div className="absolute inset-0 pointer-events-none bg-texture-paper opacity-20 mix-blend-multiply"></div>

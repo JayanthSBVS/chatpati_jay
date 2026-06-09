@@ -13,7 +13,7 @@ export default function Scene1_RoyalEntrance({ progress }) {
 
   return (
     <motion.section 
-      className="absolute inset-0 w-full h-full bg-[#110f0e] flex items-center overflow-hidden z-10 pointer-events-none transform-gpu"
+      className="absolute inset-0 w-full h-full bg-surface-base flex items-center overflow-hidden z-10 pointer-events-none transform-gpu"
       style={{ opacity }}
     >
       <div className="absolute top-0 right-[-20%] w-[140%] h-[140%] z-0 pointer-events-none bg-[radial-gradient(ellipse_at_70%_40%,_rgba(203,170,106,0.12)_0%,_transparent_60%)]" />
@@ -24,8 +24,8 @@ export default function Scene1_RoyalEntrance({ progress }) {
         style={{ scale: archScale, transformOrigin: '70% 50%' }}
       >
         <div className="relative w-[70%] h-[110vh] translate-x-[10%] opacity-40">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#110f0e] via-[#110f0e]/50 to-transparent z-20 w-[60%]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#110f0e] to-transparent z-20 h-[30%] top-auto bottom-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-surface-base via-surface-base/50 to-transparent z-20 w-[60%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-base to-transparent z-20 h-[30%] top-auto bottom-0"></div>
           <img 
             src="/assets/floral-arch.jpeg" 
             alt="Mughal Palace Atmosphere" 
@@ -39,18 +39,18 @@ export default function Scene1_RoyalEntrance({ progress }) {
         style={{ scale, transformOrigin: '20% 50%' }}
       >
         <div className="flex flex-col items-start w-full">
-          <span className="font-sans text-[10px] tracking-[0.5em] text-[#CBAA6A] uppercase mb-12 ml-2 opacity-60">
+          <span className="font-sans text-[10px] tracking-[0.5em] text-accent-gold uppercase mb-12 ml-2 opacity-60">
             A Royal Dining Chamber
           </span>
 
-          <h1 className="font-serif text-[9rem] xl:text-[12rem] 2xl:text-[16rem] text-[#F5EFEB] tracking-tighter leading-[0.75] opacity-90">
+          <h1 className="font-serif text-[9rem] xl:text-[12rem] 2xl:text-[16rem] text-content-primary tracking-tighter leading-[0.75] opacity-90">
             Chatpati
           </h1>
-          <h1 className="font-serif text-[8rem] xl:text-[11rem] 2xl:text-[14rem] text-[#CBAA6A] tracking-tighter leading-[0.75] ml-[20%] mt-[-2%]">
+          <h1 className="font-serif text-[8rem] xl:text-[11rem] 2xl:text-[14rem] text-accent-gold tracking-tighter leading-[0.75] ml-[20%] mt-[-2%]">
             Delhi
           </h1>
           
-          <div className="mt-48 ml-[10%] w-[1px] h-24 bg-[#CBAA6A]/30" />
+          <div className="mt-48 ml-[10%] w-[1px] h-24 bg-accent-gold/30" />
         </div>
       </motion.div>
 
@@ -60,8 +60,8 @@ export default function Scene1_RoyalEntrance({ progress }) {
         style={{ scale: archScale, transformOrigin: '70% 50%' }}
       >
         <div className="relative w-[60%] h-[110vh] translate-x-[5%] opacity-35">
-          <div className="absolute inset-0 bg-gradient-to-r from-[#110f0e] via-[#110f0e]/60 to-transparent z-20 w-[55%]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#110f0e] to-transparent z-20 h-[30%] top-auto bottom-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-surface-base via-surface-base/60 to-transparent z-20 w-[55%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-base to-transparent z-20 h-[30%] top-auto bottom-0"></div>
           <img 
             src="/assets/floral-arch.jpeg" 
             alt="Mughal Palace Atmosphere" 
@@ -75,17 +75,17 @@ export default function Scene1_RoyalEntrance({ progress }) {
         style={{ scale, transformOrigin: '20% 50%' }}
       >
         <div className="flex flex-col items-start w-full">
-          <span className="font-sans text-[9px] tracking-[0.45em] text-[#CBAA6A] uppercase mb-8 ml-1 opacity-60">
+          <span className="font-sans text-[9px] tracking-[0.45em] text-accent-gold uppercase mb-8 ml-1 opacity-60">
             A Royal Dining Chamber
           </span>
           {/* Tablet: large but not desktop-extreme sizes */}
-          <h1 className="font-serif text-[5.5rem] text-[#F5EFEB] tracking-tighter leading-[0.78] opacity-90 font-semibold">
+          <h1 className="font-serif text-[5.5rem] text-content-primary tracking-tighter leading-[0.78] opacity-90 font-semibold">
             Chatpati
           </h1>
-          <h1 className="font-serif text-[5rem] text-[#CBAA6A] tracking-tighter leading-[0.78] ml-[18%] mt-[-1%]">
+          <h1 className="font-serif text-[5rem] text-accent-gold tracking-tighter leading-[0.78] ml-[18%] mt-[-1%]">
             Delhi
           </h1>
-          <div className="mt-24 ml-[8%] w-[1px] h-16 bg-[#CBAA6A]/30" />
+          <div className="mt-24 ml-[8%] w-[1px] h-16 bg-accent-gold/30" />
         </div>
       </motion.div>
 
@@ -95,7 +95,7 @@ export default function Scene1_RoyalEntrance({ progress }) {
         style={{ scale: archScale, transformOrigin: '50% 50%' }}
       >
         <div className="relative w-[90%] h-[60vh] opacity-40 rounded-t-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-[#110f0e] via-[#110f0e]/50 to-transparent z-20 h-[60%] top-auto bottom-0"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/50 to-transparent z-20 h-[60%] top-auto bottom-0"></div>
           <img 
             src="/assets/floral-arch.jpeg" 
             alt="Mughal Palace Atmosphere" 
@@ -108,19 +108,19 @@ export default function Scene1_RoyalEntrance({ progress }) {
         className="flex md:hidden relative z-20 w-full h-full flex-col items-center justify-center px-6 text-center transform-gpu"
         style={{ scale, transformOrigin: '50% 50%' }}
       >
-        <span className="font-sans text-[9px] tracking-[0.4em] text-[#CBAA6A] uppercase mb-8 opacity-70">
+        <span className="font-sans text-[9px] tracking-[0.4em] text-accent-gold uppercase mb-8 opacity-70">
           A Royal Dining Chamber
         </span>
 
         {/* Mobile: heavier font weight so gold/cream text pops */}
-        <h1 className="font-serif text-[3.8rem] text-[#F5EFEB] tracking-tighter leading-none opacity-90 mb-2 font-bold">
+        <h1 className="font-serif text-[3.8rem] text-content-primary tracking-tighter leading-none opacity-90 mb-2 font-bold">
           Chatpati
         </h1>
-        <h1 className="font-serif text-[3.8rem] text-[#CBAA6A] tracking-tighter leading-none italic font-semibold">
+        <h1 className="font-serif text-[3.8rem] text-accent-gold tracking-tighter leading-none italic font-semibold">
           Delhi
         </h1>
         
-        <div className="mt-16 w-[1px] h-16 bg-gradient-to-b from-[#CBAA6A]/40 to-transparent" />
+        <div className="mt-16 w-[1px] h-16 bg-gradient-to-b from-accent-gold/40 to-transparent" />
       </motion.div>
 
     </motion.section>

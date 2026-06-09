@@ -267,7 +267,7 @@ export default function Scene0_CoverPage() {
               display: 'block',
               /* Gold gradient fill */
               background:
-                'linear-gradient(160deg, #FFE8A3 0%, #D4A752 38%, #CBAA6A 60%, #9A7535 100%)',
+                'linear-gradient(160deg, #FFE8A3 0%, #D4A752 38%, var(--accent-gold) 60%, #9A7535 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',

@@ -44,7 +44,7 @@ export default function CuisineJourney() {
   };
 
   return (
-    <section className="py-32 relative bg-surface-paper overflow-hidden">
+    <section className="py-32 relative bg-surface-card overflow-hidden">
       <style>{`
         .cuisine-item {
           opacity: 0;

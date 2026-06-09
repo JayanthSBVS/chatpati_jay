@@ -79,7 +79,7 @@ export default function GlobalScrollIndicator() {
           100% { transform: scale(2.2); opacity: 0; }
         }
         .gsi-bar-wrap:hover .gsi-bar {
-          background: linear-gradient(180deg, #FFE8A3, #CBAA6A) !important;
+          background: linear-gradient(180deg, #FFE8A3, var(--accent-gold)) !important;
         }
       `}</style>
 

@@ -21,15 +21,15 @@ export default function Scene3_StreetFoodEnergy({ progress }) {
             alt="Delhi Street Food Macro" 
             className="w-full h-full object-cover object-center saturate-200 contrast-[1.4] sepia-[0.3]"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-[#0a0908] z-10"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-transparent to-[#0a0908] z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface-paper z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-paper via-transparent to-surface-paper z-10"></div>
         </div>
 
         <div className="w-full md:w-[40%] flex flex-col justify-center px-8 md:px-16 mt-16 md:mt-0">
           <h2 className="font-serif text-5xl md:text-8xl text-[#E2A060] leading-[0.8] tracking-tighter mb-8">
             Street <br/> Fire
           </h2>
-          <p className="font-sans text-[10px] md:text-xs text-[#F5EFEB]/60 tracking-[0.2em] uppercase leading-loose max-w-xs">
+          <p className="font-sans text-[10px] md:text-xs text-content-primary/60 tracking-[0.2em] uppercase leading-loose max-w-xs">
             Heat. Oil. Spice. <br/><br/>
             The unfiltered, chaotic energy of the streets, distilled into pure emotional flavor.
           </p>

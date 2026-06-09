@@ -41,7 +41,7 @@ const events = [
 
 export default function EventsWeCater() {
   return (
-    <section className="py-24 w-full bg-surface-base relative border-t border-border-subtle overflow-hidden">
+    <section className="py-24 w-full bg-surface-accent relative border-t border-border-subtle overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
         <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-2">
           Tailored Experiences
@@ -56,7 +56,7 @@ export default function EventsWeCater() {
         {events.map((ev, i) => (
           <div
             key={i}
-            className="snap-center shrink-0 w-[85vw] md:w-[420px] lg:w-[480px] rounded-2xl border border-border-subtle bg-surface-card p-8 md:p-10 flex flex-col justify-between group hover:border-accent-gold/30 transition-colors duration-500 relative overflow-hidden"
+            className="snap-center shrink-0 w-[85vw] md:w-[420px] lg:w-[480px] rounded-2xl border border-border-subtle bg-surface-paper p-8 md:p-10 flex flex-col justify-between group hover:border-accent-gold/30 transition-colors duration-500 relative overflow-hidden"
           >
             {/* Background Image Layer */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
@@ -67,7 +67,7 @@ export default function EventsWeCater() {
                 decoding="async"
                 className="w-full h-full object-cover opacity-20 transition-opacity duration-500 group-hover:opacity-35"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface-card via-surface-card/80 to-transparent" />
+              <div className="absolute inset-0" style={{ background: 'var(--section-overlay)' }} />
             </div>
 
             <div className="relative z-10">

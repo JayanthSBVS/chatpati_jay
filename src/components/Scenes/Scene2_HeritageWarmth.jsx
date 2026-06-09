@@ -26,7 +26,7 @@ export default function Scene2_HeritageWarmth({ progress }) {
           Desktop: text-6xl+ → original tracking-tight look
         */}
         <h2 className="
-          font-serif leading-snug tracking-wide text-[#F5EFEB]/90
+          font-serif leading-snug tracking-wide text-content-primary/90
           text-2xl font-semibold
           sm:text-3xl sm:font-medium
           md:text-4xl md:font-normal md:tracking-normal md:leading-tight
@@ -35,7 +35,7 @@ export default function Scene2_HeritageWarmth({ progress }) {
           A lineage of flavor, preserved in the shadows of Purani Delhi.
         </h2>
         <p className="
-          mt-8 font-sans uppercase leading-loose text-[#CBAA6A]
+          mt-8 font-sans uppercase leading-loose text-accent-gold
           text-[9px] tracking-[0.35em] opacity-70 font-medium
           md:text-[9px] md:tracking-[0.4em] md:opacity-60 md:font-normal
           max-w-sm md:max-w-md mx-auto

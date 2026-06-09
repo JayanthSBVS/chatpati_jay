@@ -46,7 +46,7 @@ export default function HeroSection() {
           decoding="sync"
           className="absolute inset-0 w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-surface-base/80 via-surface-base/50 to-surface-base" />
+        <div className="absolute inset-0" style={{ background: 'var(--hero-overlay)' }} />
         <div className="absolute inset-0 bg-texture-paper opacity-30" />
       </div>
 
