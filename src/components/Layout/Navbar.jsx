@@ -7,17 +7,10 @@ import { Sun, Moon } from 'lucide-react';
 export default function Navbar() {
   const { scrollY } = useScroll();
   const location = useLocation();
-  const [hidden, setHidden] = useState(false);
   const [hasScrolled, setHasScrolled] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious();
-    if (latest > previous && latest > 150) {
-      setHidden(true);
-    } else {
-      setHidden(false);
-    }
     setHasScrolled(latest > 50);
   });
 
@@ -37,7 +30,7 @@ export default function Navbar() {
           visible: { y: 0, opacity: 1 },
           hidden: { y: "-100%", opacity: 0 },
         }}
-        animate={hidden && !menuOpen ? "hidden" : "visible"}
+        animate="visible"
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-0 left-0 w-full z-50 pt-8 pb-6 px-8 flex justify-between items-start pointer-events-none"
       >
