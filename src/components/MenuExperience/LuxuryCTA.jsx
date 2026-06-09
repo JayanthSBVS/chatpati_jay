@@ -1,8 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-
 
 export default function LuxuryCTA() {
   return (
@@ -11,46 +8,29 @@ export default function LuxuryCTA() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(203,170,106,0.15)_0%,_transparent_60%)] pointer-events-none" />
 
       <div className="relative z-10 text-center px-4">
-        <motion.span 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-8"
-        >
+        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-8">
           Begin Your Journey
-        </motion.span>
-        
-        <motion.h2 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary-cream mb-12 leading-none"
-        >
+        </span>
+
+        <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary-cream mb-12 leading-none">
           Let's Create An <br />
           <span className="italic text-primary-gold font-light">Unforgettable Celebration</span>
-        </motion.h2>
+        </h2>
 
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.4, duration: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
-        >
-          <Link 
-            to="/contact" 
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <Link
+            to="/contact"
             className="px-8 py-4 font-sans text-xs tracking-widest uppercase transition-transform duration-300 hover:-translate-y-1 flex items-center justify-center min-w-[200px] bg-primary-gold text-[#050403] hover:bg-primary-cream hover:shadow-lg hover:shadow-primary-gold/20"
           >
             Book Catering
           </Link>
-          <Link 
-            to="/packages" 
+          <Link
+            to="/packages"
             className="px-8 py-4 font-sans text-xs tracking-widest uppercase transition-transform duration-300 hover:-translate-y-1 flex items-center justify-center min-w-[200px] border border-primary-gold text-primary-gold hover:bg-primary-gold/10"
           >
             Explore Packages
           </Link>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

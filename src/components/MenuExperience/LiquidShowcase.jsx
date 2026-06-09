@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-
+import React from 'react';
 
 const drinks = [
   {
@@ -35,11 +34,9 @@ const drinks = [
 ];
 
 export default function LiquidShowcase() {
-  const containerRef = useRef(null);
-
   return (
-    <section ref={containerRef} className="py-24 md:py-32 bg-[#050403] relative overflow-hidden border-t border-[#CBAA6A]/10">
-      
+    <section className="py-24 md:py-32 bg-[#050403] relative overflow-hidden border-t border-[#CBAA6A]/10">
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-24 text-center">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-4">
@@ -54,47 +51,34 @@ export default function LiquidShowcase() {
           {drinks.map((drink, i) => {
             const isEven = i % 2 === 0;
             return (
-              <div key={i} className="relative group">
-                {/* Floating Typography - Optional Background Text */}
-                <h3 
-                  className="hidden md:block font-serif text-6xl md:text-8xl lg:text-[10rem] text-primary-cream/5 absolute -top-12 md:-top-24 left-0 pointer-events-none select-none transition-colors duration-700 group-hover:text-primary-gold/10"
-                >
-                  {drink.name}
-                </h3>
+              <div key={i} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24`}>
 
-                <div className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 relative z-10`}>
-                  
-                  {/* Premium Staggered Image */}
-                  <div 
-                    className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-[#CBAA6A]/10 shadow-2xl transition-transform duration-700 hover:-translate-y-2"
-                  >
-                    <img 
-                      src={drink.image} 
-                      alt={drink.name} 
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-transparent opacity-80" />
-                  </div>
-
-                  {/* Content */}
-                  <div 
-                    className="w-full md:w-1/2 flex flex-col justify-center"
-                  >
-                    <h4 className="font-serif text-4xl md:text-6xl text-primary-cream mb-6 group-hover:text-primary-gold transition-colors duration-500">
-                      {drink.name}
-                    </h4>
-                    <div className="mb-8">
-                      <span className="font-sans text-[9px] tracking-widest uppercase text-primary-cream/40 block mb-2">Ingredients</span>
-                      <p className="font-serif text-xl md:text-2xl text-primary-gold leading-relaxed">{drink.ingredients}</p>
-                    </div>
-                    <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md font-light">
-                      {drink.description}
-                    </p>
-                  </div>
-
+                {/* Image */}
+                <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-[#CBAA6A]/10 shadow-2xl">
+                  <img
+                    src={drink.image}
+                    alt={drink.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-transparent opacity-80" />
                 </div>
+
+                {/* Content */}
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <h4 className="font-serif text-4xl md:text-6xl text-primary-cream mb-6">
+                    {drink.name}
+                  </h4>
+                  <div className="mb-8">
+                    <span className="font-sans text-[9px] tracking-widest uppercase text-primary-cream/40 block mb-2">Ingredients</span>
+                    <p className="font-serif text-xl md:text-2xl text-primary-gold leading-relaxed">{drink.ingredients}</p>
+                  </div>
+                  <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md font-light">
+                    {drink.description}
+                  </p>
+                </div>
+
               </div>
             );
           })}

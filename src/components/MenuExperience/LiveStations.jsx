@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { motion } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 const stations = [
   {
@@ -34,57 +33,55 @@ const stations = [
   }
 ];
 
-const StationSpotlight = ({ name, description, tag, index, image }) => {
-  const ref = useRef(null);
-
-  // Alternate layout
-  const isEven = index % 2 === 0;
-
-  return (
-    <motion.div 
-      ref={ref}
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 mb-32`}
-    >
-      {/* Visual Component */}
-      <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-primary-cream/5 rounded-[2rem] border border-primary-cream/10">
-        <img 
-          src={image} 
-          alt={name} 
-          loading="lazy" 
-          decoding="async"
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-transparent to-transparent opacity-80" />
-      </div>
-
-      {/* Content */}
-      <div className="w-full md:w-1/2 flex flex-col justify-center">
-        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-6 block">
-          {tag}
-        </span>
-        <h3 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none">
-          {name}
-        </h3>
-        <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md mb-12">
-          {description}
-        </p>
-        <button className="self-start font-sans text-xs tracking-widest uppercase text-primary-cream border-b border-primary-gold pb-2 hover:text-primary-gold transition-colors">
-          Add to Experience
-        </button>
-      </div>
-    </motion.div>
-  );
-};
-
 export default function LiveStations() {
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    // Single shared IntersectionObserver for the entire section
+    // Each item gets a CSS class added when it enters the viewport
+    const items = section.querySelectorAll('.station-item');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('station-item--visible');
+            observer.unobserve(entry.target); // fire once only
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: '-50px 0px' }
+    );
+
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="py-32 bg-[#050403] relative border-t border-[#CBAA6A]/10">
+    <section
+      ref={sectionRef}
+      className="py-32 bg-[#050403] relative border-t border-[#CBAA6A]/10"
+    >
+      <style>{`
+        .station-item {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .station-item--visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        .station-item:nth-child(2) { transition-delay: 0.1s; }
+        .station-item:nth-child(3) { transition-delay: 0.15s; }
+        .station-item:nth-child(4) { transition-delay: 0.2s; }
+        .station-item:nth-child(5) { transition-delay: 0.25s; }
+      `}</style>
+
       <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
-      
+
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-32">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-4">
@@ -96,9 +93,43 @@ export default function LiveStations() {
         </div>
 
         <div>
-          {stations.map((station, idx) => (
-            <StationSpotlight key={idx} index={idx} {...station} />
-          ))}
+          {stations.map((station, idx) => {
+            const isEven = idx % 2 === 0;
+            return (
+              <div
+                key={idx}
+                className={`station-item flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 mb-32`}
+              >
+                {/* Image */}
+                <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-primary-cream/5 rounded-[2rem] border border-primary-cream/10">
+                  <img
+                    src={station.image}
+                    alt={station.name}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-transparent to-transparent opacity-80" />
+                </div>
+
+                {/* Content */}
+                <div className="w-full md:w-1/2 flex flex-col justify-center">
+                  <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-6 block">
+                    {station.tag}
+                  </span>
+                  <h3 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none">
+                    {station.name}
+                  </h3>
+                  <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md mb-12">
+                    {station.description}
+                  </p>
+                  <button className="self-start font-sans text-xs tracking-widest uppercase text-primary-cream border-b border-primary-gold pb-2 hover:text-primary-gold transition-colors">
+                    Add to Experience
+                  </button>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
