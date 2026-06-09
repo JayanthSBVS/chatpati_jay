@@ -16,7 +16,7 @@ export default function Scene5_CinematicPause() {
   return (
     <section 
       ref={containerRef} 
-      className="relative w-full h-[150vh] bg-[#050403] overflow-hidden flex items-center justify-center"
+      className="relative w-full h-[150vh] bg-surface-base overflow-hidden flex items-center justify-center"
     >
       
       {/* MASSIVE ENVIRONMENTAL BACKGROUND */}
@@ -29,7 +29,7 @@ export default function Scene5_CinematicPause() {
           alt="Delhi Palace Night Atmosphere" 
           className="w-full h-full object-cover object-center saturate-[0.85] contrast-125"
         />
-        <div className="absolute inset-0 bg-[#050403]/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-black/30" style={{ mixBlendMode: 'multiply' }} />
         <div className="absolute inset-0 bg-gradient-to-b from-surface-paper via-transparent to-surface-paper z-10" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_rgba(226,160,96,0.1)_0%,_transparent_60%)] z-10" />
       </motion.div>
@@ -64,7 +64,7 @@ export default function Scene5_CinematicPause() {
         <button className="mt-12 md:mt-16 group relative">
           <div className="absolute inset-0 bg-accent-gold blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-1000 rounded-full" />
           {/* Tablet: slightly larger tap target */}
-          <div className="relative px-10 md:px-12 py-4 border border-accent-gold/30 rounded-full bg-black/50 backdrop-blur-sm text-accent-gold font-sans text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all duration-700 hover:bg-accent-gold/10 hover:border-accent-gold/60 font-medium md:font-normal">
+          <div className="relative px-10 md:px-12 py-4 border border-accent-gold/30 rounded-full bg-surface-card/80 backdrop-blur-sm text-accent-gold font-sans text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all duration-700 hover:bg-accent-gold/10 hover:border-accent-gold/60 font-medium md:font-normal">
             Begin Your Celebration
           </div>
         </button>

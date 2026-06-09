@@ -23,9 +23,9 @@ export default function Scene1_RoyalEntrance({ progress }) {
         className="hidden lg:flex absolute inset-0 z-10 items-center justify-end pointer-events-none transform-gpu"
         style={{ scale: archScale, transformOrigin: '70% 50%' }}
       >
-        <div className="relative w-[70%] h-[110vh] translate-x-[10%] opacity-40">
-          <div className="absolute inset-0 bg-gradient-to-r from-surface-base via-surface-base/50 to-transparent z-20 w-[60%]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-surface-base to-transparent z-20 h-[30%] top-auto bottom-0"></div>
+        <div className="relative w-[70%] h-[110vh] translate-x-[10%]" style={{ opacity: 'var(--img-opacity-hero)' }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-surface-base via-surface-base/20 to-transparent z-20 w-[40%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/10 to-transparent z-20 h-[30%] top-auto bottom-0"></div>
           <img 
             src="/assets/floral-arch.jpeg" 
             alt="Mughal Palace Atmosphere" 
@@ -43,10 +43,10 @@ export default function Scene1_RoyalEntrance({ progress }) {
             A Royal Dining Chamber
           </span>
 
-          <h1 className="font-serif text-[9rem] xl:text-[12rem] 2xl:text-[16rem] text-content-primary tracking-tighter leading-[0.75] opacity-90">
+          <h1 className="font-serif text-[9rem] xl:text-[12rem] 2xl:text-[16rem] text-content-primary tracking-tighter leading-[0.75] drop-shadow-2xl">
             Chatpati
           </h1>
-          <h1 className="font-serif text-[8rem] xl:text-[11rem] 2xl:text-[14rem] text-accent-gold tracking-tighter leading-[0.75] ml-[20%] mt-[-2%]">
+          <h1 className="font-serif text-[8rem] xl:text-[11rem] 2xl:text-[14rem] text-accent-gold tracking-tighter leading-[0.75] ml-[20%] mt-[-2%] drop-shadow-xl">
             Delhi
           </h1>
           
@@ -59,9 +59,9 @@ export default function Scene1_RoyalEntrance({ progress }) {
         className="hidden md:flex lg:hidden absolute inset-0 z-10 items-center justify-end pointer-events-none transform-gpu"
         style={{ scale: archScale, transformOrigin: '70% 50%' }}
       >
-        <div className="relative w-[60%] h-[110vh] translate-x-[5%] opacity-35">
-          <div className="absolute inset-0 bg-gradient-to-r from-surface-base via-surface-base/60 to-transparent z-20 w-[55%]"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-surface-base to-transparent z-20 h-[30%] top-auto bottom-0"></div>
+        <div className="relative w-[60%] h-[110vh] translate-x-[5%]" style={{ opacity: 'var(--img-opacity-hero)' }}>
+          <div className="absolute inset-0 bg-gradient-to-r from-surface-base via-surface-base/20 to-transparent z-20 w-[40%]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/10 to-transparent z-20 h-[30%] top-auto bottom-0"></div>
           <img 
             src="/assets/floral-arch.jpeg" 
             alt="Mughal Palace Atmosphere" 
@@ -79,10 +79,10 @@ export default function Scene1_RoyalEntrance({ progress }) {
             A Royal Dining Chamber
           </span>
           {/* Tablet: large but not desktop-extreme sizes */}
-          <h1 className="font-serif text-[5.5rem] text-content-primary tracking-tighter leading-[0.78] opacity-90 font-semibold">
+          <h1 className="font-serif text-[5.5rem] text-content-primary tracking-tighter leading-[0.78] font-semibold drop-shadow-xl">
             Chatpati
           </h1>
-          <h1 className="font-serif text-[5rem] text-accent-gold tracking-tighter leading-[0.78] ml-[18%] mt-[-1%]">
+          <h1 className="font-serif text-[5rem] text-accent-gold tracking-tighter leading-[0.78] ml-[18%] mt-[-1%] drop-shadow-md">
             Delhi
           </h1>
           <div className="mt-24 ml-[8%] w-[1px] h-16 bg-accent-gold/30" />
@@ -94,8 +94,8 @@ export default function Scene1_RoyalEntrance({ progress }) {
         className="flex md:hidden absolute inset-0 z-10 flex-col items-center justify-center pt-24 transform-gpu"
         style={{ scale: archScale, transformOrigin: '50% 50%' }}
       >
-        <div className="relative w-[90%] h-[60vh] opacity-40 rounded-t-full overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/50 to-transparent z-20 h-[60%] top-auto bottom-0"></div>
+        <div className="relative w-[90%] h-[60vh] rounded-t-full overflow-hidden" style={{ opacity: 'var(--img-opacity-hero)' }}>
+          <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-surface-base/20 to-transparent z-20 h-[50%] top-auto bottom-0"></div>
           <img 
             src="/assets/floral-arch.jpeg" 
             alt="Mughal Palace Atmosphere" 
@@ -113,10 +113,10 @@ export default function Scene1_RoyalEntrance({ progress }) {
         </span>
 
         {/* Mobile: heavier font weight so gold/cream text pops */}
-        <h1 className="font-serif text-[3.8rem] text-content-primary tracking-tighter leading-none opacity-90 mb-2 font-bold">
+        <h1 className="font-serif text-[3.8rem] text-content-primary tracking-tighter leading-none mb-2 font-bold drop-shadow-lg">
           Chatpati
         </h1>
-        <h1 className="font-serif text-[3.8rem] text-accent-gold tracking-tighter leading-none italic font-semibold">
+        <h1 className="font-serif text-[3.8rem] text-accent-gold tracking-tighter leading-none italic font-semibold drop-shadow-md">
           Delhi
         </h1>
         

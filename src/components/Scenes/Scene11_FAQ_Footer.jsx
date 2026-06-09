@@ -30,7 +30,7 @@ export default function Scene11_FAQ_Footer() {
   ];
 
   return (
-    <section className="relative w-full bg-[#030202] flex flex-col">
+    <section className="relative w-full bg-surface-base flex flex-col">
       
       {/* QUIET CONVERSATION (FAQ) */}
       <div className="relative w-full py-24 md:py-36 lg:py-48 px-6 md:px-12 lg:px-8 flex flex-col items-center justify-center">
@@ -54,11 +54,11 @@ export default function Scene11_FAQ_Footer() {
       </div>
 
       {/* FAREWELL COURTYARD (FOOTER) */}
-      <footer className="relative w-full h-[80vh] md:h-[85vh] lg:h-screen flex flex-col items-center justify-end pb-10 md:pb-12 overflow-hidden bg-black">
-        <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-black via-black to-transparent z-10" />
+      <footer className="relative w-full h-[80vh] md:h-[85vh] lg:h-screen flex flex-col items-center justify-end pb-10 md:pb-12 overflow-hidden bg-surface-paper">
+        <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-surface-paper via-surface-paper to-transparent z-10" />
         
         <div className="absolute inset-0 z-0 flex items-end justify-center opacity-40 md:opacity-30">
-          <img src="/assets/restaurants_outside_image.webp" alt="Farewell" className="w-full h-full object-cover object-bottom" />
+          <img src="/assets/restaurants_outside_image.webp" alt="Farewell" className="w-full h-full object-cover object-bottom" style={{ mixBlendMode: 'var(--img-blend-multiply)' }} />
         </div>
 
         {/* Headline — single responsive implementation */}

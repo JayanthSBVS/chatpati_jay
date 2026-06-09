@@ -109,8 +109,9 @@ export default function LiveStations() {
                     loading="lazy"
                     decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    style={{ filter: 'saturate(var(--img-saturate)) contrast(var(--img-contrast))', opacity: 'var(--img-opacity-card)' }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent opacity-30 group-hover:opacity-10 transition-opacity duration-500" />
                 </div>
 
                 {/* Content */}

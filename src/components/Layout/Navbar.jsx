@@ -42,7 +42,7 @@ export default function Navbar() {
         className="fixed top-0 left-0 w-full z-50 pt-8 pb-6 px-8 flex justify-between items-start pointer-events-none"
       >
         {/* Background layer without glassmorphism */}
-        <div className={`absolute inset-0 transition-colors duration-500 border-b ${hasScrolled && !menuOpen ? 'bg-surface-paper border-border-subtle' : 'bg-transparent border-transparent'}`}>
+        <div className={`absolute inset-0 transition-all duration-500 border-b ${hasScrolled && !menuOpen ? 'bg-surface-paper border-border-subtle' : 'bg-gradient-to-b from-surface-base/90 via-surface-base/50 to-transparent border-transparent'}`}>
         </div>
         
         <Link to="/" className="relative z-10 pointer-events-auto font-serif text-2xl tracking-widest text-content-primary uppercase">

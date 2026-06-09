@@ -15,7 +15,7 @@ export default function Scene8_ExperienceWall() {
   const yImage = useTransform(scrollYProgress, [0, 1], ["-10%", "10%"]);
 
   return (
-    <section ref={containerRef} className="relative h-[150vh] w-full bg-[#0a0503] flex items-center justify-center overflow-hidden">
+    <section ref={containerRef} className="relative h-[150vh] w-full bg-surface-card flex items-center justify-center overflow-hidden">
       
       {/* Saffron Light Beam Background DNA */}
       <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_50%_0%,_rgba(203,170,106,0.1)_0%,_transparent_50%)]" />
@@ -30,11 +30,11 @@ export default function Scene8_ExperienceWall() {
           className="absolute inset-0 w-full h-[120%] object-cover opacity-80"
           style={{ y: yImage }}
         />
-        <div className="absolute inset-0 bg-[#0a0503]/50 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0503] via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-black/20" style={{ mixBlendMode: 'multiply' }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-surface-card via-transparent to-transparent" />
         
         <div className="relative z-20 text-center flex flex-col items-center">
-          <h2 className="font-serif text-4xl md:text-7xl text-content-primary leading-[1.1] tracking-tighter opacity-90 mix-blend-overlay">
+          <h2 className="font-serif text-4xl md:text-7xl text-content-primary leading-[1.1] tracking-tighter opacity-90 drop-shadow-2xl">
             Every Gathering Deserves<br/>A Memory Worth Serving
           </h2>
           <span className="mt-12 font-sans text-[10px] md:text-xs tracking-[0.5em] text-accent-gold uppercase opacity-70">

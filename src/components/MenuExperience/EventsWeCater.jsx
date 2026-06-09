@@ -65,37 +65,38 @@ export default function EventsWeCater() {
                 alt=""
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover opacity-20 transition-opacity duration-500 group-hover:opacity-35"
+                className="w-full h-full object-cover transition-opacity duration-500"
+                style={{ opacity: 'var(--img-opacity-card)' }}
               />
-              <div className="absolute inset-0" style={{ background: 'var(--section-overlay)' }} />
+              <div className="absolute inset-0 bg-gradient-to-b from-surface-paper/60 via-surface-paper/80 to-surface-paper/95 group-hover:from-surface-paper/50 transition-colors duration-500" />
             </div>
 
-            <div className="relative z-10">
+            <div className="relative z-10 bg-surface-paper/40 p-4 -ml-4 rounded-lg backdrop-blur-[2px]">
               <span className="font-serif text-6xl text-content-ghost absolute -top-2 -right-2 pointer-events-none select-none">
                 0{i + 1}
               </span>
-              <h3 className="font-serif text-3xl text-accent-gold mb-8">
+              <h3 className="font-serif text-3xl text-accent-gold mb-8 drop-shadow-sm">
                 {ev.title}
               </h3>
 
               <div className="space-y-5">
                 <div>
                   <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Recommended Experience</h4>
-                  <p className="font-serif text-lg text-content-primary">{ev.experience}</p>
+                  <p className="font-serif text-lg text-content-primary drop-shadow-sm">{ev.experience}</p>
                 </div>
 
                 <div className="w-8 h-[1px] bg-border-subtle" />
 
                 <div>
                   <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Live Station Focus</h4>
-                  <p className="font-serif text-lg text-content-primary">{ev.station}</p>
+                  <p className="font-serif text-lg text-content-primary drop-shadow-sm">{ev.station}</p>
                 </div>
 
                 <div className="w-8 h-[1px] bg-border-subtle" />
 
                 <div>
                   <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Signature Highlights</h4>
-                  <p className="font-serif text-lg text-content-primary">{ev.dishes}</p>
+                  <p className="font-serif text-lg text-content-primary drop-shadow-sm">{ev.dishes}</p>
                 </div>
               </div>
             </div>

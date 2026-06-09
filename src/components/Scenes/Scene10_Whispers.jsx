@@ -14,7 +14,7 @@ export default function Scene10_Whispers() {
   const y3 = useTransform(scrollYProgress, [0, 1], ["0%", "-30%"]);
 
   return (
-    <section ref={containerRef} className="relative w-full bg-[#050505] overflow-hidden flex flex-col items-center">
+    <section ref={containerRef} className="relative w-full bg-surface-base overflow-hidden flex flex-col items-center">
       
       {/* PART 1: THE QUIET INVITATION (CTA) */}
       <div className="relative w-full min-h-[50vh] flex flex-col items-center justify-center py-16 px-6 md:px-8">
@@ -54,7 +54,7 @@ export default function Scene10_Whispers() {
         <div className="flex lg:hidden flex-col items-center gap-8 px-6 md:px-12 pb-20 w-full max-w-2xl mx-auto">
           {[
             { quote: '"Best Chole Bhature in NJ."', source: '— Real Guest', size: 'text-2xl md:text-3xl' },
-            { quote: '"Everything is so damn good."', source: '— Real Guest', size: 'text-3xl md:text-4xl', extra: 'mix-blend-screen' },
+            { quote: '"Everything is so damn good."', source: '— Real Guest', size: 'text-3xl md:text-4xl', extra: '' },
             { quote: '"Our guests still talk about it."', source: '— Wedding Reception', size: 'text-xl md:text-2xl' },
           ].map(({ quote, source, size, extra }, i) => (
             <div key={i} className={`text-center max-w-sm md:max-w-md ${i % 2 === 1 ? 'text-right self-end' : 'text-left self-start'}`}>
@@ -80,7 +80,7 @@ export default function Scene10_Whispers() {
           </motion.div>
 
           <motion.div style={{ y: y2 }} className="absolute top-[50%] right-[15%] max-w-sm text-right">
-            <p className="font-serif text-5xl text-content-primary/90 leading-snug italic mix-blend-screen">
+            <p className="font-serif text-5xl text-content-primary/90 leading-snug italic">
               "Everything is so<br/>damn good."
             </p>
             <span className="font-sans text-[9px] tracking-[0.2em] text-accent-gold/50 uppercase mt-4 block text-right">— Real Guest</span>

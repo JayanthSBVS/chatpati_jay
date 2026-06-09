@@ -44,24 +44,25 @@ export default function HeroSection() {
           fetchPriority="high"
           loading="eager" 
           decoding="sync"
-          className="absolute inset-0 w-full h-full object-cover opacity-20"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 'var(--img-opacity-hero)' }}
         />
         <div className="absolute inset-0" style={{ background: 'var(--hero-overlay)' }} />
-        <div className="absolute inset-0 bg-texture-paper opacity-30" />
+        <div className="absolute inset-0 bg-texture-paper opacity-30 mix-blend-multiply" />
       </div>
 
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto animate-fade-in" style={{ animationDelay: '0.2s' }}>
-        <p className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-accent-gold mb-6 md:mb-8 block">
+        <p className="font-sans text-[10px] md:text-xs tracking-[0.4em] uppercase text-accent-gold mb-6 md:mb-8 block drop-shadow-md">
           A Legacy of Flavor
         </p>
         
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-content-primary leading-[1.1] mb-6 md:mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-content-primary leading-[1.1] mb-6 md:mb-8 animate-fade-in drop-shadow-2xl" style={{ animationDelay: '0.4s' }}>
           Where Every Event <br />
           <span className="italic font-light text-accent-gold">Becomes a</span> <br />
           Culinary Celebration
         </h1>
 
-        <p className="font-sans text-xs md:text-sm text-content-primary/70 tracking-widest max-w-2xl mx-auto leading-relaxed px-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <p className="font-sans text-xs md:text-sm text-content-primary tracking-widest max-w-2xl mx-auto leading-relaxed px-4 animate-fade-in drop-shadow-lg" style={{ animationDelay: '0.6s' }}>
           Immersive catering experiences crafted to elevate your most cherished moments. 
           Discover the breadth of our artisanal menus.
         </p>
