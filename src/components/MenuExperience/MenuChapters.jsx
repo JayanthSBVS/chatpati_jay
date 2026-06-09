@@ -1,16 +1,11 @@
-import React, { useState, useRef } from 'react';
+import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { menuData } from '../../data/menuData';
+import { assets } from '../../data/assetMap';
+import BackgroundTypography from '../ui/BackgroundTypography';
 
 // Helper to format the chapter number
 const formatChapter = (index) => `Chapter ${String(index + 1).padStart(2, '0')}`;
-
-// Helper to determine if a string item is vegetarian
-const isItemVeg = (name) => {
-  const lower = name.toLowerCase();
-  const nonVegKeywords = ['chicken', 'lamb', 'shrimp', 'fish', 'mutton', 'egg', 'meat', 'keema', 'barrah', 'seekh', 'chops'];
-  return !nonVegKeywords.some(keyword => lower.includes(keyword));
-};
 
 // Map chapter titles to their /menu/chapters/:slug routes
 const chapterSlugMap = {
@@ -26,208 +21,186 @@ const chapterSlugMap = {
   "Desserts": "desserts",
 };
 
-const preloadChapterPage = () => {
-  import('../../pages/ChapterExperiencePage');
+// Removed preloadChapterPage to avoid main thread blocking on rapid scroll (mouse accidentally sweeping across links)
+
+const useChapterData = (chapter) => {
+  return useMemo(() => {
+    const { title, items, veg, nonVeg, image } = chapter;
+    let allItems = [];
+    if (items) {
+      if (typeof items[0] === 'string') {
+        allItems = items;
+      } else {
+        allItems = items; // assuming objects with .name
+      }
+    } else {
+      if (title === "Biryani & Rice") {
+        allItems = [...(menuData.biryani.biryani || []), ...(menuData.biryani.rice || [])];
+      } else {
+        if (veg) allItems = [...allItems, ...veg];
+        if (nonVeg) allItems = [...allItems, ...nonVeg];
+      }
+    }
+
+    // Extract names if objects
+    const formattedItems = allItems.map(item => typeof item === 'string' ? item : item.name);
+
+    return {
+      title,
+      image,
+      slug: chapterSlugMap[title],
+      previewItems: formattedItems.slice(0, 3),
+      backgroundText: title,
+      totalCount: formattedItems.length
+    };
+  }, [chapter]);
 };
 
-const Chapter = ({ title, description, veg, nonVeg, items, index, image, activeFilter }) => {
-  const chapterRef = useRef(null);
-  const leftColRef = useRef(null);
-
-  const chapterSlug = chapterSlugMap[title];
-
-  // Helper to filter flat items list locally
-  const getFilteredItems = () => {
-    if (!items) return [];
-    if (activeFilter === 'all') return items;
-    if (activeFilter === 'veg') return items.filter(item => isItemVeg(item));
-    return items.filter(item => !isItemVeg(item));
-  };
-
-  const filteredFlatItems = getFilteredItems();
-
-  // If filtering leads to no items, do not render this chapter
-  const hasVegItems = veg && veg.length > 0;
-  const hasNonVegItems = nonVeg && nonVeg.length > 0;
-  const hasFlatItems = filteredFlatItems.length > 0;
-
-  if (activeFilter === 'veg' && !hasVegItems && !hasFlatItems) return null;
-  if (activeFilter === 'non-veg' && !hasNonVegItems && !hasFlatItems) return null;
-
+const DesktopCulinaryIndex = ({ chapters }) => {
   return (
-    <section ref={chapterRef} className="min-h-screen py-24 md:py-32 flex items-center relative border-b border-[#CBAA6A]/10 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 relative z-10">
-        
-        {/* Left Column: Title & Intro */}
-        <div ref={leftColRef} className="lg:col-span-5 flex flex-col justify-center relative">
-          {image && (
-            <div className="hidden lg:block absolute -right-12 top-1/2 -translate-y-1/2 w-48 h-64 rounded-2xl overflow-hidden opacity-50 border border-primary-gold/20 shadow-2xl pointer-events-none transform -rotate-3 group-hover:rotate-0 transition-transform duration-700">
-              <img src={image} alt={title} loading="lazy" decoding="async" className="w-full h-full object-cover" />
-            </div>
-          )}
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-6 block relative z-10">
-            {formatChapter(index)}
-          </span>
-          
-          {chapterSlug ? (
-            <Link
-              to={`/menu/chapters/${chapterSlug}`}
-              className="group/link block w-fit relative z-10"
-              onMouseEnter={preloadChapterPage}
-              onTouchStart={preloadChapterPage}
-              aria-label={`Explore ${title}`}
-            >
-              <h2 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none group-hover/link:text-primary-gold transition-colors duration-300">
-                {title} <span className="inline-block text-2xl align-middle transform transition-transform group-hover/link:translate-x-2">→</span>
-              </h2>
-            </Link>
-          ) : (
-            <h2 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none relative z-10">
-              {title}
-            </h2>
-          )}
+    <div className="hidden lg:flex flex-col w-full max-w-5xl mx-auto px-12">
+      {chapters.map((rawChapter, index) => {
+        const chapter = useChapterData(rawChapter);
+        if (chapter.totalCount === 0) return null;
 
-          {description && (
-            <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md relative z-10">
-              {description}
-            </p>
-          )}
-        </div>
+        return (
+          <div 
+            key={chapter.title} 
+            className="relative flex items-center justify-between py-16 border-b border-[#CBAA6A]/10 group"
+            style={{ contain: 'content' }}
+          >
+            {/* Background Typography */}
+            <BackgroundTypography text={chapter.backgroundText} />
 
-        {/* Right Column: Menu Items */}
-        <div className="lg:col-span-7 flex flex-col gap-16 pt-12 lg:pt-0">
-          {/* Vegetarian */}
-          {veg && (activeFilter === 'all' || activeFilter === 'veg') && (
-            <div className="space-y-6">
-              <h3 className="font-sans text-xs tracking-widest uppercase text-primary-gold border-b border-primary-gold/30 pb-4 mb-8">Vegetarian</h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                {veg.map((item, i) => (
-                  <li key={i} className="font-serif text-xl md:text-2xl text-primary-cream/90 hover:text-primary-gold transition-colors">{item}</li>
+            {/* Content Container */}
+            <div className="flex flex-col z-10 w-2/3">
+              <span className="font-sans text-xs tracking-[0.4em] uppercase text-primary-gold mb-4 block">
+                {formatChapter(index)}
+              </span>
+              <h3 className="font-serif text-5xl text-primary-cream mb-8">
+                {chapter.title}
+              </h3>
+              
+              <div className="mb-8 space-y-3">
+                {chapter.previewItems.map((item, i) => (
+                  <p key={i} className="font-serif text-xl text-primary-cream/80">{item}</p>
                 ))}
-              </ul>
+                {chapter.totalCount > 3 && (
+                   <p className="font-sans text-[10px] tracking-widest text-primary-gold/60 uppercase mt-4">Most Requested</p>
+                )}
+              </div>
+
+              <div className="flex items-center gap-8">
+                 <span className="font-sans text-xs tracking-widest text-primary-cream/50 uppercase">{chapter.totalCount} Dishes</span>
+                   <Link 
+                     to={`/menu/chapters/${chapter.slug}`}
+                     aria-label={`Explore ${chapter.title} Chapter`}
+                     className="font-sans text-xs tracking-widest uppercase text-primary-gold border-b border-primary-gold/30 hover:border-primary-gold pb-1 transition-colors flex items-center group/link"
+                   >
+                     Explore <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
+                   </Link>
+              </div>
             </div>
-          )}
 
-          {/* Non-Vegetarian */}
-          {nonVeg && (activeFilter === 'all' || activeFilter === 'non-veg') && (
-            <div className="space-y-6 mt-12">
-              <h3 className="font-sans text-xs tracking-widest uppercase text-primary-gold border-b border-primary-gold/30 pb-4 mb-8">Non-Vegetarian</h3>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                {nonVeg.map((item, i) => (
-                  <li key={i} className="font-serif text-xl md:text-2xl text-primary-cream/90 hover:text-primary-gold transition-colors">{item}</li>
-                ))}
-              </ul>
+            {/* Static Minimal Image Container */}
+            <div className="z-10 w-1/3 flex justify-end">
+               <div className="w-56 aspect-[4/5] overflow-hidden rounded-sm border border-[#CBAA6A]/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                 <img 
+                   src={chapter.image || assets.cover.refreshments} 
+                   alt={`${chapter.title} featured`}
+                   loading="lazy"
+                   decoding="async"
+                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500" 
+                 />
+               </div>
             </div>
-          )}
-
-          {/* Flat Items list filtered dynamically */}
-          {items && items.length > 0 && typeof items[0] === 'string' && filteredFlatItems.length > 0 && (
-            <div className="space-y-6">
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                {filteredFlatItems.map((item, i) => (
-                  <li key={i} className="font-serif text-xl md:text-2xl text-primary-cream/90 hover:text-primary-gold transition-colors">{item}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* Special case for Biryani */}
-          {title === "Biryani & Rice" && menuData.biryani.biryani && (
-            <>
-              {(activeFilter === 'all' || activeFilter === 'veg' || activeFilter === 'non-veg') && (
-                <div className="space-y-6">
-                  <h3 className="font-sans text-xs tracking-widest uppercase text-primary-gold border-b border-primary-gold/30 pb-4 mb-8">Signature Biryani</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                    {menuData.biryani.biryani
-                      .filter(item => {
-                        if (activeFilter === 'all') return true;
-                        const isVeg = isItemVeg(item);
-                        return activeFilter === 'veg' ? isVeg : !isVeg;
-                      })
-                      .map((item, i) => (
-                        <li key={i} className="font-serif text-xl md:text-2xl text-primary-cream/90 hover:text-primary-gold transition-colors">{item}</li>
-                      ))}
-                  </ul>
-                </div>
-              )}
-              {activeFilter === 'all' && (
-                <div className="space-y-6 mt-12">
-                  <h3 className="font-sans text-xs tracking-widest uppercase text-primary-gold border-b border-primary-gold/30 pb-4 mb-8">Rice Special</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
-                    {menuData.biryani.rice.map((item, i) => (
-                      <li key={i} className="font-serif text-xl md:text-2xl text-primary-cream/90 hover:text-primary-gold transition-colors">{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-            </>
-          )}
-
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default function MenuChapters() {
-  const [diet, setDiet] = useState('all');
-
-  const chapters = [
-    menuData.appetizers,
-    { ...menuData.chaatStation, image: "/assets/menu-1.jpeg" }, // Raj Kachori
-    { ...menuData.mumbaiSpecial, image: "/assets/vadapav.jpg" }, // Vada Pav
-    menuData.snacksKaChaska,
-    { ...menuData.curries, image: "/assets/menu_paneer.png" }, // Paneer / Curries
-    { ...menuData.biryani, image: "/assets/menu_feast.png" }, // Biryani
-    menuData.breads,
-    menuData.indoChinese,
-    menuData.southIndian,
-    { ...menuData.desserts, image: "/assets/menu_street.png" } // Jalebi
-  ];
-
-  const containerRef = useRef(null);
-
-  return (
-    <div ref={containerRef} className="bg-[#0a0908] relative">
-      <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
-      
-      {/* Local Toggle Header */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 flex flex-col md:flex-row items-center justify-between border-b border-[#CBAA6A]/10 pb-8 relative z-20">
-        <div>
-          <h2 className="font-serif text-3xl md:text-5xl text-primary-cream">Breadth of Flavor</h2>
-          <p className="font-sans text-xs uppercase tracking-widest text-primary-gold mt-2">Explore Chapters</p>
-        </div>
-        
-        <div className="flex border border-[#CBAA6A]/30 rounded-full p-1 mt-6 md:mt-0 bg-black/40">
-          {['all', 'veg', 'non-veg'].map((filter) => (
-            <button
-              key={filter}
-              onClick={() => setDiet(filter)}
-              className={`px-6 py-2 text-xs uppercase tracking-widest font-medium rounded-full transition-all duration-300 focus:outline-none ${
-                diet === filter 
-                  ? 'bg-primary-gold text-[#0a0908]' 
-                  : 'text-primary-cream/60 hover:text-primary-cream'
-              }`}
-            >
-              {filter === 'all' ? 'All' : filter === 'veg' ? 'Veg' : 'Non-Veg'}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {chapters.map((chapter, index) => (
-        <Chapter 
-          key={chapter.title} 
-          index={index} 
-          title={chapter.title}
-          description={chapter.description}
-          veg={chapter.veg}
-          nonVeg={chapter.nonVeg}
-          items={chapter.items}
-          image={chapter.image}
-          activeFilter={diet}
-        />
-      ))}
+          </div>
+        );
+      })}
     </div>
   );
-}
+};
+
+const MobileDiscoveryRail = ({ chapters }) => {
+  return (
+    <div className="lg:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 px-6 pb-12 w-full">
+      {chapters.map((rawChapter, index) => {
+        const chapter = useChapterData(rawChapter);
+        if (chapter.totalCount === 0) return null;
+
+        return (
+          <div key={chapter.title} className="w-[85vw] flex-shrink-0 snap-center flex flex-col relative bg-[#0a0908] border border-[#CBAA6A]/10 rounded-xl overflow-hidden p-8 min-h-[400px]">
+            {/* Background Typography */}
+            <BackgroundTypography text={chapter.backgroundText} />
+            
+            <div className="z-10 flex flex-col flex-grow">
+               <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-3">{formatChapter(index)}</span>
+               <h3 className="font-serif text-3xl text-primary-cream mb-8">{chapter.title}</h3>
+               
+               <div className="mb-8 space-y-3">
+                 {chapter.previewItems.map((item, i) => (
+                   <p key={i} className="font-serif text-lg text-primary-cream/90">{item}</p>
+                 ))}
+                 {chapter.totalCount > 3 && (
+                   <p className="font-sans text-[10px] tracking-widest text-primary-gold/60 uppercase mt-4">Most Requested</p>
+                 )}
+               </div>
+
+               <div className="mt-auto pt-6 border-t border-[#CBAA6A]/10 flex items-center justify-between">
+                 <span className="font-sans text-[10px] tracking-widest text-primary-cream/50 uppercase">{chapter.totalCount} Dishes</span>
+                   <Link 
+                     to={`/menu/chapters/${chapter.slug}`}
+                     aria-label={`Explore ${chapter.title} Chapter`}
+                     className="flex items-center justify-center bg-primary-gold/10 text-primary-gold min-w-[48px] min-h-[48px] rounded-full active:scale-95 transition-transform"
+                   >
+                     →
+                   </Link>
+               </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+export default React.memo(function MenuChapters() {
+  const chapters = useMemo(() => [
+    { ...menuData.appetizers, image: assets.menu.street },
+    { ...menuData.chaatStation, image: assets.menu.chaat },
+    { ...menuData.mumbaiSpecial, image: assets.cover.mumbai },
+    { ...menuData.snacksKaChaska, image: assets.menu.minimal },
+    { ...menuData.curries, image: assets.menu.paneer },
+    { ...menuData.biryani, image: assets.menu.feast },
+    { ...menuData.breads, image: assets.cover.north_indian },
+    { ...menuData.indoChinese, image: assets.cover.indo_chinese },
+    { ...menuData.southIndian, image: assets.cover.south_indian },
+    { ...menuData.desserts, image: assets.menu.street }
+  ], []);
+
+  return (
+    <div className="bg-[#050403] relative min-h-screen">
+      {/* Removed bg-texture-paper here because feTurbulence filter over 5000px height kills scroll performance */}
+      
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12 relative z-20">
+        <div className="border-b border-[#CBAA6A]/10 pb-8">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-4 block">
+            The Menu
+          </span>
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-cream">
+            Premium Culinary Index
+          </h2>
+        </div>
+      </div>
+
+      <div className="w-full relative z-10 pb-12 md:pb-24">
+        {/* Mobile Swipe Container */}
+        <MobileDiscoveryRail chapters={chapters} />
+        
+        {/* Desktop Index Container */}
+        <DesktopCulinaryIndex chapters={chapters} />
+      </div>
+    </div>
+  );
+});

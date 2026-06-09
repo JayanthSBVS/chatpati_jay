@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { assets } from '../../data/assetMap';
 
 const cuisines = [
-  { id: 'delhi-street-food', label: "Delhi Street Food", hero: '/assets/delhi_palace_night_opt.webp' },
-  { id: 'north-indian-classics', label: "North Indian Classics", hero: '/assets/footer_palace_opt.webp' },
-  { id: 'mumbai-specialties', label: "Mumbai Specialties", hero: '/assets/human_wall_opt.webp' },
-  { id: 'indo-chinese', label: "Indo-Chinese", hero: '/assets/cover_peacock_body_opt.webp' },
-  { id: 'south-indian-traditions', label: "South Indian Traditions", hero: '/assets/cover_botanical_opt.webp' },
-  { id: 'signature-refreshments', label: "Signature Refreshments", hero: '/assets/cover_arch_frame_opt.webp' },
+  { id: 'delhi-street-food', label: "Delhi Street Food", hero: assets.cover.delhi },
+  { id: 'north-indian-classics', label: "North Indian Classics", hero: assets.cover.north_indian },
+  { id: 'mumbai-specialties', label: "Mumbai Specialties", hero: assets.cover.mumbai },
+  { id: 'indo-chinese', label: "Indo-Chinese", hero: assets.cover.indo_chinese },
+  { id: 'south-indian-traditions', label: "South Indian Traditions", hero: assets.cover.south_indian },
+  { id: 'signature-refreshments', label: "Signature Refreshments", hero: assets.cover.refreshments },
 ];
 
 export default function CuisineJourney() {
@@ -36,7 +37,7 @@ export default function CuisineJourney() {
 
   const handlePreload = (cuisine) => {
     // Preload the page module
-    import('../../../pages/CuisineExperiencePage');
+    import('../../pages/CuisineExperiencePage');
     // Preload the hero image
     const img = new Image();
     img.src = cuisine.hero;
@@ -79,7 +80,7 @@ export default function CuisineJourney() {
             <Link
               key={cuisine.id}
               to={`/menu/${cuisine.id}`}
-              className="cuisine-item group border-b border-primary-cream/10 pb-8 flex items-end justify-between hover:border-primary-gold/50 transition-colors duration-500"
+              className="cuisine-item group border-b border-primary-cream/10 pb-8 flex items-end justify-between hover:border-primary-gold/50 active:scale-[0.98] active:opacity-80 transition-all duration-500"
               onMouseEnter={() => handlePreload(cuisine)}
               onTouchStart={() => handlePreload(cuisine)}
               aria-label={`Explore ${cuisine.label}`}

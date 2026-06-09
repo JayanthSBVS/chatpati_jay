@@ -1,5 +1,4 @@
-import React, { useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useEffect, useRef } from 'react';
 
 const highlights = [
   { value: "150+", label: "Authentic Dishes" },
@@ -9,22 +8,51 @@ const highlights = [
 ];
 
 export default function SignatureHighlights() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const items = section.querySelectorAll('.stats-item');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('stats-item--visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.2, rootMargin: '-50px 0px' }
+    );
+
+    items.forEach((item) => observer.observe(item));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <section className="py-24 md:py-32 bg-[#050403] relative border-y border-[#CBAA6A]/10">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-[#050403] relative border-y border-[#CBAA6A]/10">
+      <style>{`
+        .stats-item {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .stats-item--visible {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      `}</style>
       <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10" ref={ref}>
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center divide-x-0 md:divide-x divide-[#CBAA6A]/10">
           {highlights.map((item, i) => (
-            <motion.div
+            <div
               key={i}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="flex flex-col items-center justify-center"
+              className="stats-item flex flex-col items-center justify-center"
+              style={{ transitionDelay: `${i * 0.15}s` }}
             >
               <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-gold mb-2 md:mb-4">
                 {item.value}
@@ -32,7 +60,7 @@ export default function SignatureHighlights() {
               <p className="font-sans text-[9px] md:text-xs tracking-[0.3em] uppercase text-primary-cream/70">
                 {item.label}
               </p>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

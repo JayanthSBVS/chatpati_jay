@@ -1,3 +1,4 @@
+import { assets } from "./assetMap";
 // cuisinesData.js
 // All dishes mapped directly from menuData.js — no invented items.
 
@@ -6,7 +7,7 @@ export const cuisinesData = [
     id: 'delhi-street-food',
     title: 'Delhi Street Food',
     atmosphere: {
-      heroImage: '/assets/delhi_palace_night_opt.webp',
+      heroImage: assets.cover.delhi,
       story: 'The energy of Chandni Chowk. The aroma of live chaat stations. The flavor of old Delhi traditions.',
       visualMotifs: ['Chandni Chowk', 'Chaat Stalls', 'Street Lights', 'Spice Markets']
     },
@@ -16,7 +17,7 @@ export const cuisinesData = [
         id: 'raj-kachori',
         name: 'Raj Kachori',
         diet: 'veg',
-        image: '/assets/menu_street_opt.webp',
+        image: assets.menu.street,
         story: 'Known as the King of Kachoris — a giant, crispy semolina shell filled with spiced lentils, sweet yogurt, vibrant tamarind chutney, and pomegranate arils.',
         ingredients: ['Semolina Shell', 'Spiced Moong Dal', 'Sweet Yogurt', 'Tamarind Chutney', 'Pomegranate'],
         occasion: 'The interactive appetizer that starts every celebration right.',
@@ -26,7 +27,7 @@ export const cuisinesData = [
         id: 'chole-bhature',
         name: 'Chole Bhature',
         diet: 'veg',
-        image: '/assets/menu_chole_opt.webp',
+        image: assets.menu.chole,
         story: 'Fluffy, golden-fried breads paired with slow-cooked, deeply spiced chickpeas. An Old Delhi classic served at our live counter.',
         ingredients: ['Fermented Dough Bhatura', 'Slow-cooked Chickpeas', 'Whole Spices', 'Green Chilies', 'Pickled Onions'],
         occasion: 'The ultimate comforting brunch centerpiece.',
@@ -41,9 +42,9 @@ export const cuisinesData = [
       bestFor: ['Mehndi', 'Birthday Party', 'Corporate Event']
     },
     recommendedEvents: [
-      { type: 'mehndi', label: 'Mehndi & Sangeet', image: '/assets/event_mehndi_opt.webp', reason: 'The vibrant, fast-paced energy of chaat stations perfectly matches the festive spirit of a Mehndi evening.' },
-      { type: 'corporate', label: 'Corporate Event', image: '/assets/event_corporate_opt.webp', reason: 'Street food live counters break the ice and encourage mingling at corporate gatherings.' },
-      { type: 'birthday', label: 'Birthday Party', image: '/assets/event_family_opt.webp', reason: 'Golgappe stations and chaat counters are universally loved across all age groups.' }
+      { type: 'mehndi', label: 'Mehndi & Sangeet', image: assets.events.mehndi, reason: 'The vibrant, fast-paced energy of chaat stations perfectly matches the festive spirit of a Mehndi evening.' },
+      { type: 'corporate', label: 'Corporate Event', image: assets.events.corporate, reason: 'Street food live counters break the ice and encourage mingling at corporate gatherings.' },
+      { type: 'birthday', label: 'Birthday Party', image: assets.events.family, reason: 'Golgappe stations and chaat counters are universally loved across all age groups.' }
     ],
     dishes: [
       { id: 'dsf-1', name: 'Aloo Papri Chaat', diet: 'veg', description: 'Crispy papri with spiced potatoes, yogurt, and tangy chutneys.' },
@@ -63,13 +64,14 @@ export const cuisinesData = [
       { id: 'dsf-15', name: 'Pindi Chole', diet: 'veg', description: 'Slow-cooked chickpeas with a dark, robust Old Delhi masala.' },
       { id: 'dsf-16', name: 'Daal Makhanwala', diet: 'veg', description: 'Black lentils slow-cooked overnight with butter and cream.' },
       { id: 'dsf-17', name: 'Purani Delhi Jahangiri Chicken', diet: 'non-veg', description: 'A rich Mughal-era preparation slow-cooked with whole spices.' },
-    ]
+    ],
+    chapterKeys: ['chaat-station', 'snacks-ka-chaska']
   },
   {
     id: 'north-indian-classics',
     title: 'North Indian Classics',
     atmosphere: {
-      heroImage: '/assets/footer_palace_opt.webp',
+      heroImage: assets.cover.north_indian,
       story: 'Royal courts. Rich gravies. The art of slow cooking over coal.',
       visualMotifs: ['Mughal Arches', 'Copper Handis', 'Tandoor Fires', 'Velvet Textures']
     },
@@ -79,7 +81,7 @@ export const cuisinesData = [
         id: 'dal-makhani',
         name: 'Dal Makhani',
         diet: 'veg',
-        image: '/assets/menu_paneer_opt.webp',
+        image: assets.menu.paneer,
         story: 'Simmered slowly over low embers for 24 hours. A rich, velvety blend of whole black lentils, fresh cream, and smoked butter that defines North Indian indulgence.',
         ingredients: ['Whole Black Lentils', 'Kidney Beans', 'Fresh Cream', 'White Butter', 'Kasuri Methi'],
         occasion: 'The heart and soul of any premium Indian feast.',
@@ -89,7 +91,7 @@ export const cuisinesData = [
         id: 'butter-chicken',
         name: 'Murgh Makhani',
         diet: 'non-veg',
-        image: '/assets/menu_feast_opt.webp',
+        image: assets.menu.feast,
         story: 'Tender tandoori chicken simmered in a luscious, slightly sweet tomato gravy. A global icon, perfected with our house-smoked spices.',
         ingredients: ['Tandoori Chicken', 'Tomato Gravy', 'Cashew Paste', 'Honey', 'Garam Masala'],
         occasion: 'A universally loved masterpiece that guarantees satisfaction.',
@@ -104,9 +106,9 @@ export const cuisinesData = [
       bestFor: ['Grand Weddings', 'Family Receptions', 'Corporate Galas']
     },
     recommendedEvents: [
-      { type: 'wedding', label: 'Grand Wedding', image: '/assets/event_wedding_opt.webp', reason: 'The cornerstone of every traditional Indian wedding feast — rich, universally loved, and deeply satisfying.' },
-      { type: 'family', label: 'Family Celebration', image: '/assets/event_family_opt.webp', reason: 'Hearty, comforting classics that encourage sharing and conversation across generations.' },
-      { type: 'corporate', label: 'Corporate Gala', image: '/assets/event_corporate_opt.webp', reason: 'Sophisticated gravies and tandoori highlights for a formal, impressive dining experience.' }
+      { type: 'wedding', label: 'Grand Wedding', image: assets.events.wedding, reason: 'The cornerstone of every traditional Indian wedding feast — rich, universally loved, and deeply satisfying.' },
+      { type: 'family', label: 'Family Celebration', image: assets.events.family, reason: 'Hearty, comforting classics that encourage sharing and conversation across generations.' },
+      { type: 'corporate', label: 'Corporate Gala', image: assets.events.corporate, reason: 'Sophisticated gravies and tandoori highlights for a formal, impressive dining experience.' }
     ],
     dishes: [
       { id: 'nic-1', name: 'Paneer Tikka', diet: 'veg', description: 'Marinated cottage cheese cubes grilled in a clay oven to smoky perfection.' },
@@ -138,13 +140,14 @@ export const cuisinesData = [
       { id: 'nic-27', name: 'Butter Chicken', diet: 'non-veg', description: 'Tandoori chicken in a luscious tomato and cream gravy.' },
       { id: 'nic-28', name: 'Lamb Rogan Josh', diet: 'non-veg', description: 'Tender boneless lamb in a Kashmiri chili and aromatic spice gravy.' },
       { id: 'nic-29', name: 'Purani Delhi Chicken Biryani', diet: 'non-veg', description: 'Old Delhi-style dum biryani with whole spices and saffron.' },
-    ]
+    ],
+    chapterKeys: ['appetizers', 'curries', 'biryani-rice', 'tandoor-breads', 'desserts']
   },
   {
     id: 'mumbai-specialties',
     title: 'Mumbai Specialties',
     atmosphere: {
-      heroImage: '/assets/human_wall_opt.webp',
+      heroImage: assets.cover.mumbai,
       story: 'Coastal influences. Local street food culture. Fast urban energy.',
       visualMotifs: ['Chowpatty Beach', 'Marine Drive', 'Irani Cafes', 'Bustling Markets']
     },
@@ -154,7 +157,7 @@ export const cuisinesData = [
         id: 'vada-pav',
         name: 'Bombay Vada Pav',
         diet: 'veg',
-        image: '/assets/menu-1_opt.webp',
+        image: assets.menu.chaat,
         story: 'The heartbeat of Mumbai. A spiced potato dumpling in a crispy besan shell, nestled in a soft pav with our signature dry garlic chutney.',
         ingredients: ['Spiced Potato Mash', 'Besan Batter', 'Soft Ladi Pav', 'Dry Garlic Chutney', 'Fried Green Chili'],
         occasion: 'A quick, deeply satisfying burst of Mumbai flavor.',
@@ -164,7 +167,7 @@ export const cuisinesData = [
         id: 'missal-pao',
         name: 'Missal Pao',
         diet: 'veg',
-        image: '/assets/menu_feast_opt.webp',
+        image: assets.menu.feast,
         story: 'A Maharashtrian institution. Spicy sprouted moth curry topped with farsan, onions, and lemon — served with soft pav.',
         ingredients: ['Sprouted Moth Beans', 'Spicy Kat Gravy', 'Farsan', 'Onions', 'Lemon'],
         occasion: 'Fiery, comforting, and unmistakably Mumbaikar.',
@@ -179,9 +182,9 @@ export const cuisinesData = [
       bestFor: ['Casual Celebrations', 'Birthday Parties', 'Cocktail Parties']
     },
     recommendedEvents: [
-      { type: 'birthday', label: 'Birthday Party', image: '/assets/event_family_opt.webp', reason: 'Fun, universally loved street food classics that bring nostalgia and energy to any celebration.' },
-      { type: 'corporate', label: 'Corporate Mixer', image: '/assets/event_corporate_opt.webp', reason: 'Fast, bold flavors encourage mingling without requiring formal seating.' },
-      { type: 'mehndi', label: 'Mehndi Evening', image: '/assets/event_mehndi_opt.webp', reason: 'The casual, street-food vibe of Mumbai specialties keeps the energy high at festive evenings.' }
+      { type: 'birthday', label: 'Birthday Party', image: assets.events.family, reason: 'Fun, universally loved street food classics that bring nostalgia and energy to any celebration.' },
+      { type: 'corporate', label: 'Corporate Mixer', image: assets.events.corporate, reason: 'Fast, bold flavors encourage mingling without requiring formal seating.' },
+      { type: 'mehndi', label: 'Mehndi Evening', image: assets.events.mehndi, reason: 'The casual, street-food vibe of Mumbai specialties keeps the energy high at festive evenings.' }
     ],
     dishes: [
       { id: 'ms-1', name: 'Bun Samosa', diet: 'veg', description: 'Crispy samosa tucked inside a soft bun with chutneys.' },
@@ -202,13 +205,14 @@ export const cuisinesData = [
       { id: 'ms-16', name: 'Malwani Mutton', diet: 'non-veg', description: 'Slow-cooked mutton in a rich coastal spice base.' },
       { id: 'ms-17', name: 'Malwani Shrimp Curry', diet: 'non-veg', description: 'Shrimp in a tangy coconut-based Malwani gravy.' },
       { id: 'ms-18', name: 'Goan Shrimp Curry', diet: 'non-veg', description: 'Shrimp in a tangy Goan-style coconut and kokum curry.' },
-    ]
+    ],
+    chapterKeys: ['mumbai-special']
   },
   {
     id: 'indo-chinese',
     title: 'Indo-Chinese',
     atmosphere: {
-      heroImage: '/assets/cover_peacock_body_opt.webp',
+      heroImage: assets.cover.indo_chinese,
       story: 'Fiery woks. Sizzling sauces. The perfect marriage of two ancient culinary worlds.',
       visualMotifs: ['Wok Flames', 'Dark Soy Glazes', 'Vibrant Red Chilies', 'Steaming Bowls']
     },
@@ -218,7 +222,7 @@ export const cuisinesData = [
         id: 'gobi-manchurian',
         name: 'Gobi Manchurian',
         diet: 'veg',
-        image: '/assets/menu_fire_opt.webp',
+        image: assets.menu.fire,
         story: 'Crispy cauliflower florets tossed in a sticky, sweet, and fiery Manchurian sauce. The dish that made Indo-Chinese a national obsession.',
         ingredients: ['Cauliflower', 'Dark Soy Sauce', 'Garlic', 'Green Chilies', 'Spring Onions'],
         occasion: 'An addictive starter that sets a playful, energetic tone.',
@@ -228,7 +232,7 @@ export const cuisinesData = [
         id: 'chilli-chicken',
         name: 'Hakka Chilli Chicken',
         diet: 'non-veg',
-        image: '/assets/menu-2_opt.webp',
+        image: assets.menu.dosa,
         story: 'Wok-tossed chicken in a fiery blend of soy, green chilies, and bell peppers. The defining non-veg Indo-Chinese dish.',
         ingredients: ['Diced Chicken', 'Bell Peppers', 'Fresh Ginger', 'Soy Sauce', 'Green Chilies'],
         occasion: 'Bold, spicy, and deeply satisfying.',
@@ -243,9 +247,9 @@ export const cuisinesData = [
       bestFor: ['Birthday Parties', 'Mehndi Evenings', 'Cocktail Parties']
     },
     recommendedEvents: [
-      { type: 'birthday', label: 'Birthday Party', image: '/assets/event_family_opt.webp', reason: 'Universally loved by all age groups — the ultimate crowd-pleaser.' },
-      { type: 'mehndi', label: 'Mehndi & Cocktail', image: '/assets/event_mehndi_opt.webp', reason: 'Spicy, addictive starters pair perfectly with evening drinks and celebrations.' },
-      { type: 'corporate', label: 'Corporate Event', image: '/assets/event_corporate_opt.webp', reason: 'Fast, interactive wok counters create energy and movement at corporate gatherings.' }
+      { type: 'birthday', label: 'Birthday Party', image: assets.events.family, reason: 'Universally loved by all age groups — the ultimate crowd-pleaser.' },
+      { type: 'mehndi', label: 'Mehndi & Cocktail', image: assets.events.mehndi, reason: 'Spicy, addictive starters pair perfectly with evening drinks and celebrations.' },
+      { type: 'corporate', label: 'Corporate Event', image: assets.events.corporate, reason: 'Fast, interactive wok counters create energy and movement at corporate gatherings.' }
     ],
     dishes: [
       { id: 'ic-1', name: 'Chili Paneer', diet: 'veg', description: 'Crispy paneer cubes tossed in soy, chilies, and bell peppers.' },
@@ -275,13 +279,14 @@ export const cuisinesData = [
       { id: 'ic-25', name: 'Shezwan Chicken Fried Rice', diet: 'non-veg', description: 'Spicy Schezwan fried rice with chicken.' },
       { id: 'ic-26', name: 'Thai Chicken Green Curry', diet: 'non-veg', description: 'Chicken in a fragrant Thai green curry.' },
       { id: 'ic-27', name: 'Thai Chicken Red Curry', diet: 'non-veg', description: 'Chicken in a rich, spiced Thai red curry.' },
-    ]
+    ],
+    chapterKeys: ['indo-chinese']
   },
   {
     id: 'south-indian-traditions',
     title: 'South Indian Traditions',
     atmosphere: {
-      heroImage: '/assets/cover_botanical_opt.webp',
+      heroImage: assets.cover.south_indian,
       story: 'The rhythm of temple bells. The scent of roasted curry leaves. The mastery of coastal spices.',
       visualMotifs: ['Temple Architecture', 'Banana Leaf Dining', 'Curry Leaves', 'Brass Vessels']
     },
@@ -291,7 +296,7 @@ export const cuisinesData = [
         id: 'dosa',
         name: 'Ghee Roast Dosa',
         diet: 'veg',
-        image: '/assets/menu_minimal_opt.webp',
+        image: assets.menu.minimal,
         story: 'Wafer-thin, crisp, and folded with precision. Accompanied by our signature trio of hand-ground chutneys — coconut, tomato-onion, and coriander.',
         ingredients: ['Fermented Rice & Lentil Batter', 'Pure Desi Ghee', 'Coconut Chutney', 'Tomato Chutney', 'Sambar'],
         occasion: 'A delicate yet robust experience for breakfast or light dinner.',
@@ -301,7 +306,7 @@ export const cuisinesData = [
         id: 'medu-vada',
         name: 'Medu Vada',
         diet: 'veg',
-        image: '/assets/menu_paneer_opt.webp',
+        image: assets.menu.paneer,
         story: 'Crispy lentil doughnuts with a light, airy interior. Served fresh and hot with sambar and coconut chutney.',
         ingredients: ['Urad Dal Batter', 'Curry Leaves', 'Green Chilies', 'Coconut Chutney', 'Sambar'],
         occasion: 'A comforting South Indian classic that bridges morning and evening.',
@@ -316,21 +321,22 @@ export const cuisinesData = [
       bestFor: ['Morning Ceremonies', 'Corporate Breakfasts', 'Vegetarian Events']
     },
     recommendedEvents: [
-      { type: 'wedding', label: 'Morning Wedding', image: '/assets/event_wedding_opt.webp', reason: 'Elegant and deeply traditional — ideal for pre-wedding rituals and morning ceremonies.' },
-      { type: 'corporate', label: 'Corporate Breakfast', image: '/assets/event_corporate_opt.webp', reason: 'A refined and light start to a day of intense meetings and presentations.' },
-      { type: 'family', label: 'Family Brunch', image: '/assets/event_family_opt.webp', reason: 'A wholesome, universally beloved spread that every generation enjoys.' }
+      { type: 'wedding', label: 'Morning Wedding', image: assets.events.wedding, reason: 'Elegant and deeply traditional — ideal for pre-wedding rituals and morning ceremonies.' },
+      { type: 'corporate', label: 'Corporate Breakfast', image: assets.events.corporate, reason: 'A refined and light start to a day of intense meetings and presentations.' },
+      { type: 'family', label: 'Family Brunch', image: assets.events.family, reason: 'A wholesome, universally beloved spread that every generation enjoys.' }
     ],
     dishes: [
       { id: 'si-1', name: 'Medu Wada', diet: 'veg', description: 'Crispy lentil doughnuts served with coconut chutney and sambar.' },
       { id: 'si-2', name: 'Idli Sambar', diet: 'veg', description: 'Steamed rice cakes with piping hot sambar and chutneys.' },
       { id: 'si-3', name: 'Dosa (Live Station)', diet: 'veg', description: 'Paper-thin crispy crepes made fresh at the live counter.' },
-    ]
+    ],
+    chapterKeys: ['south-indian']
   },
   {
     id: 'signature-refreshments',
     title: 'Signature Refreshments',
     atmosphere: {
-      heroImage: '/assets/cover_arch_frame_opt.webp',
+      heroImage: assets.cover.refreshments,
       story: 'Crafted to refresh, complement, and linger. Indian beverages as an art form.',
       visualMotifs: ['Clay Matkas', 'Saffron Strands', 'Fresh Mint', 'Rose Petals']
     },
@@ -340,7 +346,7 @@ export const cuisinesData = [
         id: 'mango-lassi',
         name: 'Mango Lassi',
         diet: 'veg',
-        image: '/assets/mango_lassi_1780917929199_opt.webp',
+        image: assets.drinks.mango_lassi,
         story: 'Thick, sweet, and deeply satisfying. Made with ripe Alphonso mangoes blended with fresh yogurt, cardamom, and topped with crushed pistachios.',
         ingredients: ['Alphonso Mango Pulp', 'Fresh Yogurt', 'Cardamom', 'Honey', 'Crushed Pistachios'],
         occasion: 'The quintessential Indian summer drink that belongs at every celebration.',
@@ -350,7 +356,7 @@ export const cuisinesData = [
         id: 'thandai',
         name: 'Thandai',
         diet: 'veg',
-        image: '/assets/thandai_1780918002624_opt.webp',
+        image: assets.drinks.thandai,
         story: 'A royal, festive cooler steeped in tradition. Made with almonds, fennel seeds, rose petals, and saffron — traditionally served during Holi and festive celebrations.',
         ingredients: ['Almonds', 'Fennel Seeds', 'Rose Petals', 'Saffron', 'Whole Milk'],
         occasion: 'A luxurious, fragrant drink with deep cultural roots.',
@@ -365,31 +371,32 @@ export const cuisinesData = [
       bestFor: ['All Events', 'Welcome Drinks', 'Festive Occasions']
     },
     recommendedEvents: [
-      { type: 'wedding', label: 'Wedding Reception', image: '/assets/event_wedding_opt.webp', reason: 'Signature drinks serve as elegant welcome refreshments for arriving guests.' },
-      { type: 'mehndi', label: 'Mehndi Evening', image: '/assets/event_mehndi_opt.webp', reason: 'Festive, colorful beverages that match the energy of a Mehndi celebration.' },
-      { type: 'corporate', label: 'Corporate Brunch', image: '/assets/event_corporate_opt.webp', reason: 'Sophisticated, non-alcoholic options for professional daytime gatherings.' }
+      { type: 'wedding', label: 'Wedding Reception', image: assets.events.wedding, reason: 'Signature drinks serve as elegant welcome refreshments for arriving guests.' },
+      { type: 'mehndi', label: 'Mehndi Evening', image: assets.events.mehndi, reason: 'Festive, colorful beverages that match the energy of a Mehndi celebration.' },
+      { type: 'corporate', label: 'Corporate Brunch', image: assets.events.corporate, reason: 'Sophisticated, non-alcoholic options for professional daytime gatherings.' }
     ],
     dishes: [
-      { id: 'sr-1', name: 'Mango Lassi', diet: 'veg', description: 'Thick, sweet Alphonso mango lassi with cardamom and pistachios.', image: '/assets/mango_lassi_1780917929199_opt.webp' },
-      { id: 'sr-2', name: 'Sweet Lassi', diet: 'veg', description: 'Creamy yogurt drink topped with a layer of fresh malai.', image: '/assets/sweet_lassi_1780917946995_opt.webp' },
-      { id: 'sr-3', name: 'Salt Lassi', diet: 'veg', description: 'Frothy, savory lassi with roasted cumin and black salt.', image: '/assets/salt_lassi_1780917969166_opt.webp' },
-      { id: 'sr-4', name: 'Aam Ka Panna', diet: 'veg', description: 'Tangy raw mango cooler with cumin, black salt, and mint.', image: '/assets/aam_ka_panna_1780917981215_opt.webp' },
-      { id: 'sr-5', name: 'Thandai', diet: 'veg', description: 'Royal almond and saffron cooler with rose petals and fennel.', image: '/assets/thandai_1780918002624_opt.webp' },
-    ]
+      { id: 'sr-1', name: 'Mango Lassi', diet: 'veg', description: 'Thick, sweet Alphonso mango lassi with cardamom and pistachios.', image: assets.drinks.mango_lassi },
+      { id: 'sr-2', name: 'Sweet Lassi', diet: 'veg', description: 'Creamy yogurt drink topped with a layer of fresh malai.', image: assets.drinks.sweet_lassi },
+      { id: 'sr-3', name: 'Salt Lassi', diet: 'veg', description: 'Frothy, savory lassi with roasted cumin and black salt.', image: assets.drinks.salt_lassi },
+      { id: 'sr-4', name: 'Aam Ka Panna', diet: 'veg', description: 'Tangy raw mango cooler with cumin, black salt, and mint.', image: assets.drinks.aam_panna },
+      { id: 'sr-5', name: 'Thandai', diet: 'veg', description: 'Royal almond and saffron cooler with rose petals and fennel.', image: assets.drinks.thandai },
+    ],
+    chapterKeys: ['drinks']
   }
 ];
 
 // Chapter data mapping — slug to menuData key
 export const chaptersMap = {
-  'appetizers': { title: 'Appetizers', description: 'Hand-crafted starters designed to awaken the palate.', menuKey: 'appetizers', bestFor: ['Weddings', 'Corporate Events', 'All Celebrations'] },
-  'chaat-station': { title: 'Chaat Station', description: 'Vibrant, tangy, and unapologetically bold. Street food elevated to an art form.', menuKey: 'chaatStation', bestFor: ['Mehndi', 'Birthday Parties', 'Casual Celebrations'] },
-  'mumbai-special': { title: 'Mumbai Special', description: 'Authentic flavors from the streets of Maximum City.', menuKey: 'mumbaiSpecial', bestFor: ['Birthday Parties', 'Casual Gatherings', 'Cocktail Parties'] },
-  'snacks-ka-chaska': { title: 'Snacks Ka Chaska', description: 'Irresistible bites combining tradition with a modern twist.', menuKey: 'snacksKaChaska', bestFor: ['Evening Snacks', 'Cocktail Hours', 'Informal Gatherings'] },
-  'curries': { title: 'Curries', description: 'Slow-cooked mastery. Rich, layered, and steeped in heritage.', menuKey: 'curries', bestFor: ['Weddings', 'Grand Receptions', 'Family Dinners'] },
-  'biryani-rice': { title: 'Biryani & Rice', description: 'Aromatic basmati, perfectly spiced, sealed and steamed to perfection.', menuKey: 'biryani', bestFor: ['Weddings', 'Grand Receptions', 'All Events'] },
-  'tandoor-breads': { title: 'Tandoor Breads', description: 'Fresh from the clay oven — the perfect accompaniment to our curries.', menuKey: 'breads', bestFor: ['All Events'] },
-  'indo-chinese': { title: 'Indo-Chinese', description: 'The fiery, wok-tossed fusion that defined a culinary generation.', menuKey: 'indoChinese', bestFor: ['Birthday Parties', 'Mehndi', 'Cocktail Parties'] },
-  'south-indian': { title: 'South Indian', description: 'Crispy, comforting classics from the southern states.', menuKey: 'southIndian', bestFor: ['Morning Ceremonies', 'Corporate Breakfasts'] },
-  'desserts': { title: 'Desserts', description: 'The grand finale. Decadent, sweet, and unforgettable.', menuKey: 'desserts', bestFor: ['All Events'] },
-  'drinks': { title: 'Signature Drinks', description: 'Refreshing beverages crafted to complement the bold flavors of our feast.', menuKey: 'drinks', bestFor: ['All Events', 'Welcome Drinks'] },
+  'appetizers': { title: 'Appetizers', description: 'Hand-crafted starters designed to awaken the palate.', menuKey: 'appetizers', bestFor: ['Weddings', 'Corporate Events', 'All Celebrations'], parent: 'north-indian-classics' },
+  'chaat-station': { title: 'Chaat Station', description: 'Vibrant, tangy, and unapologetically bold. Street food elevated to an art form.', menuKey: 'chaatStation', bestFor: ['Mehndi', 'Birthday Parties', 'Casual Celebrations'], parent: 'delhi-street-food' },
+  'mumbai-special': { title: 'Mumbai Special', description: 'Authentic flavors from the streets of Maximum City.', menuKey: 'mumbaiSpecial', bestFor: ['Birthday Parties', 'Casual Gatherings', 'Cocktail Parties'], parent: 'mumbai-specialties' },
+  'snacks-ka-chaska': { title: 'Snacks Ka Chaska', description: 'Irresistible bites combining tradition with a modern twist.', menuKey: 'snacksKaChaska', bestFor: ['Evening Snacks', 'Cocktail Hours', 'Informal Gatherings'], parent: 'delhi-street-food' },
+  'curries': { title: 'Curries', description: 'Slow-cooked mastery. Rich, layered, and steeped in heritage.', menuKey: 'curries', bestFor: ['Weddings', 'Grand Receptions', 'Family Dinners'], parent: 'north-indian-classics' },
+  'biryani-rice': { title: 'Biryani & Rice', description: 'Aromatic basmati, perfectly spiced, sealed and steamed to perfection.', menuKey: 'biryani', bestFor: ['Weddings', 'Grand Receptions', 'All Events'], parent: 'north-indian-classics' },
+  'tandoor-breads': { title: 'Tandoor Breads', description: 'Fresh from the clay oven — the perfect accompaniment to our curries.', menuKey: 'breads', bestFor: ['All Events'], parent: 'north-indian-classics' },
+  'indo-chinese': { title: 'Indo-Chinese', description: 'The fiery, wok-tossed fusion that defined a culinary generation.', menuKey: 'indoChinese', bestFor: ['Birthday Parties', 'Mehndi', 'Cocktail Parties'], parent: 'indo-chinese' },
+  'south-indian': { title: 'South Indian', description: 'Crispy, comforting classics from the southern states.', menuKey: 'southIndian', bestFor: ['Morning Ceremonies', 'Corporate Breakfasts'], parent: 'south-indian-traditions' },
+  'desserts': { title: 'Desserts', description: 'The grand finale. Decadent, sweet, and unforgettable.', menuKey: 'desserts', bestFor: ['All Events'], parent: 'north-indian-classics' },
+  'drinks': { title: 'Signature Drinks', description: 'Refreshing beverages crafted to complement the bold flavors of our feast.', menuKey: 'drinks', bestFor: ['All Events', 'Welcome Drinks'], parent: 'signature-refreshments' },
 };

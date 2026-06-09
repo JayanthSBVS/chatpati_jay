@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
@@ -53,6 +53,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/packages" element={<Packages />} />
+
+          {/* Fallback route */}
+          <Route path="*" element={<Navigate to="/menu" replace />} />
         </Routes>
       </Layout>
     </BrowserRouter>

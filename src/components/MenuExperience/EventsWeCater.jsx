@@ -1,4 +1,5 @@
 import React from 'react';
+import { assets } from '../../data/assetMap';
 
 const events = [
   {
@@ -6,35 +7,35 @@ const events = [
     experience: "Royal Buffet Setup",
     station: "Live Chaat & Dosa Counters",
     dishes: "Purani Delhi Jahangiri Chicken, Dum Aloo",
-    image: "/assets/event_wedding_opt.webp"
+    image: assets.events.wedding
   },
   {
     title: "Mehndi & Sangeet",
     experience: "Vibrant Street Food Vibe",
     station: "Raj Kachori & Jalebi Station",
     dishes: "Aloo Tikki, Malai Soya Chaap",
-    image: "/assets/event_mehndi_opt.webp"
+    image: assets.events.mehndi
   },
   {
     title: "Corporate Gala",
     experience: "Sophisticated Plated or Buffet",
     station: "Paneer Taco Live Grill",
     dishes: "Lamb Chops, Malai Kofta",
-    image: "/assets/event_corporate_opt.webp"
+    image: assets.events.corporate
   },
   {
     title: "Family Celebration",
     experience: "Fun & Interactive Dining",
     station: "Chole Bhature Stand",
     dishes: "Veg Hakka Noodles, Chicken Lollypop",
-    image: "/assets/event_family_opt.webp"
+    image: assets.events.family
   },
   {
     title: "Holiday Party",
     experience: "Warm Winter Feast",
     station: "Tawa Kathal Sukkha",
     dishes: "Sarso Ka Saag, Butter Chicken",
-    image: "/assets/menu_feast_opt.webp"
+    image: assets.menu.feast
   }
 ];
 
@@ -100,7 +101,7 @@ export default function EventsWeCater() {
             </div>
 
             <div className="relative z-10 mt-8">
-              <button className="font-sans text-xs tracking-widest uppercase text-primary-cream hover:text-primary-gold transition-colors flex items-center gap-4 py-4 w-full md:w-auto">
+              <button className="font-sans text-xs tracking-widest uppercase text-primary-cream hover:text-primary-gold active:scale-[0.98] active:opacity-80 transition-all duration-100 flex items-center gap-4 py-4 w-full md:w-auto">
                 Inquire <div className="w-8 h-[1px] bg-current" />
               </button>
             </div>

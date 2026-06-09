@@ -19,7 +19,7 @@ export default function PremiumSegmentedControl({
           <button
             key={option.id}
             onClick={() => onChange(option.id)}
-            className={`relative px-6 py-2 text-sm font-medium rounded-full transition-colors duration-300 focus:outline-none ${
+            className={`relative px-6 py-2 text-sm font-medium rounded-full transition-all duration-300 focus:outline-none active:scale-[0.98] active:opacity-80 ${
               isActive ? 'text-black' : 'text-[#888888] hover:text-[#dddddd]'
             }`}
             style={{ WebkitTapHighlightColor: 'transparent' }}

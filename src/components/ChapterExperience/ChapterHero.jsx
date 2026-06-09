@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundTypography from '../ui/BackgroundTypography';
 
 // Gradient accent colors per chapter for visual differentiation
 const chapterAccents = {
@@ -22,6 +23,9 @@ export default function ChapterHero({ title, description, chapterId }) {
     <section className={`relative min-h-[45vh] flex items-end bg-gradient-to-b ${accent} to-[#0a0908] overflow-hidden`}>
       {/* Subtle texture */}
       <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
+
+      {/* Background Typography */}
+      <BackgroundTypography text={title} />
 
       {/* Gold rule at top */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary-gold/40 to-transparent" />

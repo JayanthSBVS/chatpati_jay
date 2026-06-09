@@ -1,35 +1,36 @@
 import React, { useEffect, useRef } from 'react';
+import { assets } from '../../data/assetMap';
 
 const stations = [
   {
     name: "Paneer Taco",
     description: "A modern fusion of Mexican street style and robust Indian tandoori flavors. Smoked paneer, zesty chutneys, and crisp shells.",
     tag: "Fusion Grill",
-    image: "/assets/menu_paneer_opt.webp"
+    image: assets.menu.paneer
   },
   {
     name: "Raj Kachori",
     description: "The King of Chaats. A giant, crispy orb filled with spiced lentils, yogurt, sweet dates, and vibrant tamarind chutney.",
     tag: "Heritage Chaat",
-    image: "/assets/menu-1_opt.webp"
+    image: assets.menu.chaat
   },
   {
     name: "Chole Bhature",
     description: "Puffed, golden-fried breads served alongside rich, deeply spiced chickpea curry. The ultimate Delhi street comfort.",
     tag: "Delhi Classic",
-    image: "/assets/chole_bhature.jpg"
+    image: assets.menu.chole
   },
   {
     name: "Dosa Station",
     description: "Paper-thin, crispy rice crepes made fresh on the griddle. Served with coconut chutney and piping hot sambar.",
     tag: "South Indian",
-    image: "/assets/menu-2_opt.webp"
+    image: assets.menu.dosa
   },
   {
     name: "Jalebi",
     description: "Swirls of fermented batter fried to a crisp and soaked in saffron syrup. Best enjoyed piping hot.",
     tag: "Sweet Ending",
-    image: "/assets/menu_street_opt.webp"
+    image: assets.menu.street
   }
 ];
 
@@ -62,7 +63,7 @@ export default function LiveStations() {
   return (
     <section
       ref={sectionRef}
-      className="py-32 bg-[#050403] relative border-t border-[#CBAA6A]/10"
+      className="py-16 md:py-32 bg-[#050403] relative border-t border-[#CBAA6A]/10"
     >
       <style>{`
         .station-item {
@@ -83,7 +84,7 @@ export default function LiveStations() {
       <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-32">
+        <div className="text-center mb-16 md:mb-32">
           <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-4">
             Interactive Culinary Theater
           </span>

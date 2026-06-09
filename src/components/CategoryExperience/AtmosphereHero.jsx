@@ -1,4 +1,5 @@
 import React from 'react';
+import BackgroundTypography from '../ui/BackgroundTypography';
 
 export default function AtmosphereHero({ title, atmosphere }) {
   return (
@@ -12,6 +13,9 @@ export default function AtmosphereHero({ title, atmosphere }) {
       {/* Vignette Overlay */}
       <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#0a0908] via-[#0a0908]/50 to-transparent" />
       
+      {/* Background Typography */}
+      <BackgroundTypography text={title} />
+
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto mt-20">
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-primary-cream mb-8 tracking-wide">

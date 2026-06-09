@@ -1,35 +1,36 @@
 import React from 'react';
+import { assets } from '../../data/assetMap';
 
 const drinks = [
   {
     name: "Mango Lassi",
     ingredients: "Alphonso Mango, Sweet Yogurt, Cardamom, Pistachio",
     description: "The classic tropical cooler. Rich, thick, and perfectly balanced.",
-    image: "/assets/mango_lassi_1780917929199_opt.webp"
+    image: assets.drinks.mango_lassi
   },
   {
     name: "Sweet Lassi",
     ingredients: "Fresh Yogurt, Malai, Saffron Strands, Rose Water",
     description: "A decadent, creamy staple topped with a rich layer of fresh malai.",
-    image: "/assets/sweet_lassi_1780917946995_opt.webp"
+    image: assets.drinks.sweet_lassi
   },
   {
     name: "Salt Lassi",
     ingredients: "Whipped Yogurt, Roasted Cumin, Black Salt, Fresh Mint",
     description: "Frothy, savory, and immensely refreshing to cleanse the palate.",
-    image: "/assets/salt_lassi_1780917969166_opt.webp"
+    image: assets.drinks.salt_lassi
   },
   {
     name: "Aam Ka Panna",
     ingredients: "Green Mango, Roasted Cumin, Black Salt, Mint",
     description: "A tangy, refreshing summer essential that awakens the senses.",
-    image: "/assets/aam_ka_panna_1780917981215_opt.webp"
+    image: assets.drinks.aam_panna
   },
   {
     name: "Thandai",
     ingredients: "Almonds, Saffron, Rose Petals, Fennel, Milk",
     description: "A royal, festive cooler steeped in tradition and luxury.",
-    image: "/assets/thandai_1780918002624_opt.webp"
+    image: assets.drinks.thandai
   }
 ];
 
