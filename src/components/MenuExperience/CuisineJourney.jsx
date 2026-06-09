@@ -44,7 +44,7 @@ export default function CuisineJourney() {
   };
 
   return (
-    <section className="py-32 relative bg-[#0a0908] overflow-hidden">
+    <section className="py-32 relative bg-surface-paper overflow-hidden">
       <style>{`
         .cuisine-item {
           opacity: 0;
@@ -62,16 +62,16 @@ export default function CuisineJourney() {
         .cuisine-item:nth-child(6) { transition-delay: 0.32s; }
       `}</style>
 
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_right,_rgba(203,170,106,0.05)_0%,_transparent_70%)] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_right,_var(--color-border-subtle)_0%,_transparent_70%)] pointer-events-none" />
 
       <div ref={containerRef} className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-20">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-4">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-4">
             The Breadth of Flavor
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl text-primary-cream">
+          <h2 className="font-serif text-4xl md:text-5xl text-content-primary">
             A Journey Across <br />
-            <span className="italic text-primary-gold font-light">Subcontinental Tastes</span>
+            <span className="italic text-accent-gold font-light">Subcontinental Tastes</span>
           </h2>
         </div>
 
@@ -85,10 +85,10 @@ export default function CuisineJourney() {
               onTouchStart={() => handlePreload(cuisine)}
               aria-label={`Explore ${cuisine.label}`}
             >
-              <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-primary-cream/40 group-hover:text-primary-cream transition-colors duration-500">
+              <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-content-secondary group-hover:text-content-primary transition-colors duration-500">
                 {cuisine.label}
               </h3>
-              <span className="font-sans text-xs tracking-widest text-primary-gold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
+              <span className="font-sans text-xs tracking-widest text-accent-gold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
                 Explore
               </span>
             </Link>

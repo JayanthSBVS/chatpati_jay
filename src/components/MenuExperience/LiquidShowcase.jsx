@@ -36,14 +36,14 @@ const drinks = [
 
 export default function LiquidShowcase() {
   return (
-    <section className="py-24 md:py-32 bg-[#050403] relative overflow-hidden border-t border-[#CBAA6A]/10">
+    <section className="py-24 md:py-32 bg-surface-base relative overflow-hidden border-t border-border-subtle">
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="mb-24 text-center">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-4">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-4">
             Signature Beverages
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-primary-cream">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-7xl text-content-primary">
             The Liquid Showcase
           </h2>
         </div>
@@ -55,7 +55,7 @@ export default function LiquidShowcase() {
               <div key={i} className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24`}>
 
                 {/* Image */}
-                <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-[#CBAA6A]/10 shadow-2xl">
+                <div className="w-full md:w-1/2 aspect-[4/5] rounded-[2rem] overflow-hidden relative border border-border-subtle shadow-2xl bg-surface-accent">
                   <img
                     src={drink.image}
                     alt={drink.name}
@@ -63,19 +63,19 @@ export default function LiquidShowcase() {
                     decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80" />
                 </div>
 
                 {/* Content */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
-                  <h4 className="font-serif text-4xl md:text-6xl text-primary-cream mb-6">
+                  <h4 className="font-serif text-4xl md:text-6xl text-content-primary mb-6">
                     {drink.name}
                   </h4>
                   <div className="mb-8">
-                    <span className="font-sans text-[9px] tracking-widest uppercase text-primary-cream/40 block mb-2">Ingredients</span>
-                    <p className="font-serif text-xl md:text-2xl text-primary-gold leading-relaxed">{drink.ingredients}</p>
+                    <span className="font-sans text-[9px] tracking-widest uppercase text-content-secondary block mb-2">Ingredients</span>
+                    <p className="font-serif text-xl md:text-2xl text-accent-gold leading-relaxed">{drink.ingredients}</p>
                   </div>
-                  <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md font-light">
+                  <p className="font-sans text-sm md:text-base text-content-secondary leading-relaxed max-w-md font-light">
                     {drink.description}
                   </p>
                 </div>

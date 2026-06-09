@@ -24,13 +24,13 @@ export default function StickyJourneyNavigator() {
   };
 
   return (
-    <div className="sticky top-0 z-40 w-full bg-[#0a0908]/85 backdrop-blur-md border-b border-[#CBAA6A]/10 overflow-x-auto hide-scrollbar">
+    <div className="sticky top-0 z-40 w-full bg-surface-base/85 backdrop-blur-md border-b border-border-subtle overflow-x-auto hide-scrollbar">
       <div className="flex items-center gap-6 px-6 py-4 min-w-max">
         {sections.map((section) => (
           <button
             key={section.id}
             onClick={() => scrollTo(section.id)}
-            className="text-sm font-sans font-medium text-primary-cream/60 hover:text-primary-gold transition-colors whitespace-nowrap tracking-wider"
+            className="text-sm font-sans font-medium text-content-secondary hover:text-accent-gold transition-colors whitespace-nowrap tracking-wider"
           >
             {section.label}
           </button>

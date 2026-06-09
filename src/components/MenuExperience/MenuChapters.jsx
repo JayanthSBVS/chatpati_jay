@@ -66,7 +66,7 @@ const DesktopCulinaryIndex = ({ chapters }) => {
         return (
           <div 
             key={chapter.title} 
-            className="relative flex items-center justify-between py-16 border-b border-[#CBAA6A]/10 group"
+            className="relative flex items-center justify-between py-16 border-b border-border-subtle group"
             style={{ contain: 'content' }}
           >
             {/* Background Typography */}
@@ -74,28 +74,28 @@ const DesktopCulinaryIndex = ({ chapters }) => {
 
             {/* Content Container */}
             <div className="flex flex-col z-10 w-2/3">
-              <span className="font-sans text-xs tracking-[0.4em] uppercase text-primary-gold mb-4 block">
+              <span className="font-sans text-xs tracking-[0.4em] uppercase text-accent-gold mb-4 block">
                 {formatChapter(index)}
               </span>
-              <h3 className="font-serif text-5xl text-primary-cream mb-8">
+              <h3 className="font-serif text-5xl text-content-primary mb-8">
                 {chapter.title}
               </h3>
               
               <div className="mb-8 space-y-3">
                 {chapter.previewItems.map((item, i) => (
-                  <p key={i} className="font-serif text-xl text-primary-cream/80">{item}</p>
+                  <p key={i} className="font-serif text-xl text-content-secondary">{item}</p>
                 ))}
                 {chapter.totalCount > 3 && (
-                   <p className="font-sans text-[10px] tracking-widest text-primary-gold/60 uppercase mt-4">Most Requested</p>
+                   <p className="font-sans text-[10px] tracking-widest text-accent-gold/60 uppercase mt-4">Most Requested</p>
                 )}
               </div>
 
               <div className="flex items-center gap-8">
-                 <span className="font-sans text-xs tracking-widest text-primary-cream/50 uppercase">{chapter.totalCount} Dishes</span>
+                 <span className="font-sans text-xs tracking-widest text-content-secondary uppercase">{chapter.totalCount} Dishes</span>
                    <Link 
                      to={`/menu/chapters/${chapter.slug}`}
                      aria-label={`Explore ${chapter.title} Chapter`}
-                     className="font-sans text-xs tracking-widest uppercase text-primary-gold border-b border-primary-gold/30 hover:border-primary-gold pb-1 transition-colors flex items-center group/link"
+                     className="font-sans text-xs tracking-widest uppercase text-accent-gold border-b border-border-subtle hover:border-accent-gold pb-1 transition-colors flex items-center group/link"
                    >
                      Explore <span className="ml-2 transform group-hover/link:translate-x-1 transition-transform">→</span>
                    </Link>
@@ -104,7 +104,7 @@ const DesktopCulinaryIndex = ({ chapters }) => {
 
             {/* Static Minimal Image Container */}
             <div className="z-10 w-1/3 flex justify-end">
-               <div className="w-56 aspect-[4/5] overflow-hidden rounded-sm border border-[#CBAA6A]/10 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+               <div className="w-56 aspect-[4/5] overflow-hidden rounded-sm border border-border-subtle opacity-80 group-hover:opacity-100 transition-opacity duration-500">
                  <img 
                    src={chapter.image || assets.cover.refreshments} 
                    alt={`${chapter.title} featured`}
@@ -123,35 +123,35 @@ const DesktopCulinaryIndex = ({ chapters }) => {
 
 const MobileDiscoveryRail = ({ chapters }) => {
   return (
-    <div className="lg:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 px-6 pb-12 w-full">
+    <div className="lg:hidden flex overflow-x-auto snap-x snap-mandatory hide-scrollbar gap-6 px-6 pb-6 w-full">
       {chapters.map((rawChapter, index) => {
         const chapter = useChapterData(rawChapter);
         if (chapter.totalCount === 0) return null;
 
         return (
-          <div key={chapter.title} className="w-[85vw] flex-shrink-0 snap-center flex flex-col relative bg-[#0a0908] border border-[#CBAA6A]/10 rounded-xl overflow-hidden p-8 min-h-[400px]">
+          <div key={chapter.title} className="w-[85vw] flex-shrink-0 snap-center flex flex-col relative bg-surface-card border border-border-subtle rounded-xl overflow-hidden p-8 min-h-[400px]">
             {/* Background Typography */}
             <BackgroundTypography text={chapter.backgroundText} />
             
             <div className="z-10 flex flex-col flex-grow">
-               <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-3">{formatChapter(index)}</span>
-               <h3 className="font-serif text-3xl text-primary-cream mb-8">{chapter.title}</h3>
+               <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold mb-3">{formatChapter(index)}</span>
+               <h3 className="font-serif text-3xl text-content-primary mb-8">{chapter.title}</h3>
                
                <div className="mb-8 space-y-3">
                  {chapter.previewItems.map((item, i) => (
-                   <p key={i} className="font-serif text-lg text-primary-cream/90">{item}</p>
+                   <p key={i} className="font-serif text-lg text-content-secondary">{item}</p>
                  ))}
                  {chapter.totalCount > 3 && (
-                   <p className="font-sans text-[10px] tracking-widest text-primary-gold/60 uppercase mt-4">Most Requested</p>
+                   <p className="font-sans text-[10px] tracking-widest text-accent-gold/60 uppercase mt-4">Most Requested</p>
                  )}
                </div>
 
-               <div className="mt-auto pt-6 border-t border-[#CBAA6A]/10 flex items-center justify-between">
-                 <span className="font-sans text-[10px] tracking-widest text-primary-cream/50 uppercase">{chapter.totalCount} Dishes</span>
+               <div className="mt-auto pt-6 border-t border-border-subtle flex items-center justify-between">
+                 <span className="font-sans text-[10px] tracking-widest text-content-secondary uppercase">{chapter.totalCount} Dishes</span>
                    <Link 
                      to={`/menu/chapters/${chapter.slug}`}
                      aria-label={`Explore ${chapter.title} Chapter`}
-                     className="flex items-center justify-center bg-primary-gold/10 text-primary-gold min-w-[48px] min-h-[48px] rounded-full active:scale-95 transition-transform"
+                     className="flex items-center justify-center bg-accent-gold/10 text-accent-gold min-w-[48px] min-h-[48px] rounded-full active:scale-95 transition-transform"
                    >
                      →
                    </Link>
@@ -179,22 +179,22 @@ export default React.memo(function MenuChapters() {
   ], []);
 
   return (
-    <div className="bg-[#050403] relative min-h-screen">
+    <div className="bg-surface-base relative min-h-screen">
       {/* Removed bg-texture-paper here because feTurbulence filter over 5000px height kills scroll performance */}
       
       {/* Header */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-16 md:pt-24 pb-12 relative z-20">
-        <div className="border-b border-[#CBAA6A]/10 pb-8">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-4 block">
+        <div className="border-b border-border-subtle pb-8">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold mb-4 block">
             The Menu
           </span>
-          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-cream">
+          <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl text-content-primary">
             Premium Culinary Index
           </h2>
         </div>
       </div>
 
-      <div className="w-full relative z-10 pb-12 md:pb-24">
+      <div className="w-full relative z-10 pb-0 md:pb-24">
         {/* Mobile Swipe Container */}
         <MobileDiscoveryRail chapters={chapters} />
         

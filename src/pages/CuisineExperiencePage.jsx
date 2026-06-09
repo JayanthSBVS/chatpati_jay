@@ -20,7 +20,7 @@ export default function CuisineExperiencePage() {
   if (!cuisine) return <Navigate to="/menu" replace />;
 
   return (
-    <div className="min-h-screen bg-[#0a0908] text-primary-cream relative">
+    <div className="theme-light min-h-screen bg-surface-base text-content-primary relative">
 
       {/* Back to Menu Navigation inside Cuisine page (Task 2B) */}
       <div className="absolute top-24 left-6 md:left-12 z-30">

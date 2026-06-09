@@ -25,13 +25,13 @@ export default function CateringUpsell({ bestFor }) {
   if (!bestFor || bestFor.length === 0) return null;
 
   return (
-    <section className="py-20 bg-[#050403] border-t border-[#CBAA6A]/10">
+    <section className="py-20 bg-surface-paper border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-10">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-3">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-3">
             Ideal For
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl text-primary-cream">
+          <h2 className="font-serif text-3xl md:text-4xl text-content-primary">
             Perfect For These Events
           </h2>
         </div>
@@ -42,14 +42,14 @@ export default function CateringUpsell({ bestFor }) {
             return (
               <div
                 key={i}
-                className="group relative flex items-center gap-3 border border-[#CBAA6A]/20 rounded-xl px-5 py-4 bg-black/30 hover:border-primary-gold/50 transition-colors duration-300 cursor-default"
+                className="group relative flex items-center gap-3 border border-border-subtle rounded-xl px-5 py-4 bg-surface-card hover:border-accent-gold/50 transition-colors duration-300 cursor-default"
               >
                 {img && (
                   <div className="w-8 h-8 rounded-full overflow-hidden shrink-0">
                     <img src={img} alt={event} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                   </div>
                 )}
-                <span className="font-sans text-sm text-primary-cream group-hover:text-primary-gold transition-colors duration-300">
+                <span className="font-sans text-sm text-content-primary group-hover:text-accent-gold transition-colors duration-300">
                   {event}
                 </span>
               </div>
@@ -57,14 +57,14 @@ export default function CateringUpsell({ bestFor }) {
           })}
         </div>
 
-        <div className="mt-12 pt-8 border-t border-[#CBAA6A]/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div className="mt-12 pt-8 border-t border-border-subtle flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div>
-            <p className="font-serif text-xl text-primary-cream mb-1">Planning an event?</p>
-            <p className="font-sans text-sm text-primary-cream/50">Get a customized menu built around your specific requirements.</p>
+            <p className="font-serif text-xl text-content-primary mb-1">Planning an event?</p>
+            <p className="font-sans text-sm text-content-secondary">Get a customized menu built around your specific requirements.</p>
           </div>
           <a
             href="/contact"
-            className="font-sans text-xs tracking-widest uppercase px-8 py-4 bg-primary-gold text-[#050403] hover:bg-primary-cream transition-colors duration-300 whitespace-nowrap"
+            className="font-sans text-xs tracking-widest uppercase px-8 py-4 bg-accent-gold text-surface-base hover:bg-content-primary hover:text-surface-base transition-colors duration-300 whitespace-nowrap"
           >
             Book Catering
           </a>

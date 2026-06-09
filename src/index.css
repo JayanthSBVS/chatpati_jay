@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  /* Primitive Tokens (legacy fallback & palette logic) */
   --color-primary-cream: #F5EFEB;
   --color-primary-ivory: #FAF7F2;
   --color-primary-gold: #CBAA6A;
@@ -16,12 +17,53 @@
 
   --font-serif: "Cormorant Garamond", serif;
   --font-sans: "Inter", sans-serif;
+
+  /* Semantic Tokens for Theme Switching */
+  --color-surface-base: var(--surface-base);
+  --color-surface-paper: var(--surface-paper);
+  --color-surface-card: var(--surface-card);
+  --color-surface-accent: var(--surface-accent);
+
+  --color-content-primary: var(--content-primary);
+  --color-content-secondary: var(--content-secondary);
+  --color-content-ghost: var(--content-ghost);
+
+  --color-border-subtle: var(--border-subtle);
+  --color-accent-gold: var(--accent-gold);
+}
+
+:root, .theme-dark {
+  --surface-base: #050403;
+  --surface-paper: #0a0908;
+  --surface-card: #0f0e0d;
+  --surface-accent: #1a1817;
+
+  --content-primary: #F5EFEB;
+  --content-secondary: #D5C6B1;
+  --content-ghost: rgba(255, 255, 255, 0.03);
+
+  --border-subtle: rgba(203, 170, 106, 0.1);
+  --accent-gold: #CBAA6A;
+}
+
+.theme-light {
+  --surface-base: #F4EDE3;
+  --surface-paper: #FBF7F1;
+  --surface-card: #FFFFFF;
+  --surface-accent: #EFE5D6;
+
+  --content-primary: #2E2218;
+  --content-secondary: #6D5A4B;
+  --content-ghost: rgba(62, 39, 35, 0.04);
+
+  --border-subtle: rgba(166, 124, 59, 0.2);
+  --accent-gold: #A67C3B;
 }
 
 @layer base {
   html, body {
-    @apply text-text-black font-sans antialiased selection:bg-primary-gold selection:text-white;
-    background-color: #0a0908;
+    @apply text-content-primary font-sans antialiased selection:bg-accent-gold selection:text-white;
+    background-color: var(--surface-base);
     overflow-x: hidden;
   }
 }

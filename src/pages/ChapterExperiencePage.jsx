@@ -93,7 +93,7 @@ export default function ChapterExperiencePage() {
     : [{ id: 'all', label: 'All', count: allDishes.length }];
 
   return (
-    <div className="min-h-screen bg-[#0a0908] text-primary-cream relative">
+    <div className="theme-light min-h-screen bg-surface-base text-content-primary relative">
 
       {/* Back Navigation (Task 2B) */}
       <div className="absolute top-24 left-6 md:left-12 z-30">
@@ -109,7 +109,7 @@ export default function ChapterExperiencePage() {
               window.location.href = chapterMeta.parent ? `/menu/${chapterMeta.parent}` : '/menu';
             }
           }}
-          className="flex items-center gap-2 text-primary-cream/60 hover:text-primary-gold transition-colors font-sans text-xs tracking-widest uppercase active:scale-[0.98] active:opacity-80"
+          className="flex items-center gap-2 text-content-secondary hover:text-accent-gold transition-colors font-sans text-xs tracking-widest uppercase active:scale-[0.98] active:opacity-80"
         >
           <span>←</span> Back to {chapterMeta.parent ? 'Cuisine' : 'Menu'}
         </a>
@@ -129,19 +129,19 @@ export default function ChapterExperiencePage() {
       />
 
       {/* 3. Sticky Filter + Dish Explorer */}
-      <section className="bg-[#0a0908]">
+      <section className="bg-surface-base">
         <div className="max-w-7xl mx-auto px-6 md:px-12">
 
           {/* Sticky controls */}
-          <div className="sticky top-[120px] z-30 bg-[#0a0908]/95 backdrop-blur-sm py-5 border-b border-[#CBAA6A]/10 mb-10">
+          <div className="sticky top-[120px] z-30 bg-surface-base/95 backdrop-blur-sm py-5 border-b border-border-subtle mb-10">
             <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-5">
               
               {/* Quick Stats (Task 3B) */}
               <div className="flex flex-col">
-                <span className="font-serif text-xl md:text-2xl text-primary-cream">
+                <span className="font-serif text-xl md:text-2xl text-content-primary">
                   Explore Dishes
                 </span>
-                <span className="font-sans text-[10px] md:text-xs text-primary-cream/50 uppercase tracking-[0.2em] mt-1 flex gap-2 divide-x divide-[#CBAA6A]/30">
+                <span className="font-sans text-[10px] md:text-xs text-content-secondary uppercase tracking-[0.2em] mt-1 flex gap-2 divide-x divide-border-subtle">
                   <span>{allDishes.length} Items</span>
                   {vegCount > 0 && <span className="pl-2">{vegCount} Veg</span>}
                   {nonVegCount > 0 && <span className="pl-2">{nonVegCount} Non-Veg</span>}
@@ -168,17 +168,17 @@ export default function ChapterExperiencePage() {
                 {filteredDishes.map(dish => (
                   <div
                     key={dish.id}
-                    className="group flex flex-col justify-between p-5 bg-black/40 border border-[#CBAA6A]/10 rounded-xl hover:border-primary-gold/40 transition-colors duration-300 relative overflow-hidden h-full"
+                    className="group flex flex-col justify-between p-5 bg-surface-card border border-border-subtle rounded-xl hover:border-accent-gold/40 transition-colors duration-300 relative overflow-hidden h-full"
                   >
                     {/* Subtle gradient glow on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                     {/* Depth Typography */}
                     <BackgroundTypography text={dish.name} />
 
                     <div className="relative z-10">
                       <div className="flex items-start justify-between mb-3 relative z-10">
-                        <h3 className="font-serif text-lg text-primary-cream group-hover:text-primary-gold transition-colors duration-300 leading-snug pr-4">
+                        <h3 className="font-serif text-lg text-content-primary group-hover:text-accent-gold transition-colors duration-300 leading-snug pr-4">
                           {dish.name}
                         </h3>
                         <span
@@ -186,7 +186,7 @@ export default function ChapterExperiencePage() {
                           aria-label={dish.diet === 'veg' ? 'Vegetarian' : 'Non-vegetarian'}
                         />
                       </div>
-                      <p className="font-sans text-xs text-primary-cream/55 leading-relaxed relative z-10">
+                      <p className="font-sans text-xs text-content-secondary leading-relaxed relative z-10">
                         {dish.description}
                       </p>
                     </div>
@@ -194,15 +194,15 @@ export default function ChapterExperiencePage() {
                 ))}
               </div>
             ) : (
-              <div className="text-center py-24 border border-dashed border-[#CBAA6A]/20 rounded-2xl">
-                <p className="font-serif text-xl text-primary-cream/50 mb-6">No dishes match your criteria.</p>
+              <div className="text-center py-24 border border-dashed border-border-subtle rounded-2xl">
+                <p className="font-serif text-xl text-content-secondary mb-6">No dishes match your criteria.</p>
                 <div className="flex gap-6 justify-center">
                   {hasBothDietTypes && (
-                    <button onClick={() => setDiet('all')} className="font-sans text-xs tracking-widest uppercase text-primary-gold hover:underline underline-offset-4">
+                    <button onClick={() => setDiet('all')} className="font-sans text-xs tracking-widest uppercase text-accent-gold hover:underline underline-offset-4">
                       Clear filter
                     </button>
                   )}
-                  <button onClick={() => setSearch('')} className="font-sans text-xs tracking-widest uppercase text-primary-gold hover:underline underline-offset-4">
+                  <button onClick={() => setSearch('')} className="font-sans text-xs tracking-widest uppercase text-accent-gold hover:underline underline-offset-4">
                     Clear search
                   </button>
                 </div>

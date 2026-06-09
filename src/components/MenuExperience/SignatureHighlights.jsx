@@ -32,7 +32,7 @@ export default function SignatureHighlights() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-[#050403] relative border-y border-[#CBAA6A]/10">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-surface-base relative border-y border-border-subtle">
       <style>{`
         .stats-item {
           opacity: 0;
@@ -47,17 +47,17 @@ export default function SignatureHighlights() {
       <div className="absolute inset-0 bg-texture-paper opacity-10 pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center divide-x-0 md:divide-x divide-[#CBAA6A]/10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8 text-center divide-x-0 md:divide-x divide-border-subtle">
           {highlights.map((item, i) => (
             <div
               key={i}
               className="stats-item flex flex-col items-center justify-center"
               style={{ transitionDelay: `${i * 0.15}s` }}
             >
-              <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-primary-gold mb-2 md:mb-4">
+              <h3 className="font-serif text-4xl md:text-5xl lg:text-6xl text-accent-gold mb-2 md:mb-4">
                 {item.value}
               </h3>
-              <p className="font-sans text-[9px] md:text-xs tracking-[0.3em] uppercase text-primary-cream/70">
+              <p className="font-sans text-[9px] md:text-xs tracking-[0.3em] uppercase text-content-secondary">
                 {item.label}
               </p>
             </div>

@@ -63,7 +63,7 @@ export default function LiveStations() {
   return (
     <section
       ref={sectionRef}
-      className="py-16 md:py-32 bg-[#050403] relative border-t border-[#CBAA6A]/10"
+      className="pt-8 pb-16 md:py-32 bg-surface-base relative border-t border-border-subtle"
     >
       <style>{`
         .station-item {
@@ -85,10 +85,10 @@ export default function LiveStations() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16 md:mb-32">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-4">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-4">
             Interactive Culinary Theater
           </span>
-          <h2 className="font-serif text-5xl md:text-7xl text-primary-cream">
+          <h2 className="font-serif text-5xl md:text-7xl text-content-primary">
             Live Stations
           </h2>
         </div>
@@ -102,7 +102,7 @@ export default function LiveStations() {
                 className={`station-item flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-12 md:gap-24 mb-32`}
               >
                 {/* Image */}
-                <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-primary-cream/5 rounded-[2rem] border border-primary-cream/10">
+                <div className="w-full md:w-1/2 h-[50vh] md:h-[70vh] relative group overflow-hidden bg-surface-accent rounded-[2rem] border border-border-subtle">
                   <img
                     src={station.image}
                     alt={station.name}
@@ -110,21 +110,21 @@ export default function LiveStations() {
                     decoding="async"
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-transparent to-transparent opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent opacity-80" />
                 </div>
 
                 {/* Content */}
                 <div className="w-full md:w-1/2 flex flex-col justify-center">
-                  <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-6 block">
+                  <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold mb-6 block">
                     {station.tag}
                   </span>
-                  <h3 className="font-serif text-5xl md:text-7xl text-primary-cream mb-8 leading-none">
+                  <h3 className="font-serif text-5xl md:text-7xl text-content-primary mb-8 leading-none">
                     {station.name}
                   </h3>
-                  <p className="font-sans text-sm md:text-base text-primary-cream/60 leading-relaxed max-w-md mb-12">
+                  <p className="font-sans text-sm md:text-base text-content-secondary leading-relaxed max-w-md mb-12">
                     {station.description}
                   </p>
-                  <button className="self-start font-sans text-xs tracking-widest uppercase text-primary-cream border-b border-primary-gold pb-2 hover:text-primary-gold transition-colors">
+                  <button className="self-start font-sans text-xs tracking-widest uppercase text-content-primary border-b border-border-subtle pb-2 hover:text-accent-gold hover:border-accent-gold transition-colors">
                     Add to Experience
                   </button>
                 </div>

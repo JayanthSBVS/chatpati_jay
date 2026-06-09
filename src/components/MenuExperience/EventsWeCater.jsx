@@ -41,12 +41,12 @@ const events = [
 
 export default function EventsWeCater() {
   return (
-    <section className="py-24 w-full bg-[#050403] relative border-t border-[#CBAA6A]/10 overflow-hidden">
+    <section className="py-24 w-full bg-surface-base relative border-t border-border-subtle overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
-        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold/70 block mb-2">
+        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-2">
           Tailored Experiences
         </span>
-        <h2 className="font-serif text-4xl md:text-5xl text-primary-cream">
+        <h2 className="font-serif text-4xl md:text-5xl text-content-primary">
           Events We Cater
         </h2>
       </div>
@@ -56,7 +56,7 @@ export default function EventsWeCater() {
         {events.map((ev, i) => (
           <div
             key={i}
-            className="snap-center shrink-0 w-[85vw] md:w-[420px] lg:w-[480px] rounded-2xl border border-primary-cream/10 bg-[#0a0908] p-8 md:p-10 flex flex-col justify-between group hover:border-primary-gold/30 transition-colors duration-500 relative overflow-hidden"
+            className="snap-center shrink-0 w-[85vw] md:w-[420px] lg:w-[480px] rounded-2xl border border-border-subtle bg-surface-card p-8 md:p-10 flex flex-col justify-between group hover:border-accent-gold/30 transition-colors duration-500 relative overflow-hidden"
           >
             {/* Background Image Layer */}
             <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
@@ -67,41 +67,41 @@ export default function EventsWeCater() {
                 decoding="async"
                 className="w-full h-full object-cover opacity-20 transition-opacity duration-500 group-hover:opacity-35"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0a0908] via-[#0a0908]/80 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-card via-surface-card/80 to-transparent" />
             </div>
 
             <div className="relative z-10">
-              <span className="font-serif text-6xl text-primary-cream/15 absolute -top-2 -right-2 pointer-events-none select-none">
+              <span className="font-serif text-6xl text-content-ghost absolute -top-2 -right-2 pointer-events-none select-none">
                 0{i + 1}
               </span>
-              <h3 className="font-serif text-3xl text-primary-gold mb-8">
+              <h3 className="font-serif text-3xl text-accent-gold mb-8">
                 {ev.title}
               </h3>
 
               <div className="space-y-5">
                 <div>
-                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-primary-cream/50 mb-1">Recommended Experience</h4>
-                  <p className="font-serif text-lg text-primary-cream">{ev.experience}</p>
+                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Recommended Experience</h4>
+                  <p className="font-serif text-lg text-content-primary">{ev.experience}</p>
                 </div>
 
-                <div className="w-8 h-[1px] bg-primary-gold/30" />
+                <div className="w-8 h-[1px] bg-border-subtle" />
 
                 <div>
-                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-primary-cream/50 mb-1">Live Station Focus</h4>
-                  <p className="font-serif text-lg text-primary-cream">{ev.station}</p>
+                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Live Station Focus</h4>
+                  <p className="font-serif text-lg text-content-primary">{ev.station}</p>
                 </div>
 
-                <div className="w-8 h-[1px] bg-primary-gold/30" />
+                <div className="w-8 h-[1px] bg-border-subtle" />
 
                 <div>
-                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-primary-cream/50 mb-1">Signature Highlights</h4>
-                  <p className="font-serif text-lg text-primary-cream">{ev.dishes}</p>
+                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Signature Highlights</h4>
+                  <p className="font-serif text-lg text-content-primary">{ev.dishes}</p>
                 </div>
               </div>
             </div>
 
             <div className="relative z-10 mt-8">
-              <button className="font-sans text-xs tracking-widest uppercase text-primary-cream hover:text-primary-gold active:scale-[0.98] active:opacity-80 transition-all duration-100 flex items-center gap-4 py-4 w-full md:w-auto">
+              <button className="font-sans text-xs tracking-widest uppercase text-content-primary hover:text-accent-gold active:scale-[0.98] active:opacity-80 transition-all duration-100 flex items-center gap-4 py-4 w-full md:w-auto">
                 Inquire <div className="w-8 h-[1px] bg-current" />
               </button>
             </div>

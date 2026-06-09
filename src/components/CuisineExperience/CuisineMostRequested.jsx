@@ -8,13 +8,13 @@ export default function CuisineMostRequested({ dishes }) {
   const topDishes = dishes.slice(0, 3);
 
   return (
-    <section className="py-24 bg-[#0a0908]">
+    <section className="py-24 bg-surface-base">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="mb-12">
-          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-primary-gold mb-4 block">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold mb-4 block">
             Guest Favorites
           </span>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-primary-cream">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl text-content-primary">
             Most Requested
           </h2>
         </div>
@@ -23,17 +23,17 @@ export default function CuisineMostRequested({ dishes }) {
           {topDishes.map((dish, index) => (
               <div
                 key={dish.id || index}
-                className="group p-8 bg-black/40 border border-[#CBAA6A]/10 rounded-2xl hover:border-primary-gold/40 transition-colors duration-500 flex flex-col justify-between h-full relative overflow-hidden"
+                className="group p-8 bg-surface-card border border-border-subtle rounded-2xl hover:border-accent-gold/40 transition-colors duration-500 flex flex-col justify-between h-full relative overflow-hidden"
               >
                 {/* Subtle gradient glow on hover */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
                 {/* Depth Typography */}
                 <BackgroundTypography text={dish.name} />
 
                 <div className="relative z-10">
                   <div className="flex justify-between items-start mb-4">
-                    <h3 className="font-serif text-2xl text-primary-cream group-hover:text-primary-gold transition-colors duration-300">
+                    <h3 className="font-serif text-2xl text-content-primary group-hover:text-accent-gold transition-colors duration-300">
                       {dish.name}
                     </h3>
                     <span
@@ -43,7 +43,7 @@ export default function CuisineMostRequested({ dishes }) {
                       aria-label={dish.diet === 'veg' ? 'Vegetarian' : 'Non-vegetarian'}
                     />
                   </div>
-                  <p className="font-sans text-sm text-primary-cream/60 leading-relaxed relative z-10">
+                  <p className="font-sans text-sm text-content-secondary leading-relaxed relative z-10">
                     {dish.description}
                   </p>
                 </div>
