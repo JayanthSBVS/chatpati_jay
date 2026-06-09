@@ -25,7 +25,7 @@ export default function CategoryExperiencePage() {
   }
 
   return (
-    <div className="theme-light min-h-screen bg-surface-base text-content-primary">
+    <div className="min-h-screen bg-surface-base text-content-primary">
       {/* 1. Atmosphere Layer */}
       <AtmosphereHero title={category.title} atmosphere={category.atmosphere} />
       

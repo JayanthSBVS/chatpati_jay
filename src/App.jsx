@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout/Layout'
+import { ThemeProvider } from './contexts/ThemeContext'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Catering from './pages/Catering'
@@ -13,18 +14,19 @@ const CuisineExperiencePage = React.lazy(() => import('./pages/CuisineExperience
 const ChapterExperiencePage = React.lazy(() => import('./pages/ChapterExperiencePage'));
 
 const PageLoader = () => (
-  <div className="min-h-screen bg-[#0a0908] flex items-center justify-center">
+  <div className="min-h-screen bg-surface-base flex items-center justify-center">
     <div className="flex flex-col items-center gap-4">
-      <div className="w-8 h-8 border border-primary-gold/40 border-t-primary-gold rounded-full animate-spin" />
-      <p className="font-sans text-xs tracking-widest uppercase text-primary-gold/60">Loading</p>
+      <div className="w-8 h-8 border border-accent-gold/40 border-t-accent-gold rounded-full animate-spin" />
+      <p className="font-sans text-xs tracking-widest uppercase text-accent-gold/60">Loading</p>
     </div>
   </div>
 );
 
 function App() {
   return (
-    <BrowserRouter>
-      <Layout>
+    <ThemeProvider>
+      <BrowserRouter>
+        <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
@@ -57,8 +59,9 @@ function App() {
           {/* Fallback route */}
           <Route path="*" element={<Navigate to="/menu" replace />} />
         </Routes>
-      </Layout>
-    </BrowserRouter>
+        </Layout>
+      </BrowserRouter>
+    </ThemeProvider>
   )
 }
 

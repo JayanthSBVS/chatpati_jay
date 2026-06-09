@@ -15,7 +15,7 @@ export default function Menu() {
   }, []);
 
   return (
-    <div className="theme-light bg-surface-base text-content-primary overflow-hidden">
+    <div className="bg-surface-base text-content-primary overflow-hidden">
       <HeroSection />
       <SignatureHighlights />
       <CuisineJourney />

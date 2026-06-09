@@ -6,7 +6,7 @@ import GlobalScrollIndicator from './GlobalScrollIndicator';
 export default function Layout({ children }) {
   return (
     <SmoothScroll>
-      <div className="relative min-h-screen bg-[#0a0908] selection:bg-primary-gold selection:text-primary-cream">
+      <div className="relative min-h-screen bg-surface-base selection:bg-accent-gold selection:text-surface-base">
         {/* THE RECURRING VISUAL DNA */}
         {/* 1. Global Paper Texture Overlay */}
         <div className="fixed inset-0 z-50 pointer-events-none bg-texture-paper opacity-40 mix-blend-multiply"></div>

@@ -93,7 +93,7 @@ export default function ChapterExperiencePage() {
     : [{ id: 'all', label: 'All', count: allDishes.length }];
 
   return (
-    <div className="theme-light min-h-screen bg-surface-base text-content-primary relative">
+    <div className="min-h-screen bg-surface-base text-content-primary relative">
 
       {/* Back Navigation (Task 2B) */}
       <div className="absolute top-24 left-6 md:left-12 z-30">
