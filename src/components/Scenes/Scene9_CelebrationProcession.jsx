@@ -14,7 +14,7 @@ export default function Scene9_CelebrationProcession() {
   return (
     <motion.section 
       ref={containerRef} 
-      className="relative h-[400vh] w-full bg-surface-base"
+      className="relative h-[200vh] md:h-[400vh] w-full bg-surface-base"
     >
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center">
         

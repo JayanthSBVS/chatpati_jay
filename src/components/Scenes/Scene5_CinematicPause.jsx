@@ -18,7 +18,7 @@ export default function Scene5_CinematicPause() {
   return (
     <section 
       ref={containerRef} 
-      className="relative w-full h-[150vh] bg-surface-base overflow-hidden flex items-center justify-center"
+      className="relative w-full h-[100vh] md:h-[150vh] bg-surface-base overflow-hidden flex items-center justify-center"
     >
       
       {/* MASSIVE ENVIRONMENTAL BACKGROUND */}
