@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export default function Scene5_CinematicPause() {
   const containerRef = useRef(null);
+  const navigate = useNavigate();
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -61,7 +63,7 @@ export default function Scene5_CinematicPause() {
           Crafting unforgettable hospitality experiences across every gathering.
         </p>
 
-        <button className="mt-12 md:mt-16 group relative">
+        <button onClick={() => navigate('/contact')} className="mt-12 md:mt-16 group relative cursor-pointer">
           <div className="absolute inset-0 bg-accent-gold blur-md opacity-20 group-hover:opacity-40 transition-opacity duration-1000 rounded-full" />
           {/* Tablet: slightly larger tap target */}
           <div className="relative px-10 md:px-12 py-4 border border-accent-gold/30 rounded-full bg-surface-card/80 backdrop-blur-sm text-accent-gold font-sans text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all duration-700 hover:bg-accent-gold/10 hover:border-accent-gold/60 font-medium md:font-normal">

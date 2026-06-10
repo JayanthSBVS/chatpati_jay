@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+
 import { assets } from '../../data/assetMap';
 
 const cuisines = [
@@ -35,16 +35,9 @@ export default function CuisineJourney() {
     return () => observer.disconnect();
   }, []);
 
-  const handlePreload = (cuisine) => {
-    // Preload the page module
-    import('../../pages/CuisineExperiencePage');
-    // Preload the hero image
-    const img = new Image();
-    img.src = cuisine.hero;
-  };
 
   return (
-    <section className="py-32 relative bg-surface-card overflow-hidden">
+    <section id="cuisine-journey" className="py-32 relative bg-surface-card overflow-hidden">
       <style>{`
         .cuisine-item {
           opacity: 0;
@@ -77,21 +70,14 @@ export default function CuisineJourney() {
 
         <div className="flex flex-col gap-8 md:gap-12">
           {cuisines.map((cuisine) => (
-            <Link
+            <div
               key={cuisine.id}
-              to={`/menu/${cuisine.id}`}
-              className="cuisine-item group border-b border-primary-cream/10 pb-8 flex items-end justify-between hover:border-primary-gold/50 active:scale-[0.98] active:opacity-80 transition-all duration-500"
-              onMouseEnter={() => handlePreload(cuisine)}
-              onTouchStart={() => handlePreload(cuisine)}
-              aria-label={`Explore ${cuisine.label}`}
+              className="cuisine-item border-b border-primary-cream/10 pb-8 flex items-end justify-between transition-all duration-500"
             >
-              <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-content-secondary group-hover:text-content-primary transition-colors duration-500">
+              <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-content-secondary">
                 {cuisine.label}
               </h3>
-              <span className="font-sans text-xs tracking-widest text-accent-gold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-x-4 group-hover:translate-x-0">
-                Explore
-              </span>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

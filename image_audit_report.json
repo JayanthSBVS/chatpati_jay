@@ -1,0 +1,1174 @@
+{
+  "total": 202,
+  "usedCount": 91,
+  "unusedCount": 111,
+  "used": [
+    {
+      "name": "aam_ka_panna_1780917981215_opt.webp",
+      "path": "public/assets/aam_ka_panna_1780917981215_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "afghani_murgh_1781072604669.png",
+      "path": "public/assets/afghani_murgh_1781072604669.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "aloo_tikki_chaat_1781072638930.png",
+      "path": "public/assets/aloo_tikki_chaat_1781072638930.png",
+      "refs": [
+        "src\\data\\dishImageMap.js",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "appetizers_chapter.png",
+      "path": "public/assets/appetizers_chapter.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx"
+      ]
+    },
+    {
+      "name": "Barrah Chicken.png",
+      "path": "public/assets/Barrah Chicken.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Bedmi Aloo Puri.png",
+      "path": "public/assets/Bedmi Aloo Puri.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Bun Samosa.png",
+      "path": "public/assets/Bun Samosa.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Butter Chicken.png",
+      "path": "public/assets/Butter Chicken.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "butter_naan_1770809784806.png",
+      "path": "public/assets/butter_naan_1770809784806.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "chaat_station_chapter.png",
+      "path": "public/assets/chaat_station_chapter.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx"
+      ]
+    },
+    {
+      "name": "Chandni Chowk Ke Bhalle.jpeg",
+      "path": "public/assets/Chandni Chowk Ke Bhalle.jpeg",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "chicken_dum_biryani_1781072708280.png",
+      "path": "public/assets/chicken_dum_biryani_1781072708280.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "chole_bhature.jpg",
+      "path": "public/assets/chole_bhature.jpg",
+      "refs": [
+        "src\\data\\dishImageMap.js",
+        "src\\pages\\Catering.jsx",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "Churmuri Bhel.png",
+      "path": "public/assets/Churmuri Bhel.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "cover",
+      "path": "public/assets/cover",
+      "refs": [
+        "src\\components\\CategoryExperience\\AtmosphereHero.jsx",
+        "src\\components\\CategoryExperience\\SignatureExperiences.jsx",
+        "src\\components\\ChapterExperience\\CateringUpsell.jsx",
+        "src\\components\\CuisineExperience\\RecommendedEvents.jsx",
+        "src\\components\\MenuExperience\\CuisineJourney.jsx",
+        "src\\components\\MenuExperience\\EventsWeCater.jsx",
+        "src\\components\\MenuExperience\\HeroSection.jsx",
+        "src\\components\\MenuExperience\\LiquidShowcase.jsx",
+        "src\\components\\MenuExperience\\LiveStations.jsx",
+        "src\\components\\MenuExperience\\MenuChapters.jsx",
+        "src\\components\\Scenes\\Scene0_CoverPage.jsx",
+        "src\\components\\Scenes\\Scene11_FAQ_Footer.jsx",
+        "src\\components\\Scenes\\Scene1_RoyalEntrance.jsx",
+        "src\\components\\Scenes\\Scene3_StreetFoodEnergy.jsx",
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx",
+        "src\\components\\Scenes\\Scene5_CinematicPause.jsx",
+        "src\\components\\Scenes\\Scene6_Hospitality.jsx",
+        "src\\components\\Scenes\\Scene8_ExperienceWall.jsx",
+        "src\\components\\Scenes\\Scene9_CelebrationProcession.jsx",
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js",
+        "src\\data\\cuisinesData.js",
+        "src\\pages\\Catering.jsx",
+        "src\\pages\\ChapterExperiencePage.jsx",
+        "src\\pages\\Home.jsx",
+        "src\\pages\\Story.jsx",
+        "src\\pages\\Takeaway.jsx"
+      ]
+    },
+    {
+      "name": "Daal Makhanwala.png",
+      "path": "public/assets/Daal Makhanwala.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "dal_makhani_1781072651711.png",
+      "path": "public/assets/dal_makhani_1781072651711.png",
+      "refs": [
+        "src\\data\\dishImageMap.js",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "delhi_palace_night.png",
+      "path": "public/assets/delhi_palace_night.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene5_CinematicPause.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "delhi_palace_night_opt.webp",
+      "path": "public/assets/delhi_palace_night_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "event_corporate.png",
+      "path": "public/assets/event_corporate.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene9_CelebrationProcession.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "event_corporate_opt.webp",
+      "path": "public/assets/event_corporate_opt.webp",
+      "refs": [
+        "src\\components\\ChapterExperience\\CateringUpsell.jsx",
+        "src\\data\\assetMap.js"
+      ]
+    },
+    {
+      "name": "event_family.png",
+      "path": "public/assets/event_family.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene9_CelebrationProcession.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "event_family_opt.webp",
+      "path": "public/assets/event_family_opt.webp",
+      "refs": [
+        "src\\components\\ChapterExperience\\CateringUpsell.jsx",
+        "src\\data\\assetMap.js"
+      ]
+    },
+    {
+      "name": "event_mehndi.png",
+      "path": "public/assets/event_mehndi.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene9_CelebrationProcession.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "event_mehndi_opt.webp",
+      "path": "public/assets/event_mehndi_opt.webp",
+      "refs": [
+        "src\\components\\ChapterExperience\\CateringUpsell.jsx",
+        "src\\data\\assetMap.js"
+      ]
+    },
+    {
+      "name": "event_wedding.png",
+      "path": "public/assets/event_wedding.png",
+      "refs": [
+        "src\\components\\MenuExperience\\EventsWeCater.jsx",
+        "src\\components\\Scenes\\Scene9_CelebrationProcession.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "event_wedding_opt.webp",
+      "path": "public/assets/event_wedding_opt.webp",
+      "refs": [
+        "src\\components\\ChapterExperience\\CateringUpsell.jsx",
+        "src\\data\\assetMap.js"
+      ]
+    },
+    {
+      "name": "Fish Amritsari.png",
+      "path": "public/assets/Fish Amritsari.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "floral-arch.jpeg",
+      "path": "public/assets/floral-arch.jpeg",
+      "refs": [
+        "src\\components\\Scenes\\Scene1_RoyalEntrance.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "footer_palace_opt.webp",
+      "path": "public/assets/footer_palace_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "garlic_naan_1770809887673.png",
+      "path": "public/assets/garlic_naan_1770809887673.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "human_wall.png",
+      "path": "public/assets/human_wall.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene8_ExperienceWall.jsx",
+        "src\\pages\\Catering.jsx"
+      ]
+    },
+    {
+      "name": "human_wall_opt.webp",
+      "path": "public/assets/human_wall_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "indo_chinese_chapter.png",
+      "path": "public/assets/indo_chinese_chapter.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx"
+      ]
+    },
+    {
+      "name": "Kadai Paneer.png",
+      "path": "public/assets/Kadai Paneer.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Lamb Chops.jpeg",
+      "path": "public/assets/Lamb Chops.jpeg",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "logo.png",
+      "path": "public/assets/logo.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene0_CoverPage.jsx"
+      ]
+    },
+    {
+      "name": "Malai Kofta.png",
+      "path": "public/assets/Malai Kofta.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "mango_lassi_1780917929199.png",
+      "path": "public/assets/mango_lassi_1780917929199.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "mango_lassi_1780917929199_opt.webp",
+      "path": "public/assets/mango_lassi_1780917929199_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\dishImageMap.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "meethe_me_sweets.png",
+      "path": "public/assets/meethe_me_sweets.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "menu-1.jpeg",
+      "path": "public/assets/menu-1.jpeg",
+      "refs": [
+        "src\\components\\Menu\\MenuManuscript.jsx",
+        "src\\components\\Scenes\\Scene3_StreetFoodEnergy.jsx",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "menu-1_opt.webp",
+      "path": "public/assets/menu-1_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu-2.jpeg",
+      "path": "public/assets/menu-2.jpeg",
+      "refs": [
+        "src\\components\\Menu\\MenuManuscript.jsx"
+      ]
+    },
+    {
+      "name": "menu-2_opt.webp",
+      "path": "public/assets/menu-2_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu_chole.png",
+      "path": "public/assets/menu_chole.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "menu_chole_light.png",
+      "path": "public/assets/menu_chole_light.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx"
+      ]
+    },
+    {
+      "name": "menu_chole_opt.webp",
+      "path": "public/assets/menu_chole_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu_feast.png",
+      "path": "public/assets/menu_feast.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx",
+        "src\\pages\\Catering.jsx",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "menu_feast_light.png",
+      "path": "public/assets/menu_feast_light.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx"
+      ]
+    },
+    {
+      "name": "menu_feast_opt.webp",
+      "path": "public/assets/menu_feast_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu_fire.png",
+      "path": "public/assets/menu_fire.png",
+      "refs": [
+        "src\\pages\\Catering.jsx",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "menu_fire_opt.webp",
+      "path": "public/assets/menu_fire_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu_minimal_opt.webp",
+      "path": "public/assets/menu_minimal_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu_paneer.png",
+      "path": "public/assets/menu_paneer.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx",
+        "src\\data\\takeawayData.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "menu_paneer_light.png",
+      "path": "public/assets/menu_paneer_light.png",
+      "refs": [
+        "src\\components\\Scenes\\Scene4_MenuGlimpse.jsx"
+      ]
+    },
+    {
+      "name": "menu_paneer_opt.webp",
+      "path": "public/assets/menu_paneer_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "menu_street.png",
+      "path": "public/assets/menu_street.png",
+      "refs": [
+        "src\\data\\takeawayData.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "menu_street_opt.webp",
+      "path": "public/assets/menu_street_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\categoriesData.js"
+      ]
+    },
+    {
+      "name": "mutton_seekh_kebab_1781072615927.png",
+      "path": "public/assets/mutton_seekh_kebab_1781072615927.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "old_school_paranthas.png",
+      "path": "public/assets/old_school_paranthas.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "owners.jpg",
+      "path": "public/assets/owners.jpg",
+      "refs": [
+        "src\\pages\\Story.jsx"
+      ]
+    },
+    {
+      "name": "Paneer Makhanwala.png",
+      "path": "public/assets/Paneer Makhanwala.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "paneer_tikka_1781072685218.png",
+      "path": "public/assets/paneer_tikka_1781072685218.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx",
+        "src\\data\\dishImageMap.js",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "Papri Chaat'.png",
+      "path": "public/assets/Papri Chaat'.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Pindi Chole.png",
+      "path": "public/assets/Pindi Chole.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "press_1.jpg",
+      "path": "public/assets/press_1.jpg",
+      "refs": [
+        "src\\pages\\Story.jsx"
+      ]
+    },
+    {
+      "name": "press_2.jpg",
+      "path": "public/assets/press_2.jpg",
+      "refs": [
+        "src\\pages\\Story.jsx"
+      ]
+    },
+    {
+      "name": "press_3.jpg",
+      "path": "public/assets/press_3.jpg",
+      "refs": [
+        "src\\pages\\Story.jsx"
+      ]
+    },
+    {
+      "name": "punjabi_samosa_1781072696197.png",
+      "path": "public/assets/punjabi_samosa_1781072696197.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx",
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "Purani Delhi Chicken Biryani.png",
+      "path": "public/assets/Purani Delhi Chicken Biryani.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Raj Kachori.png",
+      "path": "public/assets/Raj Kachori.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Rasmalai.png",
+      "path": "public/assets/Rasmalai.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "reference-1.jpeg",
+      "path": "public/assets/reference-1.jpeg",
+      "refs": [
+        "src\\components\\Scenes\\Scene6_Hospitality.jsx"
+      ]
+    },
+    {
+      "name": "restaurants_outside_image.webp",
+      "path": "public/assets/restaurants_outside_image.webp",
+      "refs": [
+        "src\\components\\MenuExperience\\EventsWeCater.jsx",
+        "src\\components\\Scenes\\Scene11_FAQ_Footer.jsx"
+      ]
+    },
+    {
+      "name": "restaurant_image.webp",
+      "path": "public/assets/restaurant_image.webp",
+      "refs": [
+        "src\\components\\MenuExperience\\EventsWeCater.jsx",
+        "src\\pages\\Catering.jsx",
+        "src\\pages\\Story.jsx"
+      ]
+    },
+    {
+      "name": "restaurant_image2.jpg",
+      "path": "public/assets/restaurant_image2.jpg",
+      "refs": [
+        "src\\components\\MenuExperience\\EventsWeCater.jsx",
+        "src\\pages\\Catering.jsx",
+        "src\\pages\\Story.jsx"
+      ]
+    },
+    {
+      "name": "Saag Paneer.png",
+      "path": "public/assets/Saag Paneer.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "Sabudana Wada.png",
+      "path": "public/assets/Sabudana Wada.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "salt_lassi_1780917969166_opt.webp",
+      "path": "public/assets/salt_lassi_1780917969166_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\dishImageMap.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "Sev Puri.png",
+      "path": "public/assets/Sev Puri.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "sides_accompaniments.png",
+      "path": "public/assets/sides_accompaniments.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "south_indian_chapter.png",
+      "path": "public/assets/south_indian_chapter.png",
+      "refs": [
+        "src\\components\\MenuExperience\\MenuChapters.jsx"
+      ]
+    },
+    {
+      "name": "Sutli Chicken.png",
+      "path": "public/assets/Sutli Chicken.png",
+      "refs": [
+        "src\\data\\dishImageMap.js"
+      ]
+    },
+    {
+      "name": "sweet_lassi_1780917946995.png",
+      "path": "public/assets/sweet_lassi_1780917946995.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "sweet_lassi_1780917946995_opt.webp",
+      "path": "public/assets/sweet_lassi_1780917946995_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\dishImageMap.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "tandoori_chicken_1781072592860.png",
+      "path": "public/assets/tandoori_chicken_1781072592860.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    },
+    {
+      "name": "thaali_image.jpg",
+      "path": "public/assets/thaali_image.jpg",
+      "refs": [
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "thandai_1780918002624_opt.webp",
+      "path": "public/assets/thandai_1780918002624_opt.webp",
+      "refs": [
+        "src\\data\\assetMap.js",
+        "src\\data\\dishImageMap.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "vadapav.jpg",
+      "path": "public/assets/vadapav.jpg",
+      "refs": [
+        "src\\data\\dishImageMap.js",
+        "src\\data\\takeawayData.js",
+        "src\\pages\\ChapterExperiencePage.jsx"
+      ]
+    },
+    {
+      "name": "vegetable_sizzler_1781072665614.png",
+      "path": "public/assets/vegetable_sizzler_1781072665614.png",
+      "refs": [
+        "src\\data\\takeawayData.js"
+      ]
+    }
+  ],
+  "unused": [
+    {
+      "name": "23 x 42 (3).jpg.jpeg",
+      "path": "public/assets/23 x 42 (3).jpg.jpeg"
+    },
+    {
+      "name": "23 x 42 (4).jpg.jpeg",
+      "path": "public/assets/23 x 42 (4).jpg.jpeg"
+    },
+    {
+      "name": "Aam Ka Panna.jpg",
+      "path": "public/assets/Aam Ka Panna.jpg"
+    },
+    {
+      "name": "Aam Ki Lassi.jpg",
+      "path": "public/assets/Aam Ki Lassi.jpg"
+    },
+    {
+      "name": "aam_ka_panna_1780917981215.png",
+      "path": "public/assets/aam_ka_panna_1780917981215.png"
+    },
+    {
+      "name": "Adrak Ki Chai.jpg",
+      "path": "public/assets/Adrak Ki Chai.jpg"
+    },
+    {
+      "name": "Aloo Gobhi.png",
+      "path": "public/assets/Aloo Gobhi.png"
+    },
+    {
+      "name": "Aloo Kulcha.jpg",
+      "path": "public/assets/Aloo Kulcha.jpg"
+    },
+    {
+      "name": "Aloo Parantha.png",
+      "path": "public/assets/Aloo Parantha.png"
+    },
+    {
+      "name": "Aloo Subji W Khasta Kachori.png",
+      "path": "public/assets/Aloo Subji W Khasta Kachori.png"
+    },
+    {
+      "name": "Amritsar Soya Chaap Roll.png",
+      "path": "public/assets/Amritsar Soya Chaap Roll.png"
+    },
+    {
+      "name": "bhara-samosa.png",
+      "path": "public/assets/bhara-samosa.png"
+    },
+    {
+      "name": "Bhatti Paneer Sizzler.png",
+      "path": "public/assets/Bhatti Paneer Sizzler.png"
+    },
+    {
+      "name": "Bread Basket (4 Pcs).jpg",
+      "path": "public/assets/Bread Basket (4 Pcs).jpg"
+    },
+    {
+      "name": "Brown Rabdi.png",
+      "path": "public/assets/Brown Rabdi.png"
+    },
+    {
+      "name": "C.D.P Chicken Thali.png",
+      "path": "public/assets/C.D.P Chicken Thali.png"
+    },
+    {
+      "name": "C.D.P Goat Thali.png",
+      "path": "public/assets/C.D.P Goat Thali.png"
+    },
+    {
+      "name": "C.P.D Kulcha Thali.png",
+      "path": "public/assets/C.P.D Kulcha Thali.png"
+    },
+    {
+      "name": "C.P.D Veg Thali.png",
+      "path": "public/assets/C.P.D Veg Thali.png"
+    },
+    {
+      "name": "Chaap Chaap Sizzler.png",
+      "path": "public/assets/Chaap Chaap Sizzler.png"
+    },
+    {
+      "name": "Chatpata Aloo Roll.png",
+      "path": "public/assets/Chatpata Aloo Roll.png"
+    },
+    {
+      "name": "Chatpati Delhi 2.pdf",
+      "path": "public/assets/Chatpati Delhi 2.pdf"
+    },
+    {
+      "name": "chicken chatpati.jpeg",
+      "path": "public/assets/chicken chatpati.jpeg"
+    },
+    {
+      "name": "Chicken Curry.png",
+      "path": "public/assets/Chicken Curry.png"
+    },
+    {
+      "name": "Chicken Keema Pav.png",
+      "path": "public/assets/Chicken Keema Pav.png"
+    },
+    {
+      "name": "Chicken Keema Roll with Egg.png",
+      "path": "public/assets/Chicken Keema Roll with Egg.png"
+    },
+    {
+      "name": "Chicken Keema Roll.png",
+      "path": "public/assets/Chicken Keema Roll.png"
+    },
+    {
+      "name": "Chicken Keema Roomali Roti.png",
+      "path": "public/assets/Chicken Keema Roomali Roti.png"
+    },
+    {
+      "name": "Chicken Malai.png",
+      "path": "public/assets/Chicken Malai.png"
+    },
+    {
+      "name": "Chicken Tikka Masala.png",
+      "path": "public/assets/Chicken Tikka Masala.png"
+    },
+    {
+      "name": "Chocolate Shake.jpg",
+      "path": "public/assets/Chocolate Shake.jpg"
+    },
+    {
+      "name": "Chola Tikki Chaat.png",
+      "path": "public/assets/Chola Tikki Chaat.png"
+    },
+    {
+      "name": "Chole Bhature.png",
+      "path": "public/assets/Chole Bhature.png"
+    },
+    {
+      "name": "chur_chur_naan_1770809845615.png",
+      "path": "public/assets/chur_chur_naan_1770809845615.png"
+    },
+    {
+      "name": "Chutney Paneer Pakora.png",
+      "path": "public/assets/Chutney Paneer Pakora.png"
+    },
+    {
+      "name": "Coffee.jpg",
+      "path": "public/assets/Coffee.jpg"
+    },
+    {
+      "name": "Cold Coffee.jpg",
+      "path": "public/assets/Cold Coffee.jpg"
+    },
+    {
+      "name": "Dahi Aloo Tikki.png",
+      "path": "public/assets/Dahi Aloo Tikki.png"
+    },
+    {
+      "name": "Double Eggroll Roll.png",
+      "path": "public/assets/Double Eggroll Roll.png"
+    },
+    {
+      "name": "footer_palace.png",
+      "path": "public/assets/footer_palace.png"
+    },
+    {
+      "name": "Gajar ka Halwa.png",
+      "path": "public/assets/Gajar ka Halwa.png"
+    },
+    {
+      "name": "Garlic Cheese Vada Pav.png",
+      "path": "public/assets/Garlic Cheese Vada Pav.png"
+    },
+    {
+      "name": "Ghungaraale Fries.png",
+      "path": "public/assets/Ghungaraale Fries.png"
+    },
+    {
+      "name": "Goat Curry.png",
+      "path": "public/assets/Goat Curry.png"
+    },
+    {
+      "name": "Gobhi Kulcha.jpg",
+      "path": "public/assets/Gobhi Kulcha.jpg"
+    },
+    {
+      "name": "golgappa.jpeg",
+      "path": "public/assets/golgappa.jpeg"
+    },
+    {
+      "name": "Gulab Falooda.jpg",
+      "path": "public/assets/Gulab Falooda.jpg"
+    },
+    {
+      "name": "Gulab Jamun.png",
+      "path": "public/assets/Gulab Jamun.png"
+    },
+    {
+      "name": "hero.png",
+      "path": "public/assets/hero.png"
+    },
+    {
+      "name": "Jal Jeera Soda.jpg",
+      "path": "public/assets/Jal Jeera Soda.jpg"
+    },
+    {
+      "name": "Jaypuri Pyaaz Kachori.png",
+      "path": "public/assets/Jaypuri Pyaaz Kachori.png"
+    },
+    {
+      "name": "Kacchi Dabeli.png",
+      "path": "public/assets/Kacchi Dabeli.png"
+    },
+    {
+      "name": "Kadai Chicken.png",
+      "path": "public/assets/Kadai Chicken.png"
+    },
+    {
+      "name": "Kadak Pav Bhaji.png",
+      "path": "public/assets/Kadak Pav Bhaji.png"
+    },
+    {
+      "name": "Karahi Sukha.png",
+      "path": "public/assets/Karahi Sukha.png"
+    },
+    {
+      "name": "Karjat Vada Pav.png",
+      "path": "public/assets/Karjat Vada Pav.png"
+    },
+    {
+      "name": "Kesar Dry Fruit Milk.jpg",
+      "path": "public/assets/Kesar Dry Fruit Milk.jpg"
+    },
+    {
+      "name": "Khasta Kachori.png",
+      "path": "public/assets/Khasta Kachori.png"
+    },
+    {
+      "name": "Kulfi Falooda.png",
+      "path": "public/assets/Kulfi Falooda.png"
+    },
+    {
+      "name": "kurkure_tokri.jpeg",
+      "path": "public/assets/kurkure_tokri.jpeg"
+    },
+    {
+      "name": "lachaa_parantha_1770809915716.png",
+      "path": "public/assets/lachaa_parantha_1770809915716.png"
+    },
+    {
+      "name": "Malai Kulfi.png",
+      "path": "public/assets/Malai Kulfi.png"
+    },
+    {
+      "name": "Malpua.png",
+      "path": "public/assets/Malpua.png"
+    },
+    {
+      "name": "Mango Shake.jpg",
+      "path": "public/assets/Mango Shake.jpg"
+    },
+    {
+      "name": "Masal Chanch.jpg",
+      "path": "public/assets/Masal Chanch.jpg"
+    },
+    {
+      "name": "media__1780913222100.png",
+      "path": "public/assets/media__1780913222100.png"
+    },
+    {
+      "name": "media__1780913239515.png",
+      "path": "public/assets/media__1780913239515.png"
+    },
+    {
+      "name": "media__1780913254113.png",
+      "path": "public/assets/media__1780913254113.png"
+    },
+    {
+      "name": "media__1780913267055.png",
+      "path": "public/assets/media__1780913267055.png"
+    },
+    {
+      "name": "media__1780913357714.png",
+      "path": "public/assets/media__1780913357714.png"
+    },
+    {
+      "name": "media__1781005129098.png",
+      "path": "public/assets/media__1781005129098.png"
+    },
+    {
+      "name": "Meethi Lassi.jpg",
+      "path": "public/assets/Meethi Lassi.jpg"
+    },
+    {
+      "name": "menu.pdf",
+      "path": "public/assets/menu.pdf"
+    },
+    {
+      "name": "menu_chole_light_1781006440931.png",
+      "path": "public/assets/menu_chole_light_1781006440931.png"
+    },
+    {
+      "name": "menu_feast_light_1781006506723.png",
+      "path": "public/assets/menu_feast_light_1781006506723.png"
+    },
+    {
+      "name": "menu_minimal.png",
+      "path": "public/assets/menu_minimal.png"
+    },
+    {
+      "name": "menu_paneer_light_1781006365168.png",
+      "path": "public/assets/menu_paneer_light_1781006365168.png"
+    },
+    {
+      "name": "mirchi_naan_1770809934132.png",
+      "path": "public/assets/mirchi_naan_1770809934132.png"
+    },
+    {
+      "name": "Missal Pav.png",
+      "path": "public/assets/Missal Pav.png"
+    },
+    {
+      "name": "mithi_cheese_naan_1770809951769.png",
+      "path": "public/assets/mithi_cheese_naan_1770809951769.png"
+    },
+    {
+      "name": "mix_chicken_tikka_sizzler.jpeg",
+      "path": "public/assets/mix_chicken_tikka_sizzler.jpeg"
+    },
+    {
+      "name": "Moong Dal Halwa.png",
+      "path": "public/assets/Moong Dal Halwa.png"
+    },
+    {
+      "name": "Palak Chicken.png",
+      "path": "public/assets/Palak Chicken.png"
+    },
+    {
+      "name": "Palak Paneeer.png",
+      "path": "public/assets/Palak Paneeer.png"
+    },
+    {
+      "name": "Paneer Bhatti Masala.png",
+      "path": "public/assets/Paneer Bhatti Masala.png"
+    },
+    {
+      "name": "Paneer Kulcha.jpg",
+      "path": "public/assets/Paneer Kulcha.jpg"
+    },
+    {
+      "name": "Peeli Daal (Yellow Daal).png",
+      "path": "public/assets/Peeli Daal (Yellow Daal).png"
+    },
+    {
+      "name": "Pudina Chicken Roll.png",
+      "path": "public/assets/Pudina Chicken Roll.png"
+    },
+    {
+      "name": "Purani Delhi Goat Biryani.png",
+      "path": "public/assets/Purani Delhi Goat Biryani.png"
+    },
+    {
+      "name": "Rasgulla.png",
+      "path": "public/assets/Rasgulla.png"
+    },
+    {
+      "name": "react.svg",
+      "path": "public/assets/react.svg"
+    },
+    {
+      "name": "roomali_roti_1770809824196.png",
+      "path": "public/assets/roomali_roti_1770809824196.png"
+    },
+    {
+      "name": "Rose Shake.jpg",
+      "path": "public/assets/Rose Shake.jpg"
+    },
+    {
+      "name": "Saag.png",
+      "path": "public/assets/Saag.png"
+    },
+    {
+      "name": "salt_lassi_1780917969166.png",
+      "path": "public/assets/salt_lassi_1780917969166.png"
+    },
+    {
+      "name": "Samosa Chaat.png",
+      "path": "public/assets/Samosa Chaat.png"
+    },
+    {
+      "name": "Sarson Ka Saag Makka Roti.png",
+      "path": "public/assets/Sarson Ka Saag Makka Roti.png"
+    },
+    {
+      "name": "Sev Puri Dahi Puri (SPDP).png",
+      "path": "public/assets/Sev Puri Dahi Puri (SPDP).png"
+    },
+    {
+      "name": "Soya Chaap Curry.png",
+      "path": "public/assets/Soya Chaap Curry.png"
+    },
+    {
+      "name": "stuffed_kulcha_1770809862697.png",
+      "path": "public/assets/stuffed_kulcha_1770809862697.png"
+    },
+    {
+      "name": "tandoori_roti_1770809805227.png",
+      "path": "public/assets/tandoori_roti_1770809805227.png"
+    },
+    {
+      "name": "Tarkari Biryani (Veg).png",
+      "path": "public/assets/Tarkari Biryani (Veg).png"
+    },
+    {
+      "name": "Tawa Paneer Roll.png",
+      "path": "public/assets/Tawa Paneer Roll.png"
+    },
+    {
+      "name": "thandai_1780918002624.png",
+      "path": "public/assets/thandai_1780918002624.png"
+    },
+    {
+      "name": "Vanilla Shake.jpg",
+      "path": "public/assets/Vanilla Shake.jpg"
+    },
+    {
+      "name": "Veg Cheese Burger.png",
+      "path": "public/assets/Veg Cheese Burger.png"
+    },
+    {
+      "name": "Veg Cutlet Sizzler.png",
+      "path": "public/assets/Veg Cutlet Sizzler.png"
+    },
+    {
+      "name": "Veg Keema Pav.png",
+      "path": "public/assets/Veg Keema Pav.png"
+    },
+    {
+      "name": "Veg Keema Roomali Roti.png",
+      "path": "public/assets/Veg Keema Roomali Roti.png"
+    },
+    {
+      "name": "Veg Pakode.png",
+      "path": "public/assets/Veg Pakode.png"
+    },
+    {
+      "name": "vite.svg",
+      "path": "public/assets/vite.svg"
+    }
+  ]
+}

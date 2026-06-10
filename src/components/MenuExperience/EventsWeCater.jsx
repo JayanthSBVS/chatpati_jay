@@ -1,113 +1,101 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { assets } from '../../data/assetMap';
+import { useNavigate } from 'react-router-dom';
 
-const events = [
-  {
-    title: "The Grand Wedding",
-    experience: "Royal Buffet Setup",
-    station: "Live Chaat & Dosa Counters",
-    dishes: "Purani Delhi Jahangiri Chicken, Dum Aloo",
-    image: assets.events.wedding
-  },
-  {
-    title: "Mehndi & Sangeet",
-    experience: "Vibrant Street Food Vibe",
-    station: "Raj Kachori & Jalebi Station",
-    dishes: "Aloo Tikki, Malai Soya Chaap",
-    image: assets.events.mehndi
-  },
-  {
-    title: "Corporate Gala",
-    experience: "Sophisticated Plated or Buffet",
-    station: "Paneer Taco Live Grill",
-    dishes: "Lamb Chops, Malai Kofta",
-    image: assets.events.corporate
-  },
-  {
-    title: "Family Celebration",
-    experience: "Fun & Interactive Dining",
-    station: "Chole Bhature Stand",
-    dishes: "Veg Hakka Noodles, Chicken Lollypop",
-    image: assets.events.family
-  },
-  {
-    title: "Holiday Party",
-    experience: "Warm Winter Feast",
-    station: "Tawa Kathal Sukkha",
-    dishes: "Sarso Ka Saag, Butter Chicken",
-    image: assets.menu.feast
-  }
+const EVENT_LIST = [
+  { name: "Wedding", image: '/assets/event_wedding.png' },
+  { name: "Baby Shower", image: '/assets/restaurant_image.webp' },
+  { name: "Mehndi Function", image: '/assets/restaurant_image2.jpg' },
+  { name: "Haldi Function", image: '/assets/restaurants_outside_image.webp' },
+  { name: "Birthday Parties", image: '/assets/restaurant_image.webp' },
+  { name: "Graduation Parties", image: '/assets/restaurant_image2.jpg' },
+  { name: "Retirement Parties", image: '/assets/restaurants_outside_image.webp' },
+  { name: "Family Dinners", image: '/assets/restaurant_image.webp' },
+  { name: "Engagement Celebrations", image: '/assets/event_wedding.png' },
+  { name: "Corporate Events", image: '/assets/restaurant_image2.jpg' },
+  { name: "Holiday Parties", image: '/assets/restaurants_outside_image.webp' },
+  { name: "Get Together", image: '/assets/restaurant_image.webp' },
+  { name: "Kitty Parties", image: '/assets/restaurant_image2.jpg' },
 ];
 
 export default function EventsWeCater() {
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const navigate = useNavigate();
+
   return (
-    <section className="py-24 w-full bg-surface-accent relative border-t border-border-subtle overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 mb-16">
-        <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-2">
-          Tailored Experiences
-        </span>
-        <h2 className="font-serif text-4xl md:text-5xl text-content-primary">
-          Events We Cater
-        </h2>
-      </div>
-
-      {/* Native CSS horizontal snap — no GSAP, no JS scroll */}
-      <div className="flex gap-6 px-6 md:px-12 overflow-x-auto snap-x snap-mandatory hide-scrollbar pb-8">
-        {events.map((ev, i) => (
-          <div
-            key={i}
-            className="snap-center shrink-0 w-[85vw] md:w-[420px] lg:w-[480px] rounded-2xl border border-border-subtle bg-surface-paper p-8 md:p-10 flex flex-col justify-between group hover:border-accent-gold/30 transition-colors duration-500 relative overflow-hidden"
+    <section className="py-32 w-full bg-surface-base relative border-t border-border-subtle overflow-hidden min-h-screen flex items-center">
+      
+      {/* Dynamic Background Image Layer */}
+      <div className="absolute inset-0 pointer-events-none z-0">
+        {EVENT_LIST.map((ev, index) => (
+          <div 
+            key={`bg-${index}`}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+              hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+            }`}
           >
-            {/* Background Image Layer */}
-            <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-              <img
-                src={ev.image}
-                alt=""
-                loading="lazy"
-                decoding="async"
-                className="w-full h-full object-cover transition-opacity duration-500"
-                style={{ opacity: 'var(--img-opacity-card)' }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-b from-surface-paper/60 via-surface-paper/80 to-surface-paper/95 group-hover:from-surface-paper/50 transition-colors duration-500" />
-            </div>
-
-            <div className="relative z-10 bg-surface-paper/40 p-4 -ml-4 rounded-lg backdrop-blur-[2px]">
-              <span className="font-serif text-6xl text-content-ghost absolute -top-2 -right-2 pointer-events-none select-none">
-                0{i + 1}
-              </span>
-              <h3 className="font-serif text-3xl text-accent-gold mb-8 drop-shadow-sm">
-                {ev.title}
-              </h3>
-
-              <div className="space-y-5">
-                <div>
-                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Recommended Experience</h4>
-                  <p className="font-serif text-lg text-content-primary drop-shadow-sm">{ev.experience}</p>
-                </div>
-
-                <div className="w-8 h-[1px] bg-border-subtle" />
-
-                <div>
-                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Live Station Focus</h4>
-                  <p className="font-serif text-lg text-content-primary drop-shadow-sm">{ev.station}</p>
-                </div>
-
-                <div className="w-8 h-[1px] bg-border-subtle" />
-
-                <div>
-                  <h4 className="font-sans text-[9px] tracking-widest uppercase text-content-secondary mb-1">Signature Highlights</h4>
-                  <p className="font-serif text-lg text-content-primary drop-shadow-sm">{ev.dishes}</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative z-10 mt-8">
-              <button className="font-sans text-xs tracking-widest uppercase text-content-primary hover:text-accent-gold active:scale-[0.98] active:opacity-80 transition-all duration-100 flex items-center gap-4 py-4 w-full md:w-auto">
-                Inquire <div className="w-8 h-[1px] bg-current" />
-              </button>
-            </div>
+            <img 
+              src={ev.image || assets.menu.feast} 
+              alt="" 
+              className="w-full h-full object-cover brightness-[0.25] scale-105"
+            />
           </div>
         ))}
+        {/* Default background when nothing is hovered */}
+        <div className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${hoveredIndex === null ? 'opacity-100' : 'opacity-0'}`}>
+           <div className="w-full h-full bg-surface-accent" />
+        </div>
+      </div>
+
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col">
+        <div className="mb-16 md:mb-24">
+          <span className="font-sans text-[10px] tracking-[0.4em] uppercase text-accent-gold/70 block mb-4 transition-colors duration-500">
+            Tailored Experiences
+          </span>
+          <h2 className="font-serif text-5xl md:text-7xl lg:text-8xl text-content-primary transition-colors duration-500">
+            Events We Cater
+          </h2>
+        </div>
+
+        {/* Kinetic Typography List */}
+        <div className="flex flex-col border-t border-border-subtle/50">
+          {EVENT_LIST.map((ev, index) => (
+            <div 
+              key={index}
+              onMouseEnter={() => setHoveredIndex(index)}
+              onMouseLeave={() => setHoveredIndex(null)}
+              onClick={() => {
+                if (window.innerWidth < 768) {
+                  setHoveredIndex(index);
+                } else {
+                  navigate('/contact');
+                }
+              }}
+              className="group flex flex-col md:flex-row items-start md:items-center justify-between py-6 md:py-8 border-b border-border-subtle/50 cursor-pointer transition-colors duration-500"
+            >
+              <div className="flex items-center gap-6 md:gap-12">
+                <span className="font-sans text-xs md:text-sm tracking-widest text-content-secondary group-hover:text-accent-gold transition-colors duration-500">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <h3 className="font-serif text-3xl md:text-5xl lg:text-6xl text-content-secondary group-hover:text-primary-ivory transition-colors duration-500 transform origin-left group-hover:translate-x-4">
+                  {ev.name}
+                </h3>
+              </div>
+              
+              <div className="hidden md:block opacity-0 group-hover:opacity-100 transform -translate-x-8 group-hover:translate-x-0 transition-all duration-500">
+                <span className="font-sans text-[10px] tracking-widest uppercase text-accent-gold border border-accent-gold/30 px-6 py-3 rounded-full backdrop-blur-md">
+                  Inquire Now
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="mt-16 text-center md:text-left z-20 relative">
+           <button onClick={() => navigate('/contact')} className="md:hidden font-sans text-xs tracking-widest uppercase text-accent-gold border border-accent-gold/30 px-8 py-4 rounded-full backdrop-blur-md bg-surface-base/50">
+              Inquire Now
+           </button>
+        </div>
       </div>
     </section>
   );

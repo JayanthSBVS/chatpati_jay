@@ -4,14 +4,13 @@ import Layout from './components/Layout/Layout'
 import { ThemeProvider } from './contexts/ThemeContext'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
-import Catering from './pages/Catering'
-import About from './pages/About'
+import Takeaway from './pages/Takeaway'
+import Story from './pages/Story'
 import Contact from './pages/Contact'
 import Packages from './pages/Packages'
+import ChapterExperiencePage from './pages/ChapterExperiencePage'
 
-// Lazy-loaded page modules — code split per route
-const CuisineExperiencePage = React.lazy(() => import('./pages/CuisineExperiencePage'));
-const ChapterExperiencePage = React.lazy(() => import('./pages/ChapterExperiencePage'));
+// Dynamic imports removed
 
 const PageLoader = () => (
   <div className="min-h-screen bg-surface-base flex items-center justify-center">
@@ -29,35 +28,24 @@ function App() {
         <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/menu" element={<Menu />} />
-
-          {/* System B: Chapter pages — MUST be before /menu/:cuisineId to avoid collision */}
-          <Route
-            path="/menu/chapters/:chapterId"
-            element={
-              <React.Suspense fallback={<PageLoader />}>
-                <ChapterExperiencePage />
-              </React.Suspense>
-            }
-          />
-
-          {/* System A: Cuisine pages */}
-          <Route
-            path="/menu/:cuisineId"
-            element={
-              <React.Suspense fallback={<PageLoader />}>
-                <CuisineExperiencePage />
-              </React.Suspense>
-            }
-          />
-
-          <Route path="/catering" element={<Catering />} />
-          <Route path="/about" element={<About />} />
+          
+          {/* Main New Routes */}
+          <Route path="/story" element={<Story />} />
+          <Route path="/catering" element={<Menu />} />
+          <Route path="/takeaway" element={<Takeaway />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/menu/chapters/:slug" element={<ChapterExperiencePage />} />
+          
+          {/* Compatibility Redirects */}
+          <Route path="/about" element={<Navigate to="/story" replace />} />
+          <Route path="/menu" element={<Navigate to="/catering" replace />} />
+
+
+
           <Route path="/packages" element={<Packages />} />
 
           {/* Fallback route */}
-          <Route path="*" element={<Navigate to="/menu" replace />} />
+          <Route path="*" element={<Navigate to="/catering" replace />} />
         </Routes>
         </Layout>
       </BrowserRouter>

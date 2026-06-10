@@ -52,10 +52,10 @@ export default function MenuManuscript() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="fixed inset-0 z-[200] bg-[#050403] flex items-center justify-center p-4 md:p-12 overflow-hidden"
+            transition={{ duration: 0.5 }}
+            className="fixed inset-0 z-[200] bg-surface-base flex items-center justify-center p-4 md:p-12 overflow-hidden"
           >
-            {/* Background Texture & Lighting */}
+            {/* Ambient Background Textures & Lighting */}
             <div className="absolute inset-0 pointer-events-none bg-texture-paper opacity-30 mix-blend-multiply"></div>
             <div className="absolute top-[-20%] left-[-10%] w-[150%] h-[150%] bg-[radial-gradient(circle_at_50%_0%,_rgba(203,170,106,0.1)_0%,_transparent_60%)] pointer-events-none"></div>
 
@@ -110,7 +110,7 @@ export default function MenuManuscript() {
                 </motion.div>
 
                 {/* Tactile Lighting Overlay on Image */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#050403] via-transparent to-transparent pointer-events-none md:hidden"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-surface-base via-transparent to-transparent pointer-events-none md:hidden"></div>
               </div>
 
               {/* Page Controls & Position Cues */}
@@ -125,16 +125,16 @@ export default function MenuManuscript() {
                 <div className="flex w-full justify-between items-center max-w-sm">
                   <button 
                     onClick={prevPage}
-                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 1 ? 'opacity-20 pointer-events-none text-white' : 'opacity-100 text-accent-gold hover:scale-110'}`}
+                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 1 ? 'opacity-20 pointer-events-none text-content-primary' : 'opacity-100 text-accent-gold hover:scale-110'}`}
                   >
-                    Previous
+                    Previous Chapter
                   </button>
-                  <div className="font-serif italic text-white/40 text-xs hidden md:block">
-                    Swipe or Tap
+                  <div className="font-serif italic text-content-primary/40 text-xs hidden md:block">
+                    Chapter 0{currentPage}
                   </div>
                   <button 
                     onClick={nextPage}
-                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 2 ? 'opacity-20 pointer-events-none text-white' : 'opacity-100 text-accent-gold hover:scale-110'}`}
+                    className={`font-sans text-[9px] md:text-[10px] tracking-[0.3em] uppercase transition-all duration-500 py-4 px-6 ${currentPage === 2 ? 'opacity-20 pointer-events-none text-content-primary' : 'opacity-100 text-accent-gold hover:scale-110'}`}
                   >
                     Next Page
                   </button>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { assets } from '../../data/assetMap';
+import { useNavigate } from 'react-router-dom';
 
 const stations = [
   {
@@ -36,6 +37,7 @@ const stations = [
 
 export default function LiveStations() {
   const sectionRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -62,6 +64,7 @@ export default function LiveStations() {
 
   return (
     <section
+      id="live-stations"
       ref={sectionRef}
       className="pt-8 pb-16 md:py-32 bg-surface-paper relative border-t border-border-subtle"
     >
@@ -125,7 +128,10 @@ export default function LiveStations() {
                   <p className="font-sans text-sm md:text-base text-content-secondary leading-relaxed max-w-md mb-12">
                     {station.description}
                   </p>
-                  <button className="self-start font-sans text-xs tracking-widest uppercase text-content-primary border-b border-border-subtle pb-2 hover:text-accent-gold hover:border-accent-gold transition-colors">
+                  <button 
+                    onClick={() => navigate('/contact')}
+                    className="self-start font-sans text-xs tracking-widest uppercase text-content-primary border-b border-border-subtle pb-2 hover:text-accent-gold hover:border-accent-gold transition-colors cursor-pointer"
+                  >
                     Add to Experience
                   </button>
                 </div>

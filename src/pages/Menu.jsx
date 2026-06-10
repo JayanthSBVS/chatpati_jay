@@ -5,7 +5,6 @@ import CuisineJourney from '../components/MenuExperience/CuisineJourney';
 import EventsWeCater from '../components/MenuExperience/EventsWeCater';
 import MenuChapters from '../components/MenuExperience/MenuChapters';
 import LiveStations from '../components/MenuExperience/LiveStations';
-import LiquidShowcase from '../components/MenuExperience/LiquidShowcase';
 import LuxuryCTA from '../components/MenuExperience/LuxuryCTA';
 
 export default function Menu() {
@@ -22,7 +21,6 @@ export default function Menu() {
       <EventsWeCater />
       <MenuChapters />
       <LiveStations />
-      <LiquidShowcase />
       <LuxuryCTA />
     </div>
   );

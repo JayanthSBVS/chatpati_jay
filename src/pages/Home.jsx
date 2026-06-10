@@ -68,7 +68,7 @@ export default function Home() {
         </div>
 
         {/* ACT II - V: THE HUMAN CONNECTION & FAREWELL */}
-        <div className="relative z-[40] bg-transparent -mt-[100vh]">
+        <div className="relative z-[40] bg-transparent -mt-[100vh]" style={{ contentVisibility: 'auto', containIntrinsicSize: '4000px' }}>
           <Scene5_CinematicPause />
           <Scene9_CelebrationProcession />
           <Scene10_Whispers />

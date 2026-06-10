@@ -19,6 +19,7 @@ const chapterSlugMap = {
   "Indo-Chinese": "indo-chinese",
   "South Indian": "south-indian",
   "Desserts": "desserts",
+  "Signature Drinks": "drinks"
 };
 
 // Removed preloadChapterPage to avoid main thread blocking on rapid scroll (mouse accidentally sweeping across links)
@@ -166,16 +167,17 @@ const MobileDiscoveryRail = ({ chapters }) => {
 
 export default React.memo(function MenuChapters() {
   const chapters = useMemo(() => [
-    { ...menuData.appetizers, image: assets.menu.street },
-    { ...menuData.chaatStation, image: assets.menu.chaat },
+    { ...menuData.appetizers, image: '/assets/appetizers_chapter.png' },
+    { ...menuData.chaatStation, image: '/assets/chaat_station_chapter.png' },
     { ...menuData.mumbaiSpecial, image: assets.cover.mumbai },
-    { ...menuData.snacksKaChaska, image: assets.menu.minimal },
-    { ...menuData.curries, image: assets.menu.paneer },
-    { ...menuData.biryani, image: assets.menu.feast },
-    { ...menuData.breads, image: assets.cover.north_indian },
-    { ...menuData.indoChinese, image: assets.cover.indo_chinese },
-    { ...menuData.southIndian, image: assets.cover.south_indian },
-    { ...menuData.desserts, image: assets.menu.street }
+    { ...menuData.snacksKaChaska, image: '/assets/punjabi_samosa_1781072696197.png' },
+    { ...menuData.curries, image: '/assets/paneer_tikka_1781072685218.png' },
+    { ...menuData.biryani, image: '/assets/chicken_dum_biryani_1781072708280.png' },
+    { ...menuData.breads, image: '/assets/old_school_paranthas.png' },
+    { ...menuData.indoChinese, image: '/assets/indo_chinese_chapter.png' },
+    { ...menuData.southIndian, image: '/assets/south_indian_chapter.png' },
+    { ...menuData.desserts, image: '/assets/meethe_me_sweets.png' },
+    { ...menuData.drinks, image: assets.drinks.mango_lassi }
   ], []);
 
   return (

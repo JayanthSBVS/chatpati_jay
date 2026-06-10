@@ -103,7 +103,7 @@ export default function Scene4_MenuGlimpse({ progress }) {
           className="hidden lg:flex relative z-20 w-full max-w-6xl px-8 flex-col items-center justify-center h-full"
           style={{ opacity: dTextOpacity }}
         >
-          <h2 className="font-serif text-[13rem] text-content-primary leading-[0.75] tracking-tighter opacity-80" style={{ mixBlendMode: 'var(--img-blend-overlay)' }}>
+          <h2 className="font-serif text-[13rem] text-primary-ivory leading-[0.75] tracking-tighter opacity-80" style={{ mixBlendMode: 'var(--img-blend-overlay)' }}>
             The Feast
           </h2>
         </motion.div>
@@ -113,7 +113,7 @@ export default function Scene4_MenuGlimpse({ progress }) {
           className="hidden md:flex lg:hidden relative z-20 w-full px-10 flex-col items-center justify-center h-full"
           style={{ opacity: dTextOpacity }}
         >
-          <h2 className="font-serif text-[5rem] text-content-primary leading-none tracking-tighter opacity-90 drop-shadow-2xl font-semibold">
+          <h2 className="font-serif text-[5rem] text-primary-ivory leading-none tracking-tighter opacity-90 drop-shadow-2xl font-semibold">
             The Feast
           </h2>
         </motion.div>
@@ -123,7 +123,7 @@ export default function Scene4_MenuGlimpse({ progress }) {
           className="flex md:hidden relative z-20 w-full h-full flex-col items-center justify-center px-6 text-center"
           style={{ opacity: dTextOpacity }}
         >
-          <h2 className="font-serif text-[3rem] text-content-primary leading-none tracking-tighter opacity-95 drop-shadow-2xl font-bold">
+          <h2 className="font-serif text-[3rem] text-primary-ivory leading-none tracking-tighter opacity-95 drop-shadow-2xl font-bold">
             The Feast
           </h2>
         </motion.div>

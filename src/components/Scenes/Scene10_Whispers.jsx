@@ -1,8 +1,10 @@
 import React from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 export default function Scene10_Whispers() {
   const containerRef = React.useRef(null);
+  const navigate = useNavigate();
   
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -27,7 +29,7 @@ export default function Scene10_Whispers() {
         ">
           Bring Delhi To<br/>Your Celebration.
         </h2>
-        <button className="mt-12 md:mt-16 group relative">
+        <button onClick={() => navigate('/catering')} className="mt-12 md:mt-16 group relative cursor-pointer">
           <div className="absolute inset-0 bg-accent-gold blur-md opacity-20 group-hover:opacity-50 transition-opacity duration-1000 rounded-full" />
           <div className="relative px-10 md:px-12 py-4 border border-accent-gold/30 rounded-full bg-transparent text-accent-gold font-sans text-[10px] md:text-xs tracking-[0.3em] uppercase transition-all duration-700 hover:bg-accent-gold/10 hover:border-accent-gold/60 font-medium md:font-normal">
             Begin The Journey

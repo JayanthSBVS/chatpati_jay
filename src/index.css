@@ -83,8 +83,8 @@
   --accent-gold-hover: #8F6A31;
   --accent-gold-soft: rgba(166, 124, 59, 0.12);
 
-  /* Overlays - tuned to be subtle and preserve photography */
-  --hero-overlay: linear-gradient(to bottom, rgba(244, 237, 227, 0.1) 0%, rgba(244, 237, 227, 0.6) 100%);
+  /* Overlays - Dark scrims on hero images to preserve white text legibility */
+  --hero-overlay: linear-gradient(to bottom, rgba(5,4,3,0.4) 0%, rgba(5,4,3,0.7) 100%);
   --section-overlay: linear-gradient(to bottom, transparent 0%, rgba(244, 237, 227, 0.8) 100%);
 
   /* Theme-Aware Image Treatments */

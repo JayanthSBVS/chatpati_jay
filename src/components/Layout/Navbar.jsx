@@ -17,10 +17,10 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { label: 'Story', path: '/about' },
-    { label: 'Menu', path: '/menu' },
+    { label: 'Story', path: '/story' },
     { label: 'Catering', path: '/catering' },
-    { label: 'Reservations', path: '/contact' }
+    { label: 'Takeaway', path: '/takeaway' },
+    { label: 'Reserve', path: '/contact' }
   ];
 
   return (
@@ -35,15 +35,15 @@ export default function Navbar() {
         className="fixed top-0 left-0 w-full z-50 pt-8 pb-6 px-8 flex justify-between items-start pointer-events-none"
       >
         {/* Background layer without glassmorphism */}
-        <div className={`absolute inset-0 transition-all duration-500 border-b ${hasScrolled && !menuOpen ? 'bg-surface-paper border-border-subtle' : 'bg-gradient-to-b from-surface-base/90 via-surface-base/50 to-transparent border-transparent'}`}>
+        <div className={`absolute inset-0 transition-all duration-500 ${hasScrolled && !menuOpen ? 'bg-surface-paper border-b border-border-subtle shadow-sm' : 'bg-gradient-to-b from-black/50 via-black/20 to-transparent'}`}>
         </div>
         
-        <Link to="/" className="relative z-10 pointer-events-auto font-serif text-2xl tracking-widest text-content-primary uppercase">
+        <Link to="/" className={`relative z-10 pointer-events-auto font-serif text-2xl tracking-widest uppercase transition-colors duration-500 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`}>
           Chatpati <span className="text-accent-gold">Delhi</span>
         </Link>
         
         {/* Desktop + Tablet Links & Theme Toggle */}
-        <div className="relative z-10 pointer-events-auto hidden md:flex items-center gap-8 lg:gap-12 font-sans text-[10px] lg:text-xs tracking-[0.2em] uppercase text-content-primary">
+        <div className={`relative z-10 pointer-events-auto hidden md:flex items-center gap-8 lg:gap-12 font-sans text-[10px] lg:text-xs tracking-[0.2em] uppercase transition-colors duration-500 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`}>
           {navLinks.map((item) => {
             const isActive = location.pathname === item.path;
             return (
@@ -68,7 +68,7 @@ export default function Navbar() {
               animate={{ rotate: theme === 'dark' ? 0 : 180 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {theme === 'dark' ? <Moon className="w-4 h-4 text-content-primary" /> : <Sun className="w-4 h-4 text-content-primary" />}
+              {theme === 'dark' ? <Moon className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} /> : <Sun className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} />}
             </motion.div>
           </button>
         </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
               animate={{ rotate: theme === 'dark' ? 0 : 180 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {theme === 'dark' ? <Moon className="w-4 h-4 text-content-primary" /> : <Sun className="w-4 h-4 text-content-primary" />}
+              {theme === 'dark' ? <Moon className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} /> : <Sun className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} />}
             </motion.div>
           </button>
 
@@ -93,8 +93,8 @@ export default function Navbar() {
             className="flex flex-col gap-2 p-2"
             onClick={() => setMenuOpen(!menuOpen)}
           >
-            <div className={`w-8 h-[1px] bg-content-primary transition-transform duration-500 origin-right ${menuOpen ? '-rotate-45 -translate-y-[2px]' : ''}`} />
-            <div className={`w-8 h-[1px] bg-content-primary transition-transform duration-500 origin-right ${menuOpen ? 'rotate-45 translate-y-[2px]' : ''}`} />
+            <div className={`w-8 h-[1px] transition-transform duration-500 origin-right ${menuOpen ? '-rotate-45 -translate-y-[2px] bg-content-primary' : hasScrolled ? 'bg-content-primary' : 'bg-primary-ivory'}`} />
+            <div className={`w-8 h-[1px] transition-transform duration-500 origin-right ${menuOpen ? 'rotate-45 translate-y-[2px] bg-content-primary' : hasScrolled ? 'bg-content-primary' : 'bg-primary-ivory'}`} />
           </button>
         </div>
       </motion.nav>
@@ -108,22 +108,33 @@ export default function Navbar() {
         <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] pointer-events-none bg-[radial-gradient(ellipse_at_top_right,_rgba(226,160,96,0.15)_0%,_transparent_60%)]"></div>
 
         <div className="flex flex-col items-center gap-10 mt-12">
-          {navLinks.map((item) => (
-            <Link
+          {navLinks.map((item, i) => (
+            <motion.div
               key={item.label}
-              to={item.path}
-              onClick={() => setMenuOpen(false)}
-              className={`font-serif text-4xl tracking-widest uppercase transition-colors hover:text-accent-gold ${location.pathname === item.path ? 'text-accent-gold' : 'text-content-primary'}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={menuOpen ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.5, delay: menuOpen ? 0.2 + i * 0.1 : 0, ease: "easeOut" }}
             >
-              {item.label}
-            </Link>
+              <Link
+                to={item.path}
+                onClick={() => setMenuOpen(false)}
+                className={`font-serif text-4xl md:text-5xl tracking-widest uppercase transition-colors hover:text-accent-gold ${location.pathname === item.path ? 'text-accent-gold' : 'text-content-primary'}`}
+              >
+                {item.label}
+              </Link>
+            </motion.div>
           ))}
         </div>
 
-        <div className="absolute bottom-12 flex flex-col items-center">
+        <motion.div 
+          className="absolute bottom-12 flex flex-col items-center"
+          initial={{ opacity: 0 }}
+          animate={menuOpen ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.5, delay: menuOpen ? 0.6 : 0 }}
+        >
           <div className="w-[1px] h-12 bg-gradient-to-b from-border-subtle to-transparent mb-8" />
           <span className="font-sans text-[8px] tracking-[0.4em] uppercase text-accent-gold/50">Chatpati Experience</span>
-        </div>
+        </motion.div>
       </div>
     </>
   );

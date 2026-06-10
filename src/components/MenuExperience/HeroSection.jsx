@@ -56,20 +56,37 @@ export default function HeroSection() {
           A Legacy of Flavor
         </p>
         
-        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-content-primary leading-[1.1] mb-6 md:mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+        <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-primary-ivory leading-[1.1] mb-6 md:mb-8 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           Where Every Event <br />
           <span className="italic font-light text-accent-gold">Becomes a</span> <br />
           Culinary Celebration
         </h1>
 
-        <p className="font-sans text-xs md:text-sm text-content-secondary tracking-widest max-w-2xl mx-auto leading-relaxed px-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+        <p className="font-sans text-xs md:text-sm text-primary-cream/90 tracking-widest max-w-2xl mx-auto leading-relaxed px-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
           Immersive catering experiences crafted to elevate your most cherished moments. 
           Discover the breadth of our artisanal menus.
         </p>
+        
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10 animate-fade-in relative z-20" style={{ animationDelay: '0.8s' }}>
+          <a 
+            href="#cuisine-journey" 
+            onClick={exploreMenu} 
+            className="w-full sm:w-auto px-10 py-4 bg-accent-gold text-surface-base font-sans text-xs tracking-widest uppercase hover:bg-content-primary transition-colors duration-300"
+          >
+            Explore Menu
+          </a>
+          <a 
+            href="#live-stations" 
+            onClick={(e) => { e.preventDefault(); document.getElementById('live-stations')?.scrollIntoView({ behavior: 'smooth' })}} 
+            className="w-full sm:w-auto px-10 py-4 border border-accent-gold text-accent-gold font-sans text-xs tracking-widest uppercase hover:bg-accent-gold hover:text-surface-base transition-colors duration-300 backdrop-blur-sm"
+          >
+            Live Stations
+          </a>
+        </div>
       </div>
 
       {/* Desktop Scroll indicator */}
-      <div className="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-4 animate-fade-in" style={{ animationDelay: '1.5s' }}>
+      <div className="absolute bottom-4 lg:bottom-12 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-4 animate-fade-in pointer-events-none z-0" style={{ animationDelay: '1.5s' }}>
         <span className="font-sans text-[10px] tracking-widest text-content-primary/40 uppercase block mb-4">Explore Experience</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-content-primary/40 to-transparent mx-auto">
           <div 
@@ -79,16 +96,7 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Mobile-only thumb-zone CTA */}
-      <div className="absolute bottom-12 left-0 right-0 px-6 md:hidden flex justify-center animate-fade-in" style={{ animationDelay: '1s' }}>
-        <a 
-          href="#cuisine-journey" 
-          onClick={exploreMenu}
-          className="w-full max-w-[300px] min-h-[56px] flex items-center justify-center bg-accent-gold/10 border border-accent-gold/30 text-accent-gold font-sans text-sm tracking-widest uppercase rounded-sm hover:bg-accent-gold/20 active:scale-[0.98] active:opacity-80 transition-all duration-100"
-        >
-          ↓ Explore Menu
-        </a>
-      </div>
+
     </section>
   );
 }

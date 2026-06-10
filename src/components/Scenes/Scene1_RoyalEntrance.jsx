@@ -43,7 +43,7 @@ export default function Scene1_RoyalEntrance({ progress }) {
             A Royal Dining Chamber
           </span>
 
-          <h1 className="font-serif text-[9rem] xl:text-[12rem] 2xl:text-[16rem] text-content-primary tracking-tighter leading-[0.75] drop-shadow-2xl">
+          <h1 className="font-serif text-[9rem] xl:text-[12rem] 2xl:text-[16rem] text-primary-ivory tracking-tighter leading-[0.75] drop-shadow-2xl">
             Chatpati
           </h1>
           <h1 className="font-serif text-[8rem] xl:text-[11rem] 2xl:text-[14rem] text-accent-gold tracking-tighter leading-[0.75] ml-[20%] mt-[-2%] drop-shadow-xl">
@@ -79,7 +79,7 @@ export default function Scene1_RoyalEntrance({ progress }) {
             A Royal Dining Chamber
           </span>
           {/* Tablet: large but not desktop-extreme sizes */}
-          <h1 className="font-serif text-[5.5rem] text-content-primary tracking-tighter leading-[0.78] font-semibold drop-shadow-xl">
+          <h1 className="font-serif text-[5.5rem] text-primary-ivory tracking-tighter leading-[0.78] font-semibold drop-shadow-xl">
             Chatpati
           </h1>
           <h1 className="font-serif text-[5rem] text-accent-gold tracking-tighter leading-[0.78] ml-[18%] mt-[-1%] drop-shadow-md">
@@ -113,8 +113,8 @@ export default function Scene1_RoyalEntrance({ progress }) {
         </span>
 
         {/* Mobile: heavier font weight so gold/cream text pops */}
-        <h1 className="font-serif text-[3.8rem] text-content-primary tracking-tighter leading-none mb-2 font-bold drop-shadow-lg">
-          Chatpati
+        <h1 className="font-serif text-[3.8rem] text-primary-ivory tracking-tighter leading-none mb-2 font-bold drop-shadow-lg">
+            Chatpati
         </h1>
         <h1 className="font-serif text-[3.8rem] text-accent-gold tracking-tighter leading-none italic font-semibold drop-shadow-md">
           Delhi
