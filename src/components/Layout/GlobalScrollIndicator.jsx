@@ -111,15 +111,16 @@ export default function GlobalScrollIndicator() {
         <span
           style={{
             fontFamily: 'var(--font-serif)',
-            fontSize: '8px',
+            fontSize: '10px',
+            fontWeight: 'bold',
             letterSpacing: '0.48em',
             textTransform: 'uppercase',
-            color: 'rgba(203,170,106,0.75)',
+            color: 'rgba(203,170,106,1)',
             textShadow: '0 1px 8px rgba(0,0,0,0.7)',
             animation: 'gsi-label 3.2s ease-in-out infinite',
           }}
         >
-          Scroll
+          Scroll to Explore
         </span>
 
         {/* Three cascading silk-thread bars */}

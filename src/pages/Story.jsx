@@ -137,9 +137,6 @@ export default function Story() {
                 <p>
                   What started as a passion project blossomed into a beloved destination at <strong>1636 NJ-27, Edison, NJ 0881</strong>. 
                 </p>
-                <p>
-                  Led by <strong>Chef Hema Singh</strong>, our 14-person kitchen team transforms a modest storefront into an extraordinary South Asian culinary experience. We meticulously roast and grind our own spices daily to release their essential oils, preserving the true soul of Indian cuisine.
-                </p>
               </div>
             </FadeIn>
           </div>
@@ -153,8 +150,8 @@ export default function Story() {
               <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               
               <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-accent-gold mb-6 block relative z-10 transform group-hover:-translate-y-1 transition-transform duration-500">The Driving Force</span>
-              <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug relative z-10 text-primary-ivory group-hover:text-accent-gold transition-colors duration-500">
-                Abhijit <span className="italic text-white group-hover:text-primary-ivory transition-colors duration-500">Pingle</span>
+              <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug relative z-10 text-content-primary group-hover:text-accent-gold transition-colors duration-500">
+                Abhijit <span className="italic text-content-secondary group-hover:text-content-primary transition-colors duration-500">Pingle</span>
               </h2>
               
               <div className="font-sans text-content-secondary leading-relaxed space-y-6 relative z-10 text-sm md:text-base text-left md:text-center max-w-3xl mx-auto">
