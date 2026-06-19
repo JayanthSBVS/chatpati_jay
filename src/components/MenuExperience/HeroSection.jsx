@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { assets } from '../../data/assetMap';
 
 export default function HeroSection() {
@@ -75,13 +76,12 @@ export default function HeroSection() {
           >
             Explore Menu
           </a>
-          <a 
-            href="#live-stations" 
-            onClick={(e) => { e.preventDefault(); document.getElementById('live-stations')?.scrollIntoView({ behavior: 'smooth' })}} 
+          <Link 
+            to="/cuisine/live-stations" 
             className="w-full sm:w-auto px-10 py-4 border border-accent-gold text-accent-gold font-sans text-xs tracking-widest uppercase hover:bg-accent-gold hover:text-surface-base transition-colors duration-300 backdrop-blur-sm"
           >
             Live Stations
-          </a>
+          </Link>
         </div>
       </div>
 

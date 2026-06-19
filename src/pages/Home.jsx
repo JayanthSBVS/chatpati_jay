@@ -53,7 +53,7 @@ export default function Home() {
       */}
       <div id="home-page-wrapper" style={hasSeenCover ? { opacity: 1, transform: 'translateY(0)' } : undefined}>
         {/* ACT I: THE CRAVING (Spatial Z-Depth Journey) */}
-        <div ref={containerRef} className="relative h-[500vh] md:h-[1000vh] bg-surface-base z-10">
+        <div ref={containerRef} className="relative h-[1000vh] md:h-[2000vh] bg-surface-base z-10">
           <MenuManuscript />
 
           <div className="sticky top-0 left-0 w-full h-screen overflow-hidden">
