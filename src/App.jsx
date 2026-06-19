@@ -5,10 +5,11 @@ import { ThemeProvider } from './contexts/ThemeContext'
 import Home from './pages/Home'
 import Menu from './pages/Menu'
 import Takeaway from './pages/Takeaway'
+import TakeawayCategory from './pages/TakeawayCategory'
 import Story from './pages/Story'
 import Contact from './pages/Contact'
 import Packages from './pages/Packages'
-import ChapterExperiencePage from './pages/ChapterExperiencePage'
+import CuisineExperiencePage from './pages/CuisineExperiencePage'
 
 // Dynamic imports removed
 
@@ -32,9 +33,10 @@ function App() {
           {/* Main New Routes */}
           <Route path="/story" element={<Story />} />
           <Route path="/catering" element={<Menu />} />
+          <Route path="/cuisine/:id" element={<CuisineExperiencePage />} />
           <Route path="/takeaway" element={<Takeaway />} />
+          <Route path="/takeaway/:categoryId" element={<TakeawayCategory />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/menu/chapters/:slug" element={<ChapterExperiencePage />} />
           
           {/* Compatibility Redirects */}
           <Route path="/about" element={<Navigate to="/story" replace />} />

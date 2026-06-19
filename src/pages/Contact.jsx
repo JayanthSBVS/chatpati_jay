@@ -8,7 +8,8 @@ export default function Contact() {
     date: '',
     functionType: '',
     guests: '',
-    requests: ''
+    requests: '',
+    sampleTest: false
   });
   
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -29,8 +30,8 @@ export default function Contact() {
   }, []);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({ ...prev, [name]: type === 'checkbox' ? checked : value }));
   };
 
   const handleSubmit = (e) => {
@@ -45,6 +46,7 @@ export default function Contact() {
 *Function Type:* ${formData.functionType}
 *Estimated Guests:* ${formData.guests}
 *Special Requests:* ${formData.requests || 'None'}
+*Sample Tasting Requested:* ${formData.sampleTest ? 'Yes, please arrange a tasting' : 'No'}
 
 Please let me know the availability and next steps for the tasting.`;
 
@@ -211,6 +213,22 @@ Please let me know the availability and next steps for the tasting.`;
               </div>
             </div>
 
+            {/* Sample Test Checkbox */}
+            <div 
+              className="flex items-center gap-4 mt-2 mb-2 p-5 border border-border-subtle bg-surface-base hover:border-accent-gold/50 transition-colors cursor-pointer group" 
+              onClick={() => setFormData(prev => ({ ...prev, sampleTest: !prev.sampleTest }))}
+            >
+              <div className={`w-5 h-5 flex shrink-0 items-center justify-center border transition-colors ${formData.sampleTest ? 'bg-accent-gold border-accent-gold' : 'border-content-secondary group-hover:border-accent-gold'}`}>
+                {formData.sampleTest && <span className="text-surface-base text-xs font-bold leading-none">✓</span>}
+              </div>
+              <div className="flex flex-col">
+                <label className="font-sans text-sm md:text-base text-content-primary cursor-pointer select-none">
+                  Request a Sample Food Tasting
+                </label>
+                <span className="font-sans text-[10px] text-content-secondary uppercase tracking-widest mt-1">Experience our menu before you finalize</span>
+              </div>
+            </div>
+
             <button 
               type="submit"
               className="w-full bg-accent-gold text-surface-base font-sans text-xs tracking-widest uppercase py-5 mt-4 hover:bg-content-primary transition-all duration-300 active:scale-[0.98]"
@@ -259,8 +277,8 @@ Please let me know the availability and next steps for the tasting.`;
                 <h3 className="text-content-primary font-medium tracking-widest uppercase text-xs mb-2">Address</h3>
                 <p className="leading-relaxed">
                   Chatpati Delhi<br />
-                  123 Culinary Boulevard<br />
-                  New Brunswick, NJ 08901
+                  1636 NJ-27<br />
+                  Edison, NJ 0881
                 </p>
               </div>
 
@@ -279,28 +297,25 @@ Please let me know the availability and next steps for the tasting.`;
             </motion.div>
           </div>
 
-          {/* Video Player */}
+          {/* Map Embed */}
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="relative w-full aspect-video bg-surface-card border border-border-subtle overflow-hidden group shadow-2xl"
+            className="relative w-full aspect-video bg-surface-base border border-border-subtle shadow-2xl p-2"
           >
-            <video 
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="w-full h-full object-cover"
-              src="/assets/location_video.mp4"
-            >
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute inset-0 border border-accent-gold/20 m-4 pointer-events-none transition-transform duration-700 group-hover:scale-95" />
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-black/40 backdrop-blur-sm pointer-events-none">
-               <span className="font-sans text-xs tracking-[0.2em] uppercase text-white">Experience Our Space</span>
-            </div>
+            <iframe 
+              src="https://maps.google.com/maps?q=1636%20NJ-27,%20Edison,%20NJ%2008817&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Chatpati Delhi Location"
+              className="w-full h-full"
+            ></iframe>
           </motion.div>
         </div>
       </section>

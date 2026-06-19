@@ -9,10 +9,10 @@ export const ThemeProvider = ({ children }) => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('chatpati-theme');
       if (saved) return saved;
-      // Default to dark theme for luxury brand identity
-      return 'dark';
+      // Default to light theme as requested
+      return 'light';
     }
-    return 'dark';
+    return 'light';
   });
 
   useEffect(() => {

@@ -86,7 +86,7 @@ export default function Story() {
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-32 lg:mb-48 items-center">
           <div className="md:text-right md:pr-12">
             <FadeIn>
-              <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-accent-gold mb-4 block">1990s • The Vision</span>
+              <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-accent-gold mb-4 block">The Vision</span>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-snug">
                 A Unified <br className="hidden md:block"/> Dream
               </h2>
@@ -116,23 +116,26 @@ export default function Story() {
         <div className="relative grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 mb-32 lg:mb-48 items-center">
           <div className="order-2 md:order-1 relative h-[60vh] md:h-[80vh] w-full overflow-hidden rounded-sm group">
             <FadeIn className="w-full h-full">
-              <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-700" />
-              <img 
-                src={kitchenImg} 
-                alt="The Chatpati Delhi Kitchen" 
+              <div className="absolute inset-0 bg-black/20 z-10 group-hover:bg-transparent transition-colors duration-700 pointer-events-none" />
+              <video 
+                src="/assets/cover/story_mobile_video.mp4" 
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               />
             </FadeIn>
           </div>
           <div className="order-1 md:order-2 md:pl-12">
             <FadeIn>
-              <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-accent-gold mb-4 block">2010s • The Craft</span>
+              <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-accent-gold mb-4 block">The Craft</span>
               <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-8 leading-snug">
                 From Delhi to <br className="hidden md:block"/> New Jersey
               </h2>
               <div className="font-sans text-content-secondary leading-relaxed space-y-6">
                 <p>
-                  What started as a passion project blossomed into a beloved destination at <strong>3201 NJ-27, Franklin Park</strong>. 
+                  What started as a passion project blossomed into a beloved destination at <strong>1636 NJ-27, Edison, NJ 0881</strong>. 
                 </p>
                 <p>
                   Led by <strong>Chef Hema Singh</strong>, our 14-person kitchen team transforms a modest storefront into an extraordinary South Asian culinary experience. We meticulously roast and grind our own spices daily to release their essential oils, preserving the true soul of Indian cuisine.
@@ -140,6 +143,33 @@ export default function Story() {
               </div>
             </FadeIn>
           </div>
+        </div>
+
+        {/* Section 2.5: The Driving Force */}
+        <div className="relative mb-32 lg:mb-48">
+          <FadeIn className="max-w-4xl mx-auto text-center">
+            <div className="group relative bg-surface-card border border-border-subtle p-8 md:p-12 lg:p-16 hover:border-accent-gold/50 transition-all duration-700 shadow-xl overflow-hidden cursor-default hover:shadow-[0_0_40px_rgba(226,160,96,0.15)] transform hover:-translate-y-2">
+              {/* Interactive background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              
+              <span className="font-sans text-[10px] tracking-[0.3em] uppercase text-accent-gold mb-6 block relative z-10 transform group-hover:-translate-y-1 transition-transform duration-500">The Driving Force</span>
+              <h2 className="font-serif text-3xl md:text-5xl mb-8 leading-snug relative z-10 text-primary-ivory group-hover:text-accent-gold transition-colors duration-500">
+                Abhijit <span className="italic text-white group-hover:text-primary-ivory transition-colors duration-500">Pingle</span>
+              </h2>
+              
+              <div className="font-sans text-content-secondary leading-relaxed space-y-6 relative z-10 text-sm md:text-base text-left md:text-center max-w-3xl mx-auto">
+                <p className="group-hover:text-content-primary transition-colors duration-500">
+                  As the Founder of Chatpati Delhi, Abhijit is the driving force behind our catering success. With over 18 years of experience in the hospitality and catering industry, he has built a reputation for delivering exceptional culinary experiences with professionalism and attention to detail.
+                </p>
+                <p className="opacity-80 group-hover:opacity-100 transition-opacity duration-500 delay-75">
+                  Having successfully managed and catered more than 1,000 events—ranging from intimate family gatherings to large-scale weddings, corporate functions, and community celebrations—he brings a wealth of expertise to every occasion.
+                </p>
+                <p className="opacity-80 group-hover:opacity-100 transition-opacity duration-500 delay-150">
+                  His passion for authentic Indian cuisine, commitment to quality, and dedication to customer satisfaction have helped establish Chatpati Delhi as a trusted name in catering, creating memorable experiences for clients across the region.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
         </div>
 
         {/* Section 3: Press & Recognition */}

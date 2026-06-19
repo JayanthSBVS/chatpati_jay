@@ -35,7 +35,7 @@
   --color-accent-gold-soft: var(--accent-gold-soft);
 }
 
-:root, .theme-dark {
+.theme-dark {
   --surface-base: #050403;
   --surface-paper: #0a0908;
   --surface-card: #0f0e0d;
@@ -67,7 +67,7 @@
   --img-blend-luminosity: luminosity;
 }
 
-.theme-light {
+:root, .theme-light {
   --surface-base: #F4EDE3;
   --surface-paper: #FBF7F1;
   --surface-card: #FFFFFF;

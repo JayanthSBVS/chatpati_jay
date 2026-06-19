@@ -1,14 +1,15 @@
 import React, { useEffect, useRef } from 'react';
-
+import { Link } from 'react-router-dom';
 import { assets } from '../../data/assetMap';
 
 const cuisines = [
-  { id: 'delhi-street-food', label: "Delhi Street Food", hero: assets.cover.delhi },
   { id: 'north-indian-classics', label: "North Indian Classics", hero: assets.cover.north_indian },
   { id: 'mumbai-specialties', label: "Mumbai Specialties", hero: assets.cover.mumbai },
   { id: 'indo-chinese', label: "Indo-Chinese", hero: assets.cover.indo_chinese },
   { id: 'south-indian-traditions', label: "South Indian Traditions", hero: assets.cover.south_indian },
   { id: 'signature-refreshments', label: "Signature Refreshments", hero: assets.cover.refreshments },
+  { id: 'desserts', label: "Desserts", hero: assets.cover.desserts },
+  { id: 'live-stations', label: "Live Stations", hero: assets.cover.live_stations },
 ];
 
 export default function CuisineJourney() {
@@ -53,6 +54,10 @@ export default function CuisineJourney() {
         .cuisine-item:nth-child(4) { transition-delay: 0.2s; }
         .cuisine-item:nth-child(5) { transition-delay: 0.26s; }
         .cuisine-item:nth-child(6) { transition-delay: 0.32s; }
+        .cuisine-item:nth-child(7) { transition-delay: 0.38s; }
+        .cuisine-item:hover .arrow-icon {
+          transform: translateX(10px);
+        }
       `}</style>
 
       <div className="absolute top-0 right-0 w-1/2 h-full bg-[radial-gradient(ellipse_at_right,_var(--color-border-subtle)_0%,_transparent_70%)] pointer-events-none" />
@@ -68,16 +73,22 @@ export default function CuisineJourney() {
           </h2>
         </div>
 
-        <div className="flex flex-col gap-8 md:gap-12">
+        <div className="flex flex-col gap-8 md:gap-12 relative z-10">
           {cuisines.map((cuisine) => (
-            <div
+            <Link
+              to={`/cuisine/${cuisine.id}`}
               key={cuisine.id}
-              className="cuisine-item border-b border-primary-cream/10 pb-8 flex items-end justify-between transition-all duration-500"
+              className="cuisine-item border-b border-primary-cream/10 pb-8 flex items-end justify-between transition-all duration-500 group cursor-pointer"
             >
-              <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-content-secondary">
+              <h3 className="font-serif text-3xl md:text-5xl lg:text-7xl text-content-secondary group-hover:text-accent-gold transition-colors duration-300">
                 {cuisine.label}
               </h3>
-            </div>
+              <div className="arrow-icon transition-transform duration-300 hidden md:block">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" className="text-accent-gold">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </div>
+            </Link>
           ))}
         </div>
       </div>
