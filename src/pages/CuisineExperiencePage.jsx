@@ -115,6 +115,17 @@ export default function CuisineExperiencePage() {
              </div>
           )}
         </div>
+        
+        {/* Added Back to Menu Button */}
+        <div className="flex justify-center mt-12 md:mt-16">
+          <Link 
+            to="/catering" 
+            className="flex items-center gap-2 text-accent-gold hover:text-accent-gold/80 transition-colors uppercase tracking-widest text-sm font-sans px-8 py-4 rounded-full border border-accent-gold/30 hover:bg-accent-gold/10"
+          >
+            <ChevronLeft size={18} />
+            Back to Menu
+          </Link>
+        </div>
       </section>
 
       {/* Lightbox */}

@@ -4,18 +4,18 @@ import { useNavigate } from 'react-router-dom';
 
 const EVENT_LIST = [
   { name: "Wedding", image: '/assets/event_wedding.png' },
-  { name: "Baby Shower", image: '/assets/restaurant_image.webp' },
-  { name: "Mehndi Function", image: '/assets/restaurant_image2.jpg' },
-  { name: "Haldi Function", image: '/assets/restaurants_outside_image.webp' },
-  { name: "Birthday Parties", image: '/assets/restaurant_image.webp' },
-  { name: "Graduation Parties", image: '/assets/restaurant_image2.jpg' },
-  { name: "Retirement Parties", image: '/assets/restaurants_outside_image.webp' },
-  { name: "Family Dinners", image: '/assets/restaurant_image.webp' },
-  { name: "Engagement Celebrations", image: '/assets/event_wedding.png' },
-  { name: "Corporate Events", image: '/assets/restaurant_image2.jpg' },
-  { name: "Holiday Parties", image: '/assets/restaurants_outside_image.webp' },
-  { name: "Get Together", image: '/assets/restaurant_image.webp' },
-  { name: "Kitty Parties", image: '/assets/restaurant_image2.jpg' },
+  { name: "Baby Shower", image: '/assets/event_baby_shower.png' },
+  { name: "Mehndi Function", image: '/assets/event_mehndi.png' },
+  { name: "Haldi Function", image: '/assets/event_haldi.png' },
+  { name: "Birthday Parties", image: '/assets/event_birthday.png' },
+  { name: "Graduation Parties", image: '/assets/event_graduation.png' },
+  { name: "Retirement Parties", image: '/assets/event_retirement.png' },
+  { name: "Family Dinners", image: '/assets/event_family.png' },
+  { name: "Engagement Celebrations", image: '/assets/event_engagement.png' },
+  { name: "Corporate Events", image: '/assets/event_corporate.png' },
+  { name: "Holiday Parties", image: '/assets/event_holiday.png' },
+  { name: "Get Together", image: '/assets/event_get_together.png' },
+  { name: "Kitty Parties", image: '/assets/event_kitty_party.png' },
 ];
 
 export default function EventsWeCater() {

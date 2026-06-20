@@ -152,7 +152,7 @@ export const takeawayData = [
     id: 'meethe-me',
     title: 'Meethe Me',
     tagline: 'Sweet endings, the traditional way.',
-    heroImage: '/assets/meethe_me_sweets_1781074765523.png',
+    heroImage: '/assets/meethe_me_sweets.png',
     items: [
       { id: 'mm1', name: 'Gulab Jamun', price: '$5.95', isVeg: true, image: '/assets/meethe_me_sweets.png' },
       { id: 'mm2', name: 'Rasmalai', price: '$6.95', isVeg: true, image: '/assets/Rasmalai.png' },
@@ -166,7 +166,7 @@ export const takeawayData = [
     id: 'old-school-paranthas',
     title: 'Old School Paranthas',
     tagline: 'Stuffed Indian flatbreads, served with a dollop of butter.',
-    heroImage: '/assets/old_school_paranthas_1781074787374.png',
+    heroImage: '/assets/old_school_paranthas.png',
     items: [
       { id: 'osp1', name: 'Aloo Parantha', price: '$11.95', isVeg: true, image: '/assets/old_school_paranthas.png' },
       { id: 'osp2', name: 'Gobhi Parantha', price: '$11.95', isVeg: true, image: '/assets/old_school_paranthas.png' },
@@ -197,7 +197,7 @@ export const takeawayData = [
     id: 'sides',
     title: 'Sides',
     tagline: 'The perfect accompaniments to your meal.',
-    heroImage: '/assets/sides_accompaniments_1781074810280.png',
+    heroImage: '/assets/sides_accompaniments.png',
     items: [
       { id: 'sd1', name: 'Pav (2Pcs)', price: '$2.95', isVeg: true, image: '/assets/vadapav.jpg' },
       { id: 'sd2', name: 'Jeera Rice', price: '$2.95', isVeg: true, image: '/assets/chicken_dum_biryani_1781072708280.png' },
