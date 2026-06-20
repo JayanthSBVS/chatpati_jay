@@ -30,9 +30,9 @@ export default function Takeaway() {
               </p>
               
               <div className="flex flex-col sm:flex-row gap-6 lg:gap-10 font-sans text-[10px] tracking-widest text-content-secondary uppercase border-t border-border-subtle pt-6">
-                <div className="flex items-center gap-3"><MapPin size={16} className="text-accent-gold"/> Oaktree Rd, Iselin</div>
-                <div className="flex items-center gap-3"><Clock size={16} className="text-accent-gold"/> 11:30 AM - 10:00 PM</div>
-                <div className="flex items-center gap-3"><Phone size={16} className="text-accent-gold"/> (732) 516-8407</div>
+                <div className="flex items-center gap-3"><MapPin size={16} className="text-accent-gold"/> 1636 NJ-27, Edison, NJ</div>
+                <div className="flex items-center gap-3"><Clock size={16} className="text-accent-gold"/> Tue-Sun: 11AM - 9:30PM</div>
+                <div className="flex items-center gap-3"><Phone size={16} className="text-accent-gold"/> (732) 354-3045</div>
               </div>
             </div>
          </motion.div>

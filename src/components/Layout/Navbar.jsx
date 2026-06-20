@@ -20,7 +20,7 @@ export default function Navbar() {
     { label: 'Story', path: '/story' },
     { label: 'Catering', path: '/catering' },
     { label: 'Takeaway', path: '/takeaway' },
-    { label: 'Reserve', path: '/contact' }
+    { label: 'Contact', path: '/contact' }
   ];
 
   return (
@@ -43,7 +43,7 @@ export default function Navbar() {
         </Link>
         
         {/* Desktop + Tablet Links & Theme Toggle */}
-        <div className={`relative z-10 pointer-events-auto hidden md:flex items-center gap-8 lg:gap-12 font-sans text-[10px] lg:text-xs tracking-[0.2em] uppercase transition-colors duration-500 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`}>
+        <div className={`relative z-10 pointer-events-auto hidden md:flex items-center gap-8 lg:gap-12 font-sans text-[10px] lg:text-xs tracking-[0.2em] uppercase transition-colors duration-500 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory/80'}`}>
           {navLinks.map((item) => {
             const isActive = location.pathname === item.path;
             return (
@@ -68,7 +68,7 @@ export default function Navbar() {
               animate={{ rotate: theme === 'dark' ? 0 : 180 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {theme === 'dark' ? <Moon className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} /> : <Sun className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} />}
+              {theme === 'dark' ? <Moon className={`w-4 h-4 text-accent-gold`} /> : <Sun className={`w-4 h-4 text-accent-gold`} />}
             </motion.div>
           </button>
         </div>
@@ -85,7 +85,7 @@ export default function Navbar() {
               animate={{ rotate: theme === 'dark' ? 0 : 180 }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
-              {theme === 'dark' ? <Moon className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} /> : <Sun className={`w-4 h-4 ${hasScrolled || menuOpen ? 'text-content-primary' : 'text-primary-ivory'}`} />}
+              {theme === 'dark' ? <Moon className={`w-4 h-4 text-accent-gold`} /> : <Sun className={`w-4 h-4 text-accent-gold`} />}
             </motion.div>
           </button>
 

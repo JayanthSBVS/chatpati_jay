@@ -283,16 +283,16 @@ Please let me know the availability and next steps for the tasting.`;
               </div>
 
               <div>
-                <h3 className="text-content-primary font-medium tracking-widest uppercase text-xs mb-2">Contact</h3>
-                <p>+1 (732) 516-8407</p>
+                <h3 className="text-content-primary font-medium tracking-widest uppercase text-xs mb-2">Takeout Orders</h3>
+                <p>Phone: (732) 354-3045</p>
+                <p className="text-sm mt-1 text-content-secondary/70">Tuesday - Sunday: 11:00 AM - 9:30 PM</p>
               </div>
 
               <div>
-                <h3 className="text-content-primary font-medium tracking-widest uppercase text-xs mb-2">Hours</h3>
-                <p className="leading-relaxed">
-                  Monday - Thursday: 11:30 AM - 10:00 PM<br />
-                  Friday - Sunday: 11:00 AM - 11:00 PM
-                </p>
+                <h3 className="text-content-primary font-medium tracking-widest uppercase text-xs mb-2">Catering Orders</h3>
+                <p>Live Stations (Abhijit): (732) 516-8407</p>
+                <p>Tray Orders (Jimmy): (732) 986-0129</p>
+                <p className="text-sm mt-1 text-content-secondary/70">Office Hours: Monday - Friday 11:00 AM - 6:00 PM</p>
               </div>
             </motion.div>
           </div>

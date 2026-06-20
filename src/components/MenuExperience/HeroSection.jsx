@@ -39,15 +39,16 @@ export default function HeroSection() {
       `}</style>
       
       <div className="absolute inset-0 pointer-events-none">
-        <img 
-          src={assets.menu.fire} 
-          alt="" 
-          fetchPriority="high"
-          loading="eager" 
-          decoding="sync"
+        <video 
+          autoPlay 
+          loop 
+          muted 
+          playsInline 
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: 'var(--img-opacity-hero)' }}
-        />
+        >
+          <source src="/assets/menu-page_hero_section_video.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0" style={{ background: 'var(--hero-overlay)' }} />
         <div className="absolute inset-0 bg-texture-paper opacity-35 mix-blend-multiply" />
       </div>

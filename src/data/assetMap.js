@@ -26,7 +26,7 @@ export const assets = {
     live_stations:'/assets/chaat_station_chapter.png',
   },
   cuisineMenus: {
-    'north-indian-classics': ['/assets/north_indian_1.jpeg', '/assets/north_indian_2.jpeg', '/assets/north_indian_3.png'],
+    'north-indian-classics': ['/assets/north_indian_1.png', '/assets/north_indian_2.png', '/assets/north_indian_3.png'],
     'mumbai-specialties': ['/assets/mumbai_specials.png'],
     'indo-chinese': ['/assets/indo-chinese.png'],
     'south-indian-traditions': ['/assets/south-indian.png'],

@@ -35,38 +35,6 @@
   --color-accent-gold-soft: var(--accent-gold-soft);
 }
 
-.theme-dark {
-  --surface-base: #050403;
-  --surface-paper: #0a0908;
-  --surface-card: #0f0e0d;
-  --surface-accent: #1a1817;
-
-  --content-primary: #F5EFEB;
-  --content-secondary: #D5C6B1;
-  --content-ghost: rgba(255, 255, 255, 0.03);
-
-  --border-subtle: rgba(203, 170, 106, 0.1);
-  
-  --accent-gold: #CBAA6A;
-  --accent-gold-hover: #E2A060;
-  --accent-gold-soft: rgba(203, 170, 106, 0.12);
-
-  /* Overlays */
-  --hero-overlay: linear-gradient(to bottom, rgba(5,4,3,0.3) 0%, rgba(5,4,3,0.7) 100%);
-  --section-overlay: linear-gradient(to bottom, transparent 0%, rgba(5,4,3,0.9) 100%);
-
-  /* Theme-Aware Image Treatments */
-  --img-opacity-hero: 0.4;
-  --img-opacity-card: 0.4;
-  --img-saturate: 1.2;
-  --img-contrast: 1.1;
-  --img-blend-screen: screen;
-  --img-blend-lighten: lighten;
-  --img-blend-overlay: overlay;
-  --img-blend-multiply: multiply;
-  --img-blend-luminosity: luminosity;
-}
-
 :root, .theme-light {
   --surface-base: #F4EDE3;
   --surface-paper: #FBF7F1;
@@ -97,6 +65,38 @@
   --img-blend-overlay: normal;
   --img-blend-multiply: normal;
   --img-blend-luminosity: normal;
+}
+
+.theme-dark {
+  --surface-base: #050403;
+  --surface-paper: #0a0908;
+  --surface-card: #0f0e0d;
+  --surface-accent: #1a1817;
+
+  --content-primary: #F5EFEB;
+  --content-secondary: #D5C6B1;
+  --content-ghost: rgba(255, 255, 255, 0.03);
+
+  --border-subtle: rgba(203, 170, 106, 0.1);
+  
+  --accent-gold: #CBAA6A;
+  --accent-gold-hover: #E2A060;
+  --accent-gold-soft: rgba(203, 170, 106, 0.12);
+
+  /* Overlays */
+  --hero-overlay: linear-gradient(to bottom, rgba(5,4,3,0.3) 0%, rgba(5,4,3,0.7) 100%);
+  --section-overlay: linear-gradient(to bottom, transparent 0%, rgba(5,4,3,0.9) 100%);
+
+  /* Theme-Aware Image Treatments */
+  --img-opacity-hero: 0.4;
+  --img-opacity-card: 0.4;
+  --img-saturate: 1.2;
+  --img-contrast: 1.1;
+  --img-blend-screen: screen;
+  --img-blend-lighten: lighten;
+  --img-blend-overlay: overlay;
+  --img-blend-multiply: multiply;
+  --img-blend-luminosity: luminosity;
 }
 
 @layer base {
